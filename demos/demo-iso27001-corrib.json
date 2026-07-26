@@ -1,0 +1,737 @@
+{
+  "schema": 2,
+  "meta": {
+    "customer": "Corrib Analytics Ltd",
+    "assessor": "M. Kavanagh",
+    "date": "2026-07-09",
+    "scope": "The Corrib analytics SaaS platform, the supporting AWS eu-west-1 infrastructure and the Dublin office, per the draft ISMS scope statement. Excludes the US sales subsidiary. Stage 1 certification audit booked for October 2026.",
+    "frameworkId": "iso27001",
+    "framework": "ISO/IEC 27001:2022 and ISO/IEC 27002:2022"
+  },
+  "goals": {
+    "ISMS": 3,
+    "A.5": 3,
+    "A.6": 3,
+    "A.7": 2,
+    "A.8": 3
+  },
+  "frameworkId": "iso27001",
+  "responses": {
+    "Cl.4.1": {
+      "p": 2,
+      "i": 1,
+      "pn": "A context section exists in the draft ISMS manual listing market and regulatory issues.",
+      "in": "Written by the consultant in one sitting and not revisited since February. Internal issues are barely covered and no review cycle is set."
+    },
+    "Cl.4.2": {
+      "p": 2,
+      "i": 1,
+      "pn": "Interested parties are listed in the ISMS manual.",
+      "in": "The list is generic. Actual customer security requirements sit in individual contracts and sales questionnaires and are not consolidated or owned."
+    },
+    "Cl.4.3": {
+      "p": 3,
+      "i": 3,
+      "pn": "A scope statement covers the SaaS platform, supporting AWS infrastructure and the Dublin office, with exclusions justified.",
+      "in": "Clear and defensible. Excludes the US sales subsidiary, which is documented and reasonable at this stage."
+    },
+    "Cl.4.4": {
+      "p": 2,
+      "i": 1,
+      "pn": "The ISMS manual asserts that processes and their interactions are defined.",
+      "in": "No process model exists. ISMS activities happen but nobody can show how they connect, which is a likely stage 1 finding."
+    },
+    "Cl.5.1": {
+      "p": 2,
+      "i": 2,
+      "pn": "Leadership commitment is asserted in the manual and the CEO signed the policy.",
+      "in": "The CEO signed and has attended one ISMS meeting. Resource decisions are made by the CTO without reference to the ISMS, and security is not integrated into business planning."
+    },
+    "Cl.5.2": {
+      "p": 3,
+      "i": 3,
+      "pn": "An information security policy is approved, published on the intranet and available to customers on request.",
+      "in": "Appropriate to the organisation and states commitment to requirements and continual improvement. One of the stronger clause artefacts."
+    },
+    "Cl.5.3": {
+      "p": 2,
+      "i": 2,
+      "pn": "Roles are assigned in the manual: CTO as ISMS owner, a part-time security engineer, the DPO for privacy.",
+      "in": "Assigned but not communicated outside engineering. Three of five interviewees outside engineering could not name the ISMS owner."
+    },
+    "Cl.6.1.1": {
+      "p": 2,
+      "i": 1,
+      "pn": "Risks and opportunities are addressed in one paragraph of the manual.",
+      "in": "No evidence that actions to address them are planned, integrated into ISMS processes, or evaluated for effectiveness."
+    },
+    "Cl.6.1.2": {
+      "p": 2,
+      "i": 2,
+      "pn": "A risk assessment methodology is documented with a 5x5 likelihood and impact matrix and defined acceptance criteria.",
+      "in": "One assessment was run in February producing 34 risks. Risk owners are named but were not consulted, and the method has not been repeated so reproducibility is untested."
+    },
+    "Cl.6.1.3": {
+      "p": 2,
+      "i": 2,
+      "pn": "A treatment process is defined and a Statement of Applicability exists covering all 93 Annex A controls.",
+      "in": "The SoA has justification text for inclusions but boilerplate for the four exclusions. No documented risk owner approval of the treatment plan or of residual risk \u2014 a probable major nonconformity.",
+      "rec": "Get documented risk owner approval of the treatment plan and residual risk before stage 1. The named risk owners were not consulted when the February assessment was produced, so this needs a short working session per owner rather than a signature request. Unapproved residual risk is a strong candidate for a major nonconformity, which would delay certification rather than merely generate an action."
+    },
+    "Cl.6.2": {
+      "p": 1,
+      "i": 1,
+      "pn": "Security objectives are not documented anywhere.",
+      "in": "The only measurable target in circulation is 'get certified by December', which is not a security objective. This is a likely stage 1 finding.",
+      "rec": "Draft three or four measurable security objectives before stage 1 rather than after \u2014 vulnerability remediation within SLA, access review completion, incident response time and awareness completion are all things Corrib already measures operationally and can be reframed as objectives in an afternoon. Absence of documented objectives is one of the most commonly raised clause 6 findings and it is avoidable at zero cost."
+    },
+    "Cl.6.3": {
+      "p": 1,
+      "i": 1,
+      "pn": "No requirement to plan changes to the ISMS.",
+      "in": "The scope was quietly narrowed in April to exclude a data pipeline with no assessment or approval recorded."
+    },
+    "Cl.7.1": {
+      "p": 2,
+      "i": 2,
+      "pn": "Resource needs are asserted in the manual.",
+      "in": "Security is 0.6 FTE of one engineer plus consultant days. The shortfall is real, understood informally, and not recorded as an accepted risk."
+    },
+    "Cl.7.2": {
+      "p": 1,
+      "i": 1,
+      "pn": "No competence requirements are defined for any security role.",
+      "in": "The security engineer holds relevant certifications, which is fortunate rather than managed. No competence assessment or gap closure evidence exists."
+    },
+    "Cl.7.3": {
+      "p": 3,
+      "i": 3,
+      "pn": "Awareness requirements cover the policy, individual contribution and consequences of non-conformance.",
+      "in": "Delivered at induction and annually through a platform module, 96% complete. Content genuinely covers the three required elements rather than generic phishing training."
+    },
+    "Cl.7.4": {
+      "p": 1,
+      "i": 1,
+      "pn": "No communication plan exists.",
+      "in": "Not performed. Nobody could say what is communicated about the ISMS, to whom, when or by what means."
+    },
+    "Cl.7.5": {
+      "p": 2,
+      "i": 2,
+      "pn": "A document control procedure defines version numbering and approval.",
+      "in": "Applied to the ISMS manual and policies. Engineering runbooks and standards live in Notion with no version control, approval or review dates, and they are in scope."
+    },
+    "Cl.8.1": {
+      "p": 2,
+      "i": 2,
+      "pn": "Operational planning is described in the manual.",
+      "in": "Processes run and are broadly repeatable, but documented information sufficient to have confidence they are carried out as planned is thin. Outsourced processes are not identified as such."
+    },
+    "Cl.8.2": {
+      "p": 2,
+      "i": 1,
+      "pn": "Risk assessment at planned intervals and on significant change is mandated.",
+      "in": "Only the February assessment exists. The April scope change and the June move to a new sub-processor did not trigger reassessment."
+    },
+    "Cl.8.3": {
+      "p": 2,
+      "i": 2,
+      "pn": "Treatment plan implementation must be tracked with results retained.",
+      "in": "A tracker exists in Jira; of 34 treatments, 19 are closed with evidence, 8 are in progress and 7 have never been started."
+    },
+    "Cl.9.1": {
+      "p": 1,
+      "i": 1,
+      "pn": "Monitoring and measurement is asserted but no methods, timing or responsibilities are defined.",
+      "in": "No ISMS metrics exist. Engineering has excellent operational telemetry, none of which is framed as ISMS performance evaluation.",
+      "rec": "Reframe the operational telemetry engineering already produces as ISMS performance evaluation, with defined methods, timing and responsibility. The data exists in Datadog and Jira; the gap is that nobody has declared which numbers constitute ISMS measurement. This is documentation work, not tooling work, and it also feeds the management review input that is currently missing."
+    },
+    "Cl.9.2": {
+      "p": 2,
+      "i": 2,
+      "pn": "An internal audit programme is documented on a twelve-month cycle.",
+      "in": "One consultant-led audit covered clauses 4-6 in May. Annex A has never been internally audited and the programme does not cover the whole ISMS before certification."
+    },
+    "Cl.9.3": {
+      "p": 2,
+      "i": 2,
+      "pn": "Management review inputs are listed correctly in the procedure.",
+      "in": "One review held in May. Minutes cover status but omit risk assessment results, interested party feedback and improvement opportunities, and record no decisions."
+    },
+    "Cl.10.1": {
+      "p": 2,
+      "i": 1,
+      "pn": "Continual improvement is asserted.",
+      "in": "No improvement register. Good ideas surface in retrospectives and are not carried into the ISMS."
+    },
+    "Cl.10.2": {
+      "p": 2,
+      "i": 1,
+      "pn": "A nonconformity and corrective action procedure is documented and is well written.",
+      "in": "Never used. No nonconformities have been raised, including for the seven treatments never started \u2014 which is itself the evidence that the process is not live."
+    },
+    "A.5.1": {
+      "p": 3,
+      "i": 2,
+      "pn": "An overarching policy plus eleven topic-specific policies, approved by the CEO in January.",
+      "in": "Comprehensive on paper. Several were adopted from a template and describe controls Corrib does not operate \u2014 the physical security policy references a data centre they do not have."
+    },
+    "A.5.2": {
+      "p": 2,
+      "i": 2,
+      "pn": "Security responsibilities are allocated in the ISMS manual.",
+      "in": "Understood within engineering. Asset and risk ownership outside engineering \u2014 HR data, finance systems \u2014 is not allocated to anyone."
+    },
+    "A.5.3": {
+      "p": 2,
+      "i": 2,
+      "pn": "Segregation of duties is required by the access control policy.",
+      "in": "Deployment requires peer review, which is good. Two engineers can both request and approve their own production access changes in AWS IAM."
+    },
+    "A.5.4": {
+      "p": 2,
+      "i": 2,
+      "pn": "Management responsibility for enforcing policy is stated.",
+      "in": "Engineering managers reinforce it credibly. Outside engineering, policy compliance is neither required nor checked by line management."
+    },
+    "A.5.5": {
+      "p": 2,
+      "i": 2,
+      "pn": "Contact with authorities is required by the incident policy.",
+      "in": "The DPC and the NCSC-IE are named with contact details. Nobody has verified them and there is no law enforcement route."
+    },
+    "A.5.6": {
+      "p": 3,
+      "i": 3,
+      "pn": "Participation in special interest groups is encouraged by policy.",
+      "in": "The security engineer is active in OWASP Dublin and a SaaS security community, and brings findings back into the backlog. Genuinely useful."
+    },
+    "A.5.7": {
+      "p": 2,
+      "i": 2,
+      "pn": "Threat intelligence is required by the ISMS manual.",
+      "in": "Consumption is informal \u2014 GitHub advisories, AWS bulletins and vendor feeds read by one engineer. Nothing is documented and it stops when he is on leave."
+    },
+    "A.5.8": {
+      "p": 2,
+      "i": 1,
+      "pn": "Project management security requirements are stated in the SDLC policy.",
+      "in": "Applied to platform features through the design review. Non-engineering projects \u2014 the HR system migration in March \u2014 had no security involvement at all."
+    },
+    "A.5.9": {
+      "p": 3,
+      "i": 2,
+      "pn": "An asset inventory covering information and associated assets with owners is required.",
+      "in": "AWS resources are inventoried through enforced tagging and are accurate. SaaS applications are in a spreadsheet last updated in January; four applications found in expense claims are not on it."
+    },
+    "A.5.10": {
+      "p": 3,
+      "i": 3,
+      "pn": "An acceptable use policy covers corporate and personal devices, cloud services and removable media.",
+      "in": "Signed by all staff at induction with signature records retained. Well handled."
+    },
+    "A.5.11": {
+      "p": 3,
+      "i": 2,
+      "pn": "Asset return is required at termination.",
+      "in": "Included in the leaver checklist. Two of eight sampled leavers had no recorded device return, both remote workers."
+    },
+    "A.5.12": {
+      "p": 2,
+      "i": 1,
+      "pn": "A four-level classification scheme is defined in the data policy.",
+      "in": "The scheme exists on paper and nothing is classified against it. Customer data is treated as sensitive by convention rather than by classification."
+    },
+    "A.5.13": {
+      "p": 1,
+      "i": 1,
+      "pn": "Labelling is required by the data policy.",
+      "in": "Not implemented. Microsoft 365 sensitivity labels are licensed and unconfigured."
+    },
+    "A.5.14": {
+      "p": 2,
+      "i": 2,
+      "pn": "Transfer rules are stated by classification level.",
+      "in": "TLS is enforced everywhere technically, so practice is sound. Rules for physical and verbal transfer are absent and no transfer agreements exist with recipients of sensitive data."
+    },
+    "A.5.15": {
+      "p": 3,
+      "i": 3,
+      "pn": "An access control policy applies least privilege and need-to-know.",
+      "in": "Well implemented through Okta groups mapped to job roles, with joiner provisioning automated from the HR system."
+    },
+    "A.5.16": {
+      "p": 3,
+      "i": 3,
+      "pn": "Identity lifecycle management is documented for people, services and devices.",
+      "in": "Okta is authoritative with SCIM to 11 of 13 applications. Service identities in AWS use IAM roles rather than long-lived keys."
+    },
+    "A.5.17": {
+      "p": 3,
+      "i": 3,
+      "pn": "Authentication information handling is covered by the authentication standard.",
+      "in": "1Password for shared secrets with no credentials found in code during this review. Strong."
+    },
+    "A.5.18": {
+      "p": 3,
+      "i": 2,
+      "pn": "Access rights must be reviewed six-monthly.",
+      "in": "Provisioning and deprovisioning are reliable. The six-monthly review has never run \u2014 the first is now three months overdue and will be a finding."
+    },
+    "A.5.19": {
+      "p": 1,
+      "i": 1,
+      "pn": "No supplier security process exists. The procurement policy is silent on security.",
+      "in": "Vendors are selected by the team that needs them. Of 31 SaaS vendors, 6 have any security review on file.",
+      "rec": "Establish a minimum viable supplier security process ahead of stage 1: a one-page questionnaire tiered by data access, a security schedule for new contracts, and a review of the 31 existing SaaS vendors starting with the 8 that hold customer data. Auditors will look for evidence the process runs, not that every vendor is already assessed \u2014 a partial but operating process scores better than a complete policy with no records."
+    },
+    "A.5.20": {
+      "p": 2,
+      "i": 1,
+      "pn": "Supplier agreement requirements are listed in the draft supplier policy.",
+      "in": "No standard security schedule. Terms are whatever the vendor's standard contract provides."
+    },
+    "A.5.21": {
+      "p": 1,
+      "i": 1,
+      "pn": "ICT supply chain risk is not addressed.",
+      "in": "Not performed. Sub-processors of the main SaaS vendors are unknown."
+    },
+    "A.5.22": {
+      "p": 1,
+      "i": 1,
+      "pn": "No requirement to review or monitor supplier services.",
+      "in": "No supplier review has ever been held. A sub-processor change by the email vendor in April was noticed only because of a billing change."
+    },
+    "A.5.23": {
+      "p": 2,
+      "i": 2,
+      "pn": "Cloud service requirements are stated in the infrastructure standard.",
+      "in": "AWS shared responsibility is well understood and configuration is strong. No documented exit plan for AWS or for any material SaaS vendor."
+    },
+    "A.5.24": {
+      "p": 3,
+      "i": 3,
+      "pn": "An incident management plan defines roles, severity criteria and escalation.",
+      "in": "Genuinely operational, with PagerDuty on-call and a clear command structure inherited from SRE practice."
+    },
+    "A.5.25": {
+      "p": 3,
+      "i": 3,
+      "pn": "Event assessment and incident declaration criteria are documented.",
+      "in": "Applied consistently; declaration decisions are recorded in the incident tool."
+    },
+    "A.5.26": {
+      "p": 3,
+      "i": 3,
+      "pn": "Response procedures are documented by incident type.",
+      "in": "Four playbooks exist covering credential compromise, data exposure, availability and malware. Used and referenced during the two incidents this year."
+    },
+    "A.5.27": {
+      "p": 3,
+      "i": 3,
+      "pn": "Post-incident review is required within ten working days.",
+      "in": "Blameless reviews are held reliably and produce tracked actions. A real strength carried over from engineering culture."
+    },
+    "A.5.28": {
+      "p": 2,
+      "i": 1,
+      "pn": "Evidence collection is mentioned in the incident plan.",
+      "in": "No procedure covering identification, acquisition or preservation. Evidence during the March credential incident was collected into a shared Google Drive folder with no hashing."
+    },
+    "A.5.29": {
+      "p": 2,
+      "i": 1,
+      "pn": "Maintaining security during disruption is asserted.",
+      "in": "Not thought through. Nobody could say which controls degrade during a regional failover or what compensates."
+    },
+    "A.5.30": {
+      "p": 2,
+      "i": 2,
+      "pn": "ICT continuity requirements are documented with RTO 4 hours and RPO 15 minutes.",
+      "in": "Objectives derive from customer commitments rather than a business impact analysis, and full regional failover has never been tested."
+    },
+    "A.5.31": {
+      "p": 2,
+      "i": 2,
+      "pn": "Legal and regulatory requirements are listed in the ISMS manual.",
+      "in": "Covers GDPR reasonably. Customer contractual security obligations, which are the more onerous set here, are not consolidated anywhere."
+    },
+    "A.5.32": {
+      "p": 3,
+      "i": 3,
+      "pn": "IP and licensing are covered by the acceptable use policy.",
+      "in": "Open source licence scanning runs in the pipeline and blocks copyleft licences. Well handled."
+    },
+    "A.5.33": {
+      "p": 2,
+      "i": 2,
+      "pn": "Record protection requirements are stated.",
+      "in": "Technical protection is strong. Retention requirements per record type are undefined, so nothing is deleted."
+    },
+    "A.5.34": {
+      "p": 3,
+      "i": 3,
+      "pn": "Privacy requirements are documented and a DPO is appointed.",
+      "in": "ROPA maintained, DPIA process defined and used for the March feature launch, data subject rights procedure tested."
+    },
+    "A.5.35": {
+      "p": 2,
+      "i": 2,
+      "pn": "Independent review is required annually.",
+      "in": "The consultant-led internal audit in May is the only instance. No independent review of the overall security approach."
+    },
+    "A.5.36": {
+      "p": 1,
+      "i": 1,
+      "pn": "Compliance checking against policies is required.",
+      "in": "Never performed. This is why the template-derived policies describing non-existent controls have gone unnoticed for six months.",
+      "rec": "Introduce a quarterly policy compliance check against the eleven topic-specific policies. The first pass should be aimed squarely at the template-derived content \u2014 the physical security policy references a data centre Corrib does not have, and an auditor reading that alongside the serviced office scope will question the whole policy set."
+    },
+    "A.5.37": {
+      "p": 2,
+      "i": 2,
+      "pn": "Operating procedures must be documented.",
+      "in": "Engineering runbooks in Notion are good and actually used, but uncontrolled \u2014 no approval, no review date, no version history."
+    },
+    "A.6.1": {
+      "p": 3,
+      "i": 3,
+      "pn": "Screening requirements are proportionate to role and documented.",
+      "in": "Employment and reference checks evidenced for all sampled hires, including contractors."
+    },
+    "A.6.2": {
+      "p": 3,
+      "i": 3,
+      "pn": "Security responsibilities are stated in contracts of employment.",
+      "in": "Present in all sampled contracts, including obligations continuing after termination."
+    },
+    "A.6.3": {
+      "p": 3,
+      "i": 3,
+      "pn": "Awareness and training is required at induction and annually.",
+      "in": "96% completion with role-relevant content for engineers. Non-engineering roles get the general module only."
+    },
+    "A.6.4": {
+      "p": 2,
+      "i": 2,
+      "pn": "A disciplinary process for security violations is documented in the employee handbook.",
+      "in": "Documented but never communicated as applying to security specifically, and never used."
+    },
+    "A.6.5": {
+      "p": 3,
+      "i": 2,
+      "pn": "Post-termination responsibilities are defined and communicated at exit.",
+      "in": "Access revocation is automated from the HR system and is prompt. Exit interviews do not consistently cover continuing obligations."
+    },
+    "A.6.6": {
+      "p": 3,
+      "i": 3,
+      "pn": "NDA templates are maintained and reviewed.",
+      "in": "Signed by all staff and by contractors before access. Retained and tracked."
+    },
+    "A.6.7": {
+      "p": 3,
+      "i": 3,
+      "pn": "A remote working standard covers device compliance, network access and physical precautions.",
+      "in": "Well suited to a hybrid workforce; device compliance is enforced technically before access is granted."
+    },
+    "A.6.8": {
+      "p": 3,
+      "i": 3,
+      "pn": "Event reporting expectations are documented with a target response time.",
+      "in": "A Slack channel and email alias both work and are used \u2014 38 reports in the period, with feedback given to reporters."
+    },
+    "A.7.1": {
+      "p": 2,
+      "i": 2,
+      "pn": "Physical perimeters are described for the Dublin office.",
+      "in": "The serviced office building perimeter is managed by the landlord under an arrangement Corrib has not reviewed or documented."
+    },
+    "A.7.2": {
+      "p": 3,
+      "i": 3,
+      "pn": "Entry control requirements are documented.",
+      "in": "Individual badge access to the floor with logging retained by the building operator. Reasonable for a serviced office."
+    },
+    "A.7.3": {
+      "p": 2,
+      "i": 2,
+      "pn": "Securing offices and rooms is covered by the physical policy.",
+      "in": "Open plan with no separate secure area. The comms cupboard is shared with two other tenants, which has not been risk assessed."
+    },
+    "A.7.4": {
+      "p": 2,
+      "i": 2,
+      "pn": "Physical monitoring is required.",
+      "in": "CCTV is operated by the building with 30-day retention. Corrib has no access to it and no agreement covering incident access."
+    },
+    "A.7.5": {
+      "p": 2,
+      "i": 2,
+      "pn": "Environmental threat protection is asserted.",
+      "in": "Handled by the building. No documented assessment of whether it meets Corrib's requirements \u2014 a likely stage 1 question given the comms cupboard."
+    },
+    "A.7.6": {
+      "p": 1,
+      "i": 1,
+      "pn": "Working in secure areas is not addressed.",
+      "in": "No secure areas exist, but no risk decision records that, so the control is simply unaddressed rather than justifiably excluded."
+    },
+    "A.7.7": {
+      "p": 3,
+      "i": 3,
+      "pn": "Clear desk and clear screen rules are documented.",
+      "in": "Screen lock is enforced by device policy at ten minutes. Clear desk is reinforced by awareness and observed in practice on a shared floor."
+    },
+    "A.7.8": {
+      "p": 2,
+      "i": 2,
+      "pn": "Equipment siting requirements are stated.",
+      "in": "No server equipment on premises. Desk positioning relative to windows and walkways has not been considered on a shared floor."
+    },
+    "A.7.9": {
+      "p": 3,
+      "i": 3,
+      "pn": "Off-premises asset protection is documented.",
+      "in": "All laptops encrypted with remote wipe, tracked in the MDM. Appropriate for a hybrid workforce."
+    },
+    "A.7.10": {
+      "p": 2,
+      "i": 2,
+      "pn": "Storage media handling is covered by the data policy.",
+      "in": "Removable media is blocked on all endpoints, which is the right answer. Disposal of decommissioned laptops has no certificate trail for the six retired this year."
+    },
+    "A.7.11": {
+      "p": 2,
+      "i": 2,
+      "pn": "Supporting utilities are referenced.",
+      "in": "Provided by the building; no documentation of what is provided or whether it is adequate."
+    },
+    "A.7.12": {
+      "p": 1,
+      "i": 1,
+      "pn": "Cabling security is not addressed.",
+      "in": "Not assessed. Cabling in the shared comms cupboard is accessible to other tenants."
+    },
+    "A.7.13": {
+      "p": 2,
+      "i": 2,
+      "pn": "Equipment maintenance is stated in the asset procedure.",
+      "in": "Laptops are on a three-year refresh. No maintenance regime is documented and none is needed at this scale, but that reasoning is not recorded."
+    },
+    "A.7.14": {
+      "p": 2,
+      "i": 1,
+      "pn": "Secure disposal is required with certification.",
+      "in": "Six laptops were disposed of through a local recycler this year with no destruction certificates retained. Likely minor nonconformity."
+    },
+    "A.8.1": {
+      "p": 4,
+      "i": 4,
+      "pn": "Endpoint requirements cover encryption, patching, lock, malware protection and remote wipe.",
+      "in": "Jamf and Intune enforce the full baseline with 100% compliance reporting. Strong."
+    },
+    "A.8.2": {
+      "p": 3,
+      "i": 3,
+      "pn": "Privileged access is restricted and must be justified.",
+      "in": "AWS privileged access is time-bound through IAM Identity Center with session recording. Standing production admin is limited to three engineers."
+    },
+    "A.8.3": {
+      "p": 3,
+      "i": 3,
+      "pn": "Information access restriction follows the access control policy.",
+      "in": "Application-level tenant isolation is well designed and was verified during the last penetration test."
+    },
+    "A.8.4": {
+      "p": 3,
+      "i": 3,
+      "pn": "Source code access is controlled by the SDLC policy.",
+      "in": "GitHub with SSO, branch protection, required reviews and audit logging. Well operated."
+    },
+    "A.8.5": {
+      "p": 4,
+      "i": 4,
+      "pn": "Secure authentication requirements mandate MFA everywhere and phishing-resistant factors for privileged access.",
+      "in": "Okta with FIDO2 for engineering and administrative access, no legacy authentication paths. One of the strongest controls."
+    },
+    "A.8.6": {
+      "p": 3,
+      "i": 3,
+      "pn": "Capacity management is documented with thresholds.",
+      "in": "Auto-scaling with alerting at 70% and a quarterly capacity review that produces a documented forecast."
+    },
+    "A.8.7": {
+      "p": 3,
+      "i": 3,
+      "pn": "Malware protection is required on all endpoints.",
+      "in": "CrowdStrike deployed at 100% with central management. Container images are scanned at build."
+    },
+    "A.8.8": {
+      "p": 3,
+      "i": 3,
+      "pn": "Vulnerability management defines SLAs of 7, 30 and 90 days by severity.",
+      "in": "Dependabot, container scanning and quarterly external testing. Median close for criticals is 5 days. Office network devices are outside the process."
+    },
+    "A.8.9": {
+      "p": 3,
+      "i": 3,
+      "pn": "Configuration baselines are defined for endpoints and cloud infrastructure.",
+      "in": "Infrastructure as code with drift detection in Terraform Cloud, and CIS-aligned endpoint baselines enforced by MDM."
+    },
+    "A.8.10": {
+      "p": 1,
+      "i": 1,
+      "pn": "Information deletion is required when no longer needed.",
+      "in": "Not implemented. No retention schedule is enforced anywhere; customer data from churned accounts from 2021 is still present.",
+      "rec": "Define and enforce a retention schedule for customer data, starting with churned accounts. Data from 2021 customers is still in production, which is both an ISO finding and a GDPR storage limitation exposure. Automating deletion at contract end plus a one-off purge of historic accounts closes both."
+    },
+    "A.8.11": {
+      "p": 2,
+      "i": 2,
+      "pn": "Data masking is stated as a requirement for non-production.",
+      "in": "A masking script exists and is used for the main dataset. Two smaller test datasets are unmasked production copies."
+    },
+    "A.8.12": {
+      "p": 1,
+      "i": 1,
+      "pn": "DLP is not required by policy.",
+      "in": "Not implemented and arguably not warranted at this size, but no risk decision records that reasoning."
+    },
+    "A.8.13": {
+      "p": 3,
+      "i": 3,
+      "pn": "Backup requirements are documented with RPO 15 minutes and monthly restore testing.",
+      "in": "Cross-region snapshots with monthly restore tests that pass. Well operated."
+    },
+    "A.8.14": {
+      "p": 3,
+      "i": 2,
+      "pn": "Redundancy requirements are stated for the platform.",
+      "in": "Multi-AZ throughout, which is genuine. Cross-region failover is designed but has never been executed end to end."
+    },
+    "A.8.15": {
+      "p": 3,
+      "i": 3,
+      "pn": "Logging requirements define events and a 12-month retention period.",
+      "in": "CloudTrail, application and access logs centralised in Datadog with retention met and log integrity protected."
+    },
+    "A.8.16": {
+      "p": 3,
+      "i": 3,
+      "pn": "Monitoring requirements cover networks, systems and applications.",
+      "in": "GuardDuty and Datadog with a 24/7 on-call rota and defined escalation. Genuinely capable."
+    },
+    "A.8.17": {
+      "p": 3,
+      "i": 3,
+      "pn": "Clock synchronisation is required.",
+      "in": "AWS Time Sync across the estate; endpoint time is managed by MDM."
+    },
+    "A.8.18": {
+      "p": 2,
+      "i": 2,
+      "pn": "Privileged utility use is referenced in the access policy.",
+      "in": "Session recording on privileged AWS access provides the audit trail. No explicit restriction or review of utility use on endpoints."
+    },
+    "A.8.19": {
+      "p": 3,
+      "i": 3,
+      "pn": "Software installation on operational systems is controlled.",
+      "in": "Immutable infrastructure \u2014 nothing is installed on running systems, everything is redeployed. Effective by design."
+    },
+    "A.8.20": {
+      "p": 3,
+      "i": 3,
+      "pn": "Network security requirements are documented.",
+      "in": "Security groups managed as code with default deny and peer-reviewed changes. Good."
+    },
+    "A.8.21": {
+      "p": 2,
+      "i": 2,
+      "pn": "Network service security requirements are stated.",
+      "in": "AWS-managed services are well configured. The office network is managed by the building operator with no documented security requirements or service levels."
+    },
+    "A.8.22": {
+      "p": 3,
+      "i": 3,
+      "pn": "Network segregation is required between environments.",
+      "in": "Separate AWS accounts per environment with no network path between production and development."
+    },
+    "A.8.23": {
+      "p": 2,
+      "i": 2,
+      "pn": "Web filtering is required by the acceptable use policy.",
+      "in": "DNS filtering is applied on managed endpoints. Remote workers off the corporate VPN are not covered, and the VPN is optional."
+    },
+    "A.8.24": {
+      "p": 3,
+      "i": 2,
+      "pn": "A cryptography standard defines approved algorithms and protocol versions.",
+      "in": "TLS 1.2+ and AES-256 throughout, using AWS KMS. Key lifecycle \u2014 rotation intervals, escrow, compromise procedure \u2014 is not documented."
+    },
+    "A.8.25": {
+      "p": 3,
+      "i": 3,
+      "pn": "An SDLC policy defines security activities at each stage.",
+      "in": "Followed for platform development with design review, code review and security testing gates."
+    },
+    "A.8.26": {
+      "p": 3,
+      "i": 3,
+      "pn": "Application security requirements must be specified and approved.",
+      "in": "Security requirements appear in feature specifications and are reviewed at design stage."
+    },
+    "A.8.27": {
+      "p": 3,
+      "i": 3,
+      "pn": "Secure engineering principles are documented.",
+      "in": "Defence in depth, least privilege and secure defaults are applied as design review criteria and visible in the architecture."
+    },
+    "A.8.28": {
+      "p": 3,
+      "i": 3,
+      "pn": "A secure coding standard is adopted with mandatory review.",
+      "in": "All code peer-reviewed; SAST runs in the pipeline and blocks on high-severity findings."
+    },
+    "A.8.29": {
+      "p": 3,
+      "i": 3,
+      "pn": "Security testing is required in development and acceptance.",
+      "in": "SAST, DAST and dependency scanning gate the pipeline; quarterly external penetration testing."
+    },
+    "A.8.30": {
+      "p": 2,
+      "i": 2,
+      "pn": "Outsourced development requirements are stated.",
+      "in": "Two contractors work on the platform under the same review gates as employees, but their contracts contain no security requirements or right to test."
+    },
+    "A.8.31": {
+      "p": 3,
+      "i": 3,
+      "pn": "Environment separation is required.",
+      "in": "Separate AWS accounts for production, staging and development with no shared credentials."
+    },
+    "A.8.32": {
+      "p": 3,
+      "i": 3,
+      "pn": "Change management is documented for all environments.",
+      "in": "Peer-reviewed pull requests with automated rollback; 610 changes in the period with three rollbacks and no change-related incidents."
+    },
+    "A.8.33": {
+      "p": 2,
+      "i": 2,
+      "pn": "Test information handling is stated in the data policy.",
+      "in": "Masking is used for the main dataset but two test datasets are unmasked production copies with no documented approval."
+    },
+    "A.8.34": {
+      "p": 2,
+      "i": 2,
+      "pn": "Audit testing arrangements are referenced in the ISMS manual.",
+      "in": "The quarterly penetration test has agreed rules of engagement. No equivalent arrangement covers internal audit access to production."
+    }
+  },
+  "exported": "2026-07-09T17:05:00.000Z",
+  "frameworkVersion": "2022"
+}

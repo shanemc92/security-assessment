@@ -1,0 +1,461 @@
+{
+  "schema": 2,
+  "meta": {
+    "customer": "Boyne Payments DAC",
+    "assessor": "M. Kavanagh",
+    "date": "2026-05-14",
+    "scope": "All ICT supporting the card issuing and SEPA payout platform, including the AWS eu-west-1 estate, the outsourced card processor and the KYC vendor. Boyne is an e-money institution authorised by the Central Bank of Ireland and in scope of DORA.",
+    "frameworkId": "dora",
+    "framework": "DORA \u2014 Regulation (EU) 2022/2554 on digital operational resilience"
+  },
+  "goals": {
+    "II": 4,
+    "III": 4,
+    "IV": 3,
+    "V": 3,
+    "VI": 2
+  },
+  "frameworkId": "dora",
+  "responses": {
+    "Art. 5.1": {
+      "p": 3,
+      "i": 2,
+      "pn": "The ICT risk management framework was approved by the board in November 2025 and the terms of reference name ICT risk as a standing item.",
+      "in": "Approval is evidenced but oversight is thin \u2014 ICT risk appeared on the board agenda twice in the last four meetings and both times as an information item with no decisions recorded."
+    },
+    "Art. 5.2": {
+      "p": 2,
+      "i": 2,
+      "pn": "Board duties are described in general terms in the framework but are not mapped to the specific list in Article 5(2).",
+      "in": "Business continuity and audit policy approval are evidenced. Approval of ICT third-party arrangements is not \u2014 the CTO signs these under delegated authority with no board visibility."
+    },
+    "Art. 5.3": {
+      "p": 2,
+      "i": 1,
+      "pn": "No requirement for board members to maintain ICT risk knowledge.",
+      "in": "Two of seven directors have relevant technical background. No structured ICT risk training has been delivered to the board and none is scheduled."
+    },
+    "Art. 6.1": {
+      "p": 3,
+      "i": 3,
+      "pn": "A documented ICT risk management framework exists, approved November 2025, covering strategy, policies, procedures and tooling, and positioned within the enterprise risk management system.",
+      "in": "The framework is real and used \u2014 risk assessments reference it and the second line challenges against it. Coverage of ICT third-party risk is the weakest section."
+    },
+    "Art. 6.3": {
+      "p": 3,
+      "i": 2,
+      "pn": "Annual review is mandated and the trigger events \u2014 major incidents, supervisory instruction, testing conclusions \u2014 are listed.",
+      "in": "The framework has been in force for eight months so no annual review has fallen due yet. The March 2026 processor outage did not trigger an out-of-cycle review, which it should have."
+    },
+    "Art. 6.4": {
+      "p": 3,
+      "i": 2,
+      "pn": "The internal audit charter includes the ICT risk management framework on a three-year rotation.",
+      "in": "Internal audit is a two-person function with limited ICT depth; the 2025 ICT audit was co-sourced. Formal follow-up of audit findings exists but three findings are past their agreed dates."
+    },
+    "Art. 6.8": {
+      "p": 2,
+      "i": 2,
+      "pn": "A digital operational resilience strategy exists as a section of the framework rather than a standalone document, and does not state ICT risk tolerance.",
+      "in": "Reference architecture and detection mechanisms are described. Risk tolerance for ICT disruption has never been quantified, so there is no threshold against which to judge the March outage."
+    },
+    "Art. 6.9": {
+      "p": 2,
+      "i": 1,
+      "pn": "No multi-vendor strategy is documented.",
+      "in": "Single-provider dependency on AWS and on the card processor, both without documented rationale. Concentration was raised at the November board but no analysis followed."
+    },
+    "Art. 7": {
+      "p": 3,
+      "i": 3,
+      "pn": "Infrastructure standards define capacity, availability and supportability requirements.",
+      "in": "AWS auto-scaling with load testing at three times peak before each major release; the last test was March. Two internal services still run on an EOL runtime scheduled for replacement in Q4."
+    },
+    "Art. 8.1": {
+      "p": 3,
+      "i": 2,
+      "pn": "The framework requires a classified inventory of business functions, information assets and ICT assets, reviewed annually.",
+      "in": "The CMDB covers AWS resources well through tagging enforcement. Business function to asset mapping exists only for the four functions assessed as critical, and SaaS assets outside AWS are inventoried in a spreadsheet."
+    },
+    "Art. 8.2": {
+      "p": 3,
+      "i": 3,
+      "pn": "Annual ICT risk assessment is mandated, including exposure to and from other financial entities.",
+      "in": "The 2025 assessment was completed and explicitly covered inbound exposure from the card processor and outbound exposure to marketplace clients. Good practice and well evidenced."
+    },
+    "Art. 8.4": {
+      "p": 3,
+      "i": 3,
+      "pn": "Critical or important functions are defined in the framework with documented determination criteria.",
+      "in": "Four functions identified \u2014 card authorisation, SEPA payout, KYC onboarding and the client portal \u2014 with dependencies mapped to underlying services and third parties."
+    },
+    "Art. 8.5": {
+      "p": 3,
+      "i": 3,
+      "pn": "Change policy requires an ICT risk assessment for major infrastructure and process changes.",
+      "in": "Evidenced consistently across the sampled changes, including the March processor migration. Emergency changes are documented retrospectively within 48 hours."
+    },
+    "Art. 8.6": {
+      "p": 2,
+      "i": 1,
+      "pn": "The framework references the register of information but no procedure defines how it is produced or maintained.",
+      "in": "A partial register exists in a spreadsheet covering 23 of an estimated 40 ICT arrangements. It is not in the ESA reporting template, sub-outsourcing is not captured, and the January submission was made late."
+    },
+    "Art. 9.1": {
+      "p": 3,
+      "i": 3,
+      "pn": "Monitoring requirements are documented per environment with defined ownership.",
+      "in": "Datadog and GuardDuty cover the AWS estate with alerting into PagerDuty and a 24/7 on-call rota. Coverage of the SaaS layer, including the KYC vendor, is materially weaker."
+    },
+    "Art. 9.2": {
+      "p": 3,
+      "i": 3,
+      "pn": "Security architecture principles are documented and applied as design review criteria.",
+      "in": "Data is encrypted at rest with KMS and in transit throughout; integrity controls on payment message flows are strong. Data-in-use protection is not addressed and no risk decision records why."
+    },
+    "Art. 9.4a": {
+      "p": 3,
+      "i": 3,
+      "pn": "Data transfer and protection requirements are documented by classification level.",
+      "in": "Payment messages use mutual TLS with certificate pinning to the processor. File transfers with two marketplace clients still use SFTP with password authentication."
+    },
+    "Art. 9.4b": {
+      "p": 3,
+      "i": 3,
+      "pn": "Access management policy applies need-to-know, need-to-use and least privilege, with quarterly recertification.",
+      "in": "Okta as the identity provider with SCIM provisioning to 14 of 17 applications. Quarterly recertification ran on schedule in Q1 and Q2 with evidenced revocations."
+    },
+    "Art. 9.4c": {
+      "p": 4,
+      "i": 4,
+      "pn": "Authentication standard mandates phishing-resistant MFA for all administrative and remote access and documents key protection requirements.",
+      "in": "FIDO2 hardware keys for all engineering and administrative access, AWS KMS with automatic rotation for cryptographic material. Genuinely strong."
+    },
+    "Art. 9.4d": {
+      "p": 3,
+      "i": 3,
+      "pn": "Change management procedure covers software, hardware, firmware and security parameters with risk assessment, approval and rollback.",
+      "in": "CI/CD with mandatory peer review and automated rollback; 340 changes in the period with two rollbacks and no change-related incidents."
+    },
+    "Art. 9.4e": {
+      "p": 3,
+      "i": 2,
+      "pn": "Patch policy sets SLAs of 7 days critical, 30 days high, 90 days medium.",
+      "in": "Container base images rebuild weekly and dependency scanning gates the pipeline. Patching of the two EOL runtime services and of network appliances at the office lags materially \u2014 one critical is 41 days old."
+    },
+    "Art. 10.1": {
+      "p": 3,
+      "i": 3,
+      "pn": "Detection requirements cover anomalous activity, performance degradation and single points of failure.",
+      "in": "GuardDuty, Datadog and application-level fraud monitoring feed a central Datadog view. Single points of failure are identified in architecture review but not tracked in a register."
+    },
+    "Art. 10.2": {
+      "p": 3,
+      "i": 2,
+      "pn": "Alert thresholds and the criteria that trigger the incident process are documented per service.",
+      "in": "Thresholds are defined but have not been reviewed since initial deployment. On-call reports significant alert noise from the payment latency monitor, and two March alerts were acknowledged and not investigated."
+    },
+    "Art. 10.3": {
+      "p": 3,
+      "i": 3,
+      "pn": "The framework commits to 24/7 monitoring of ICT anomalies.",
+      "in": "A five-engineer on-call rota provides genuine out-of-hours cover with a 15-minute acknowledgement target, met 94% of the time. Security-specific triage depth outside hours is limited to escalation."
+    },
+    "Art. 11.1": {
+      "p": 3,
+      "i": 3,
+      "pn": "A dedicated ICT business continuity policy exists, approved by the board and integrated with the operational continuity policy.",
+      "in": "Well constructed and clearly derived from the critical function analysis rather than written to a template."
+    },
+    "Art. 11.3": {
+      "p": 3,
+      "i": 2,
+      "pn": "Continuity plans define activation criteria per critical function and require preliminary impact estimation.",
+      "in": "Plans exist for all four critical functions. Impact, loss and damage estimation is described but was not actually performed during the March outage."
+    },
+    "Art. 11.7": {
+      "p": 2,
+      "i": 2,
+      "pn": "The continuity policy names the CTO as crisis lead but no separate crisis management function or procedure exists.",
+      "in": "Internal communication during the March outage was effective. External communication to marketplace clients was inconsistent \u2014 three clients learned of the outage from their own users."
+    },
+    "Art. 11.4": {
+      "p": 3,
+      "i": 3,
+      "pn": "Response and recovery plans are documented per critical function and are within internal audit scope.",
+      "in": "Reviewed by internal audit in 2025 with findings closed. Runbooks are current and were followed during the March incident."
+    },
+    "Art. 11.6": {
+      "p": 2,
+      "i": 2,
+      "pn": "Annual testing including primary-to-secondary switchover is mandated.",
+      "in": "Component-level failover is tested quarterly through chaos engineering. Full regional switchover to eu-central-1 has never been executed \u2014 the last attempt in October was abandoned after four hours.",
+      "rec": "Reschedule the full regional switchover test that was abandoned in October, and treat the abandonment itself as the finding \u2014 six to eight hours estimated against a four-hour stated RTO means either the capability or the objective is wrong, and DORA does not permit leaving that unresolved. Warm standby capacity in eu-central-1 is the likely answer."
+    },
+    "Art. 11.8": {
+      "p": 2,
+      "i": 2,
+      "pn": "The plan requires records of activities during disruption.",
+      "in": "The March incident timeline was reconstructed after the fact from Slack and PagerDuty rather than recorded contemporaneously, and the reconstruction took nine days."
+    },
+    "Art. 12.1": {
+      "p": 3,
+      "i": 3,
+      "pn": "Backup policy defines scope, frequency and retention driven by data criticality, with RPO 15 minutes for payment data.",
+      "in": "RDS point-in-time recovery and cross-region snapshot replication meet the stated RPO. Well documented and well operated."
+    },
+    "Art. 12.2": {
+      "p": 3,
+      "i": 3,
+      "pn": "Backup segregation is required by policy.",
+      "in": "Backups sit in a separate AWS account with distinct credentials and S3 Object Lock. Production roles cannot delete them \u2014 verified during this assessment."
+    },
+    "Art. 12.3": {
+      "p": 2,
+      "i": 2,
+      "pn": "Secondary site requirements are stated in the continuity policy.",
+      "in": "eu-central-1 holds replicated data and infrastructure-as-code definitions but no warm capacity. Standing the region up is estimated at six to eight hours against a stated four-hour RTO, and that estimate is unvalidated."
+    },
+    "Art. 12.5": {
+      "p": 3,
+      "i": 2,
+      "pn": "Restoration testing is required quarterly using isolated systems.",
+      "in": "Database restores are tested monthly into an isolated account and pass. Full application-stack restoration has not been tested since the platform migration in 2024."
+    },
+    "Art. 13.1": {
+      "p": 3,
+      "i": 3,
+      "pn": "Threat and vulnerability intelligence sources are named in the framework with an assigned owner.",
+      "in": "Feeds from the CBI, FS-ISAC and the card schemes are consumed and reviewed weekly by the security engineer, with actions raised into the backlog."
+    },
+    "Art. 13.2": {
+      "p": 3,
+      "i": 3,
+      "pn": "Post-incident review is mandated for all major incidents within ten working days.",
+      "in": "The March outage review was thorough, blameless and produced eleven actions, seven of which are closed. This is a real strength."
+    },
+    "Art. 13.3": {
+      "p": 3,
+      "i": 2,
+      "pn": "Findings from reviews and testing must feed the risk assessment and be reported to the board.",
+      "in": "Actions are tracked well operationally but the loop back into the ICT risk assessment is not evidenced, and the board received a summary rather than the risk implications."
+    },
+    "Art. 13.6": {
+      "p": 2,
+      "i": 2,
+      "pn": "Awareness training is mandatory for staff. Digital operational resilience training is not defined as a module and the board is not in scope.",
+      "in": "Annual security awareness at 97% completion with quarterly phishing simulation. Nothing addresses operational resilience specifically, and no director has completed any module."
+    },
+    "Art. 14": {
+      "p": 2,
+      "i": 1,
+      "pn": "The continuity policy assigns external communication to the CTO with marketing support but no communication plan exists.",
+      "in": "No responsible disclosure route, no client notification templates and no named spokesperson. The March outage communication was drafted live by the CTO."
+    },
+    "Art. 17.1": {
+      "p": 4,
+      "i": 3,
+      "pn": "A documented ICT-related incident management process defines detection, management and notification, and was updated in January to reference DORA classification.",
+      "in": "Well operated with PagerDuty integration and a clear command structure. The notification limb is the weaker part \u2014 internal handling is strong, regulatory notification is untested."
+    },
+    "Art. 17.2": {
+      "p": 3,
+      "i": 3,
+      "pn": "All incidents and significant cyber threats must be recorded, with root cause tracked.",
+      "in": "Jira Service Management holds a complete incident record; 47 incidents in the period with root cause recorded on all but three."
+    },
+    "Art. 17.3a": {
+      "p": 2,
+      "i": 2,
+      "pn": "Early warning indicators are referenced but not defined per service.",
+      "in": "Latency and error-rate SLOs function as de facto early warning indicators for the payment path. Nothing equivalent exists for the KYC or onboarding flows."
+    },
+    "Art. 17.3b": {
+      "p": 3,
+      "i": 3,
+      "pn": "Triage, categorisation and classification procedures define priority, severity and service criticality.",
+      "in": "Applied consistently \u2014 severity was recorded on 46 of 47 incidents. Strong."
+    },
+    "Art. 17.3c": {
+      "p": 3,
+      "i": 3,
+      "pn": "Incident roles are assigned by scenario type with named deputies.",
+      "in": "Roles are understood and were followed during the March outage. Incident commander training has been given to four engineers."
+    },
+    "Art. 17.3d": {
+      "p": 2,
+      "i": 1,
+      "pn": "Communication plans for staff, clients, media and the public are listed as required content but are not written.",
+      "in": "Only internal communication has an actual plan. Client, media and public communication would be improvised."
+    },
+    "Art. 17.3e": {
+      "p": 3,
+      "i": 3,
+      "pn": "Reporting thresholds and timeframes to senior management and the board are defined.",
+      "in": "The March outage reached the CEO within 40 minutes and the board within a day, against targets of one hour and two days."
+    },
+    "Art. 17.3g": {
+      "p": 3,
+      "i": 3,
+      "pn": "Root cause identification and prevention of recurrence are required for all incidents above severity 3.",
+      "in": "Consistently performed with preventive actions tracked in the engineering backlog."
+    },
+    "Art. 18.1": {
+      "p": 2,
+      "i": 1,
+      "pn": "The incident procedure references the DORA classification criteria but does not embed them in the incident record.",
+      "in": "Classification against the six criteria is done manually and inconsistently. The March outage was assessed as major three days after the fact, which would have missed the initial notification window.",
+      "rec": "Embed the six DORA classification criteria as mandatory fields in the Jira incident form so major-incident determination happens at triage rather than retrospectively. The March outage was classified three days late, which under Article 19 would have meant a missed initial notification \u2014 the process is sound, the trigger point is in the wrong place."
+    },
+    "Art. 18.2": {
+      "p": 1,
+      "i": 1,
+      "pn": "No criteria for classifying a cyber threat as significant.",
+      "in": "Not performed. The voluntary notification route has never been considered."
+    },
+    "Art. 19.1": {
+      "p": 3,
+      "i": 2,
+      "pn": "The competent authority is identified as the Central Bank of Ireland and the reporting channel is documented.",
+      "in": "The channel is documented but has never been used or tested. Two people are authorised to submit and neither has walked through the portal."
+    },
+    "Art. 19.3": {
+      "p": 2,
+      "i": 1,
+      "pn": "The initial, intermediate and final reporting deadlines are listed in the procedure.",
+      "in": "No templates are held and no automated reminders exist. On the March timeline the initial notification would have been late."
+    },
+    "Art. 19.4": {
+      "p": 2,
+      "i": 2,
+      "pn": "Client notification is required where financial interests are affected, with the trigger left to judgement.",
+      "in": "Marketplace clients were notified of the March outage but not within a defined timeframe and without pre-approved content."
+    },
+    "Art. 23": {
+      "p": 3,
+      "i": 3,
+      "pn": "Payment-related operational and security incidents are explicitly in scope of the same process, with the existing PSD2 reporting route retained.",
+      "in": "The PSD2 reporting muscle is real and is the strongest part of the incident capability \u2014 this is what the DORA route should be modelled on."
+    },
+    "Art. 24.1": {
+      "p": 3,
+      "i": 3,
+      "pn": "A resilience testing programme is documented within the framework covering methodologies, cadence and scope.",
+      "in": "The programme exists and is followed, largely inherited from PSD2 and card scheme obligations."
+    },
+    "Art. 24.2": {
+      "p": 3,
+      "i": 3,
+      "pn": "Testing scope and frequency are driven by asset criticality and the threat landscape, with rationale recorded annually.",
+      "in": "The 2026 test plan is justified against the critical function list and is proportionate."
+    },
+    "Art. 24.3": {
+      "p": 3,
+      "i": 3,
+      "pn": "Independence requirements are documented, including conflict-of-interest handling for internal testers.",
+      "in": "External testing by an accredited provider; internal testing is performed by a team separate from the engineers who built the service."
+    },
+    "Art. 24.5": {
+      "p": 3,
+      "i": 2,
+      "pn": "Annual testing of all systems supporting critical or important functions is mandated.",
+      "in": "Card authorisation and SEPA payout are tested annually. The KYC onboarding flow, also assessed as critical, has not been tested since 2024."
+    },
+    "Art. 24.6": {
+      "p": 3,
+      "i": 3,
+      "pn": "Prioritisation, classification and remediation of test findings are documented with internal validation.",
+      "in": "Findings enter the same backlog as vulnerabilities with SLA tracking. Retest validation is evidenced for the 2025 findings."
+    },
+    "Art. 25.1": {
+      "p": 2,
+      "i": 2,
+      "pn": "The test catalogue lists penetration testing and vulnerability scanning but does not map against the full Article 25 range.",
+      "in": "Vulnerability scanning, penetration testing and performance testing are performed well. Source code review, scenario-based testing and physical security review are absent with no documented justification."
+    },
+    "Art. 26.1": {
+      "p": 1,
+      "i": 0,
+      "pn": "No TLPT programme. Whether Boyne is in scope for threat-led penetration testing has not been formally determined.",
+      "in": "Not performed. Given transaction volumes, in-scope designation is likely and the three-year cycle would need to start within twelve months.",
+      "rec": "Commission a formal in-scope determination for TLPT from external counsel or the CBI before committing budget. On current transaction volumes designation looks likely, and if it is confirmed the three-year cycle plus the tester procurement lead time means work would need to begin within twelve months."
+    },
+    "Art. 26.6": {
+      "p": 1,
+      "i": 0,
+      "pn": "No contractual right to include the card processor or KYC vendor in TLPT scope.",
+      "in": "Not performed. Neither contract contains testing participation clauses, and both are up for renewal in 2027."
+    },
+    "Art. 27": {
+      "p": 1,
+      "i": 1,
+      "pn": "Tester requirements are defined for conventional penetration testing but not to the TLPT standard.",
+      "in": "The current provider is CREST-accredited, which is a reasonable base, but TLPT-specific requirements have not been assessed."
+    },
+    "Art. 28.1": {
+      "p": 3,
+      "i": 2,
+      "pn": "The framework states that outsourcing does not transfer regulatory responsibility and places third-party risk inside ICT risk.",
+      "in": "The principle is stated and understood, but in practice third-party risk is managed by procurement on a separate track from the ICT risk process."
+    },
+    "Art. 28.2": {
+      "p": 2,
+      "i": 1,
+      "pn": "A third-party risk strategy exists in draft and has not been approved by the board. No specific policy covers services supporting critical or important functions.",
+      "in": "Draft since October. The absence of an approved policy is the root of most other Chapter V findings.",
+      "rec": "Take the draft ICT third-party risk strategy to the March board for approval as a single agenda item \u2014 it has been in draft since October and it is the dependency for eight other findings in this report. Pair it with the specific policy for services supporting critical or important functions so both are approved together rather than sequentially."
+    },
+    "Art. 28.3": {
+      "p": 2,
+      "i": 1,
+      "pn": "The register of information is required by the framework but no owner or maintenance procedure is assigned.",
+      "in": "Partial spreadsheet covering 23 of an estimated 40 arrangements, not in the ESA template, with sub-outsourcing chains absent. The January submission was late and incomplete.",
+      "rec": "Rebuild the register of information in the ESA reporting template rather than continuing to extend the spreadsheet, and assign it to the procurement analyst with a contract-change trigger. Budget for the sub-outsourcing chain discovery \u2014 the processor and the KYC vendor will each need to be asked directly, and neither contract currently obliges them to answer."
+    },
+    "Art. 28.4": {
+      "p": 2,
+      "i": 2,
+      "pn": "Pre-contractual assessment is required and covers due diligence, but concentration risk and conflicts of interest are not addressed.",
+      "in": "Due diligence is performed on major vendors \u2014 SOC 2 reports are held for AWS, the processor and the KYC vendor. Smaller ICT vendors bypass the assessment entirely."
+    },
+    "Art. 28.7": {
+      "p": 2,
+      "i": 1,
+      "pn": "Termination rights are required by the draft policy but the DORA grounds are not enumerated.",
+      "in": "Reviewed contracts do not contain the full termination rights. The KYC vendor contract has a 24-month lock-in with no supervisory-instruction termination right."
+    },
+    "Art. 28.8": {
+      "p": 1,
+      "i": 0,
+      "pn": "No exit strategy requirement for services supporting critical or important functions.",
+      "in": "Not performed. No documented or tested exit path exists for the card processor, which supports card authorisation \u2014 the single most critical function.",
+      "rec": "Prioritise the exit strategy for the card processor above the other Chapter V gaps. It supports card authorisation, it is the least substitutable dependency in the estate, and the contract does not come up for renewal until 2027 \u2014 which means the leverage to negotiate exit assistance has to be created now rather than at renewal."
+    },
+    "Art. 29": {
+      "p": 2,
+      "i": 1,
+      "pn": "Concentration risk is named in the draft strategy with no methodology.",
+      "in": "Not assessed. Heavy reliance on AWS and a single card processor, neither easily substitutable, with no documented tolerance."
+    },
+    "Art. 30.2": {
+      "p": 2,
+      "i": 1,
+      "pn": "Contract requirements are listed in the draft policy but no standard schedule exists.",
+      "in": "Of eleven ICT contracts reviewed, three contain data location provisions, two contain audit rights, and none contain the full Article 30(2) element set."
+    },
+    "Art. 30.3": {
+      "p": 1,
+      "i": 0,
+      "pn": "The enhanced requirements for critical or important functions are not reflected in any contract template.",
+      "in": "Not performed. The processor and KYC contracts lack full service level descriptions, notice periods, TLPT participation and unrestricted audit rights."
+    },
+    "Art. 45": {
+      "p": 2,
+      "i": 2,
+      "pn": "Participation in FS-ISAC is recorded in the framework.",
+      "in": "Boyne consumes FS-ISAC intelligence actively but has never contributed. The competent authority has not been notified of membership."
+    }
+  },
+  "exported": "2026-05-14T17:05:00.000Z",
+  "frameworkVersion": "2022/2554"
+}

@@ -1,0 +1,1197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<meta name="robots" content="noindex, nofollow">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src https: data: blob:; connect-src 'self'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'">
+<link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAACXBIWXMAAAsTAAALEwEAmpwYAAAFQUlEQVR4nO2dUUxbZRTHb/YguidCMt/0XV8Mj2YhaYY+khgxBIwzwemYW6QlKhAfdC76IGOZGjeRJWOrcWwyHMY9sCUGBAKbWVxgG3DLcHOWUqCc8n1V0IE55qu33W1vkdpbes+V809+L7fJ137nl9PvNk3u0TQOh8PhcDgcDofD4XA4HA7nfxwAeFxK2SyEGBRChIQQa1JK3MoIIdaEEDNCiAEpZdPy8vJjmy4CER+WUrYKIf5wugCSOEKIFSllCyIWbYqMWCz2qJTyitMblS4jGo2qmu3YjM4YcXpz0qXMzMyMDg8PP5I3IepryulNSZczODh4VtO0orwc4JnOjMjCIrZ9dgGrnz+Iu3b60PN0/ZZm105fvBZtx3pwYWHRIgQA7ldUVNRomrbNbne8k0lGXe1hx4vgIcq+Pa0ZpXR3d5/RNO0pW0LUrW36wqoznN60hzhfHOuxCNF1fULTtCpN07bbETKbvrBqzcQbe33d2NYRxHZ/aEvT1hFEr7c7WZeayoMWIeFwGDRNU19bT9oRYvnRZz4zWEbogZRTvybromqUXrelpaW/DCHlOQvJdMdgbk2ni9BODHNtMtXOEPIcC/GTElLNQvykhChYSDsL2Xp4WEiIFCzETwsW4qcFC/HTgoX4aeG4EB2QgQewEKAFCwFasBCgBQsBWrAQoAULgc3n+ixg50gnDtyeYCG6w1wLhvG9c3vwzY4KbDpdiTfmfmchOgEZiuYvq/Dm/DIL0TeJm/MreO5qF14c7dtQRuPpSvxe/2nDNVkI5I5/6FSy4P7BDtsyXCHEfwuxoR/R11d4GvoQ28fW/2ydI2eTRU9IsSPDFULe+sEZGT4T44uZP9tEZBU/7f0gRYo6J3KV4QohlDtEX0dKrjJcIcQNTKRJyVUGC4H8SjnZ34Yt376NffpozuuwEKAFCwFasBCgBQsBWrAQoAULAVqwEKAFCwFasBCgBQuB/BCYXcl8fX41DguBwjF3sgN/2/sSLnxyFAPz95PX714dw9gbr6H07cPpySAL0QuEKrgSooi0tsSl/HJlDGP7a5PXgxcvsRC9QIQufJcsvAIOvZsiY6nJh1P3lliI7qCUBKLRi9O357Neh7wQ6n9Q6SbmTpxIkRE7UIs/T4b+k1jyQij/haubiB/g+1+xdEik9aOUg971QtzQIXd/vJFyZkjv3lQpRw5nfetLXogbEI3elAN8enoBZ7/+JkVK8HI/C9ELBHx46B8ZzQ1xGYnrSSl1u+NdxEKgMARml/He0DWcCsYsr925HsA7Y9NZr8VCgBYsBGjBQoAWLARowUKAFiwEaMFCgBYsBGjBQoAWLAS2mJCNHqQ8PrfmeBF0ItyaW832Qcq2hMz826PGP/78MksBjNfg6PFLybq8+ML7FiHhcHgxH0IG0hdWIxnMrcnUW2g/bn0Y/+Tk5Hg+HqTcnL6wGsWgRjI4vWkPUV5/9QhGItZxFV1dXV/ZftS4mjZmDLiySFEjGdQUAB7oUh+vgaqF6oxMMgDgT4/Hc8D2w/iNLmnJdMfAyKzp7e3tMZ0fT9gSgogPRaNRy2AXRmbF1NSUXlJS8rIhw95AF1OX7FDTxpzenHQZgUBALy0trTN1h72RR+ao0W9DQ0OdasCV0xuVxFFnhvqaKi4u3m2S8aztoWAZUqSmjZ0/f/6MmqmkxvioHzxOF0A6jKqBqoW6tVW1KSsrSxzgCZ7Jy9i8dbLNaL2qtDdlNAtVRq3y3hmZst24Yyg37q2rCRSgxmGqjVqUG7XJ34RPDofD4XA4HA6Hw+FwOFph8zfQaBjzgGBxjwAAAABJRU5ErkJggg==">
+
+<script>
+(function(){
+  var m = document.cookie.match(/(?:^|;\s*)mat_theme=(dark|light)/);
+  document.documentElement.setAttribute("data-theme", m ? m[1] : "dark");
+})();
+</script>
+<title>Maturity Assessment — Report Builder</title>
+<style>
+:root{
+  color-scheme:light;
+  --paper:#E7EAF0; --surface:#FFFFFF; --ink:#171A21; --muted:#5D6577;
+  --rule:#C6CCD8; --rule-soft:#DFE3EB; --tint:#F4F6FA;
+  --field:#FBFCFD; --accent-soft:#F7F9FF; --on-accent:#FFFFFF;
+  --warn-bg:#FDF3F4; --warn-rule:#E9C2C8; --warn-ink:#8A2233;
+  --measured:#1F4FD8; --policy:#5B7FE8; --impl:#12324F;
+  --goal:#3A4353; --gap:#B3243C; --ok:#1B7A4B; --warn:#C4622B;
+  --sidebar:300px;
+}
+/* Dark applies to the tool chrome only. The report itself is a document destined for
+   print or a client's inbox, so .stage below restores the light palette for everything
+   inside it — dark shell, white page, the way a layout tool works. */
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --paper:#0D1117; --surface:#161B23; --ink:#E4E8EF; --muted:#8F9AAB;
+  --rule:#2B323E; --rule-soft:#222833; --tint:#1C2330;
+  --field:#131922; --accent-soft:#141F35; --on-accent:#0D1117;
+  --warn-bg:#2A1519; --warn-rule:#5A2833; --warn-ink:#FF97A6;
+  --measured:#6E9BFF; --policy:#7C9CEC; --impl:#AFC2DE;
+  --goal:#8B96A8; --gap:#FF6B7E; --ok:#4FCB8B; --warn:#F1955E;
+}
+.stage{
+  color-scheme:light;
+  --paper:#E7EAF0; --surface:#FFFFFF; --ink:#171A21; --muted:#5D6577;
+  --rule:#C6CCD8; --rule-soft:#DFE3EB; --tint:#F4F6FA;
+  --field:#FBFCFD; --accent-soft:#F7F9FF; --on-accent:#FFFFFF;
+  --warn-bg:#FDF3F4; --warn-rule:#E9C2C8; --warn-ink:#8A2233;
+  --measured:#1F4FD8; --policy:#5B7FE8; --impl:#12324F;
+  --goal:#3A4353; --gap:#B3243C; --ok:#1B7A4B; --warn:#C4622B;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);
+  font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;font-size:15px;line-height:1.45}
+.mono{font-family:ui-monospace,"SF Mono","JetBrains Mono",Menlo,Consolas,monospace}
+:focus-visible{outline:2px solid var(--measured);outline-offset:2px}
+
+/* ================= shell ================= */
+.shell{display:grid;grid-template-columns:var(--sidebar) minmax(0,1fr);min-height:100vh}
+aside{background:var(--surface);border-right:1px solid var(--rule);position:sticky;top:0;height:100vh;
+  overflow-y:auto;padding:0 0 40px}
+aside header{padding:16px 18px 12px;border-bottom:2px solid var(--ink);position:sticky;top:0;
+  background:var(--surface);z-index:5}
+aside h1{font-size:15px;margin:0;letter-spacing:-.01em}
+aside h1 span{font-family:ui-monospace,monospace;color:var(--measured);font-weight:600}
+aside .sub{font-size:11.5px;color:var(--muted);margin-top:3px}
+.themebtn{border:1px solid var(--rule);background:var(--surface);color:var(--muted);
+  padding:5px 8px;display:inline-flex;align-items:center;line-height:1;flex:none}
+.themebtn:hover{background:var(--tint);color:var(--ink);border-color:var(--ink)}
+.themebtn svg{width:15px;height:15px;display:block;fill:none;stroke:currentColor;
+  stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.themebtn .ic-sun{display:none}
+:root[data-theme="dark"] .themebtn .ic-sun{display:block}
+:root[data-theme="dark"] .themebtn .ic-moon{display:none}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+aside header{display:flex;align-items:flex-start;gap:10px}
+aside header .htxt{flex:1;min-width:0}
+
+.panel{padding:14px 18px;border-bottom:1px solid var(--rule-soft)}
+.panel h2{font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);
+  font-family:ui-monospace,monospace;margin:0 0 10px;font-weight:600}
+label.f{display:block;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);
+  font-family:ui-monospace,monospace;margin-bottom:9px}
+label.f input[type=text],label.f input[type=date],label.f input[type=url],label.f select,label.f textarea{
+  display:block;width:100%;margin-top:3px;border:1px solid var(--rule);background:var(--surface);
+  padding:6px 8px;font:inherit;font-size:12.5px;color:var(--ink);border-radius:0;
+  font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;letter-spacing:normal;text-transform:none}
+label.f textarea{min-height:110px;resize:vertical;line-height:1.5}
+.chk{display:flex;align-items:center;gap:7px;font-size:12.5px;margin:5px 0;color:var(--ink)}
+.chk input{margin:0}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+button{font:inherit;font-size:12.5px;border:1px solid var(--ink);background:var(--surface);color:var(--ink);
+  padding:6px 11px;cursor:pointer;border-radius:0;white-space:nowrap}
+button:hover{background:var(--ink);color:var(--surface)}
+button.primary{background:var(--ink);color:var(--surface);width:100%;padding:9px}
+button.primary:hover{background:var(--measured);border-color:var(--measured)}
+button.ghost{border-color:var(--rule);color:var(--muted)}
+button.ghost:hover{background:var(--muted);color:var(--surface);border-color:var(--muted)}
+.btnrow{display:flex;gap:7px}
+.hint{font-size:11px;color:var(--muted);line-height:1.5;margin-top:7px}
+.loaded{font-size:11.5px;background:var(--tint);border:1px solid var(--rule-soft);padding:7px 9px;margin-top:8px}
+.loaded b{display:block;font-size:12.5px;margin-bottom:2px}
+.warnbox{font-size:11.5px;background:var(--warn-bg);border:1px solid var(--warn-rule);color:var(--warn-ink);padding:8px 10px;margin-top:8px}
+.seg{display:flex;flex-wrap:wrap}
+.seg button{border-color:var(--rule);color:var(--muted);padding:4px 9px;font-size:12px;margin:0 -1px -1px 0}
+.seg button[aria-pressed=true]{background:var(--impl);color:var(--surface);border-color:var(--impl);
+  position:relative;z-index:1}
+
+/* ================= viewer ================= */
+main{padding:26px 26px 80px;display:flex;flex-direction:column;align-items:center}
+.stage{width:100%;max-width:820px}
+.dropzone{background:var(--surface);border:2px dashed var(--rule);padding:60px 40px;text-align:center;
+  color:var(--muted);max-width:640px;margin:60px auto}
+.dropzone h3{color:var(--ink);font-size:17px;margin:0 0 8px}
+.dropzone p{font-size:13.5px;line-height:1.6;margin:0 auto 18px;max-width:440px}
+.dropzone.over{border-color:var(--measured);background:var(--accent-soft)}
+
+/* ================= the report ================= */
+.page{background:#fff;border:1px solid var(--rule);margin-bottom:20px;padding:52px 60px 60px;
+  box-shadow:0 1px 3px rgba(23,26,33,.06)}
+.report{color:var(--ink);font-size:13.5px;line-height:1.55}
+.report h2{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);
+  font-family:ui-monospace,monospace;font-weight:600;margin:0 0 4px;padding-bottom:7px;
+  border-bottom:2px solid var(--ink)}
+.report h3{font-size:16px;margin:26px 0 8px;letter-spacing:-.01em}
+.report h4{font-size:13.5px;margin:20px 0 6px}
+.report p{margin:0 0 11px}
+.sechd{margin-bottom:18px}
+.sechd .num{font-family:ui-monospace,monospace;font-size:11px;color:var(--measured);font-weight:700;
+  letter-spacing:.1em}
+.sechd .ttl{font-size:22px;letter-spacing:-.02em;margin:6px 0 0;font-weight:600}
+
+/* cover */
+.cover{min-height:940px;display:flex;flex-direction:column;padding:64px 60px 48px}
+.cover .logo{max-height:64px;max-width:260px;margin-bottom:auto;display:block}
+.cover .logo-sp{margin-bottom:auto}
+.cover .rule{height:5px;background:var(--ink);width:110px;margin:0 0 24px}
+.cover h1{font-size:38px;line-height:1.12;letter-spacing:-.03em;margin:0 0 10px;font-weight:600;max-width:16em}
+.cover .sub{font-size:17px;color:var(--muted);margin:0 0 34px;letter-spacing:-.01em}
+.cover .meta{border-top:1px solid var(--rule);padding-top:18px;display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 28px;max-width:620px}
+.cover .meta div{font-size:13px}
+.cover .meta .dt{font-family:ui-monospace,monospace;font-size:9.5px;letter-spacing:.11em;
+  text-transform:uppercase;color:var(--muted);margin-bottom:3px}
+.cover .cls{margin-top:26px;font-family:ui-monospace,monospace;font-size:10.5px;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--gap);border:1px solid var(--gap);padding:5px 10px;
+  display:inline-block}
+
+/* kpis + tables */
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:11px;margin:16px 0 4px}
+.kpi{border:1px solid var(--rule);padding:12px 13px}
+.kpi b{display:block;font-family:ui-monospace,monospace;font-size:26px;line-height:1.1;
+  letter-spacing:-.03em;font-weight:600}
+.kpi span{font-family:ui-monospace,monospace;font-size:9px;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--muted);display:block;margin-top:2px}
+table{width:100%;border-collapse:collapse;margin:12px 0 4px}
+th,td{text-align:left;padding:7px 9px;border-bottom:1px solid var(--rule-soft);font-size:12.5px;
+  vertical-align:top}
+th{font-family:ui-monospace,monospace;font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--muted);background:var(--tint);border-bottom:1px solid var(--rule);white-space:nowrap}
+td.num,th.num{text-align:right;font-family:ui-monospace,monospace;white-space:nowrap}
+tr.tot td{background:var(--tint);font-weight:600}
+.gap-neg{color:var(--gap);font-weight:600}
+.gap-ok{color:var(--ok);font-weight:600}
+.minibar{display:block;height:7px;background:var(--rule-soft);position:relative;min-width:70px}
+.minibar>i{position:absolute;left:0;top:0;bottom:0;background:var(--measured)}
+.minibar>u{position:absolute;top:-2px;bottom:-2px;width:2px;background:var(--goal)}
+
+.charts{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:22px;margin:18px 0 6px;
+  align-items:start}
+.chart h4{margin:0 0 2px;font-size:13px}
+.chart p{font-size:11.5px;color:var(--muted);margin:0 0 8px}
+svg{display:block;width:100%;height:auto}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:11px;color:var(--muted);margin-top:8px}
+.legend i{display:inline-block;width:10px;height:10px;margin-right:4px;vertical-align:-1px}
+
+/* findings */
+.finding{border:1px solid var(--rule);margin:0 0 12px;page-break-inside:avoid;break-inside:avoid}
+.finding-hd{display:flex;align-items:flex-start;gap:10px;padding:10px 12px;background:var(--tint);
+  border-bottom:1px solid var(--rule)}
+.finding-hd .ref{font-family:ui-monospace,monospace;font-size:12px;font-weight:700;color:var(--measured);
+  white-space:nowrap}
+.finding-hd .q{flex:1;font-size:13px;font-weight:600;line-height:1.4}
+.finding-hd .scores{font-family:ui-monospace,monospace;font-size:11px;color:var(--muted);
+  white-space:nowrap;text-align:right}
+.finding-hd .scores b{color:var(--ink);font-size:14px}
+.pill{font-family:ui-monospace,monospace;font-size:9.5px;font-weight:700;letter-spacing:.05em;
+  padding:2px 6px;color:var(--on-accent);white-space:nowrap;display:inline-block}
+.pill.P1{background:var(--gap)} .pill.P2{background:var(--warn)} .pill.P3{background:var(--measured)}
+.pill.P4{background:var(--ok)} .pill.NA{background:var(--muted)}
+.eff{font-family:ui-monospace,monospace;font-size:9.5px;border:1px solid var(--rule);padding:2px 6px;
+  color:var(--muted);display:inline-block}
+.finding-bd{padding:11px 12px}
+.fblock{margin-bottom:10px}
+.fblock:last-child{margin-bottom:0}
+.fblock .lbl{font-family:ui-monospace,monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:3px}
+.fblock p{margin:0;font-size:12.5px;line-height:1.5}
+.rec{background:var(--accent-soft);border-left:3px solid var(--measured);padding:9px 11px;margin-top:10px}
+.rec .lbl{color:var(--measured)}
+.refs{margin-top:9px;font-size:11px;color:var(--muted);font-family:ui-monospace,monospace}
+.grouphd{margin:30px 0 12px;padding-bottom:8px;border-bottom:1px solid var(--rule)}
+.grouphd .gid{font-family:ui-monospace,monospace;font-size:11px;color:var(--measured);font-weight:700;
+  letter-spacing:.08em}
+.grouphd h3{margin:4px 0 3px;font-size:18px}
+.grouphd .gdesc{font-size:12.5px;color:var(--muted);margin:0}
+.grouphd .gstat{font-family:ui-monospace,monospace;font-size:11.5px;color:var(--muted);margin-top:6px}
+.sectionhd{font-family:ui-monospace,monospace;font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--muted);margin:18px 0 8px;font-weight:600}
+.empty{border:1px dashed var(--rule);padding:22px;text-align:center;color:var(--muted);font-size:13px}
+.summary-note{font-size:12px;color:var(--muted);border-left:2px solid var(--rule);padding-left:11px;
+  margin:12px 0}
+.toc{columns:2;column-gap:34px;font-size:12.5px}
+.toc div{break-inside:avoid;margin-bottom:5px;display:flex;gap:8px}
+.toc .n{font-family:ui-monospace,monospace;color:var(--measured);font-weight:700;min-width:22px}
+.scale td:first-child{font-family:ui-monospace,monospace;font-weight:700;width:34px;text-align:center}
+
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:var(--ink);color:var(--paper);
+  padding:9px 16px;font-size:13px;z-index:99;opacity:0;pointer-events:none;transition:opacity .18s}
+.toast.on{opacity:1}
+
+@media(max-width:1000px){
+  .shell{grid-template-columns:1fr}
+  aside{position:static;height:auto;border-right:none;border-bottom:1px solid var(--rule)}
+  .page{padding:32px 26px}
+  .kpis{grid-template-columns:repeat(2,1fr)}
+  .charts{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+
+/* ================= print ================= */
+@page{size:A4;margin:14mm 13mm}
+@media print{
+  :root,:root[data-theme="dark"],.stage{
+    color-scheme:light;
+  --paper:#E7EAF0; --surface:#FFFFFF; --ink:#171A21; --muted:#5D6577;
+  --rule:#C6CCD8; --rule-soft:#DFE3EB; --tint:#F4F6FA;
+  --field:#FBFCFD; --accent-soft:#F7F9FF; --on-accent:#FFFFFF;
+  --warn-bg:#FDF3F4; --warn-rule:#E9C2C8; --warn-ink:#8A2233;
+  --measured:#1F4FD8; --policy:#5B7FE8; --impl:#12324F;
+  --goal:#3A4353; --gap:#B3243C; --ok:#1B7A4B; --warn:#C4622B;
+  }
+  aside,.toast,.noprint,.themebtn{display:none!important}
+  html,body{background:#fff}
+  .shell{display:block}
+  main{padding:0;display:block}
+  .stage{max-width:none}
+  .page{border:none;box-shadow:none;margin:0;padding:0;page-break-after:always}
+  .page.nobreak{page-break-after:auto;padding-bottom:14mm}
+  .page:last-child{page-break-after:auto}
+  .cover{min-height:auto;height:252mm}
+  .report h2{border-bottom-color:#000}
+  .finding,.chart,.kpi,tr{page-break-inside:avoid;break-inside:avoid}
+  thead{display:table-header-group}
+  .grouphd{page-break-after:avoid;break-after:avoid}
+  a{color:inherit;text-decoration:none}
+}
+</style>
+</head>
+<body>
+
+<div class="shell">
+<aside class="noprint">
+  <header>
+    <div class="htxt">
+      <h1><span>Maturity</span> report builder</h1>
+      <div class="sub">Turns an assessment export into a client-ready report.</div>
+    </div>
+    <button class="themebtn" id="themeBtn" type="button" aria-pressed="true">
+      <svg class="ic-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.7A8.6 8.6 0 0 1 9.3 3.5a8.6 8.6 0 1 0 11.2 11.2Z"/></svg>
+      <svg class="ic-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.4M12 19.6V22M4.2 4.2l1.7 1.7M18.1 18.1l1.7 1.7M2 12h2.4M19.6 12H22M4.2 19.8l1.7-1.7M18.1 5.9l1.7-1.7"/></svg>
+      <span class="sr">Toggle theme</span>
+    </button>
+  </header>
+
+  <div class="panel">
+    <h2>1 · Data</h2>
+    <div class="btnrow">
+      <button id="btnAssess">Assessment JSON</button>
+      <button class="ghost" id="btnFw">Framework</button>
+    </div>
+    <input type="file" id="fileAssess" accept=".json,application/json" hidden>
+    <input type="file" id="fileFw" accept=".json,application/json" hidden>
+    <div id="loadState"></div>
+    <div class="hint">Load the JSON saved from the assessment tool. If it was written by the app it already
+      contains everything; a hand-built or older file also needs its framework file.</div>
+  </div>
+
+  <div class="panel" id="cfgPanel" hidden>
+    <h2>2 · Cover</h2>
+    <label class="f">Report title<input type="text" id="cTitle"></label>
+    <label class="f">Subtitle<input type="text" id="cSub"></label>
+    <label class="f">Client<input type="text" id="cClient"></label>
+    <label class="f">Logo URL<input type="url" id="cLogo" placeholder="https://…/logo.png"></label>
+    <div class="row">
+      <label class="f">Prepared by<input type="text" id="cAuthor"></label>
+      <label class="f">Date<input type="date" id="cDate"></label>
+    </div>
+    <div class="row">
+      <label class="f">Reference<input type="text" id="cRef" placeholder="e.g. SEC-2026-014"></label>
+      <label class="f">Version<input type="text" id="cVer" placeholder="1.0"></label>
+    </div>
+    <label class="f">Classification
+      <select id="cClass">
+        <option>Confidential</option><option>Client Confidential</option>
+        <option>Restricted</option><option>Internal Use Only</option><option value="">None</option>
+      </select></label>
+  </div>
+
+  <div class="panel" id="summaryPanel" hidden>
+    <h2>3 · Executive summary</h2>
+    <label class="f">Summary text<textarea id="cSummary"></textarea></label>
+    <div class="btnrow">
+      <button class="ghost" id="btnDraft">Regenerate draft</button>
+    </div>
+    <label class="f" style="margin-top:12px">Scope statement<textarea id="cScope" style="min-height:70px"></textarea></label>
+  </div>
+
+  <div class="panel" id="filterPanel" hidden>
+    <h2>4 · What to include</h2>
+    <label class="f">Findings scoring</label>
+    <div class="seg" id="segScore" style="margin-bottom:9px">
+      <button data-s="0" aria-pressed="true">0</button><button data-s="1" aria-pressed="true">1</button>
+      <button data-s="2" aria-pressed="true">2</button><button data-s="3" aria-pressed="true">3</button>
+      <button data-s="4" aria-pressed="true">4</button><button data-s="5" aria-pressed="true">5</button>
+      <button data-s="na" aria-pressed="true">n/a</button>
+    </div>
+    <div class="hint" style="margin:-2px 0 10px">Bands are rounded from the combined policy and
+      implementation score. Deselect 3–5 for a gaps-only report.</div>
+    <label class="f">Priority</label>
+    <div class="seg" id="segPri" style="margin-bottom:10px"></div>
+    <label class="f">Effort</label>
+    <div class="seg" id="segEff" style="margin-bottom:10px">
+      <button data-e="Low" aria-pressed="true">Low</button>
+      <button data-e="Medium" aria-pressed="true">Medium</button>
+      <button data-e="High" aria-pressed="true">High</button>
+    </div>
+    <label class="chk"><input type="checkbox" id="fOnlyNotes"> Only items with findings recorded</label>
+    <label class="chk"><input type="checkbox" id="fOnlyBelow"> Only items below their goal</label>
+    <div class="hint" id="filtCount" style="margin-top:9px"></div>
+  </div>
+
+  <div class="panel" id="sectionPanel" hidden>
+    <h2>5 · Sections</h2>
+    <label class="chk"><input type="checkbox" id="sCover" checked> Cover page</label>
+    <label class="chk"><input type="checkbox" id="sToc" checked> Contents</label>
+    <label class="chk"><input type="checkbox" id="sSummary" checked> Executive summary</label>
+    <label class="chk"><input type="checkbox" id="sApproach" checked> Scope and approach</label>
+    <label class="chk"><input type="checkbox" id="sOverview" checked> Maturity overview</label>
+    <label class="chk"><input type="checkbox" id="sCharts" checked> Charts</label>
+    <label class="chk"><input type="checkbox" id="sPriority" checked> Prioritised actions</label>
+    <label class="chk"><input type="checkbox" id="sFindings" checked> Detailed findings</label>
+    <label class="chk"><input type="checkbox" id="sRecs" checked> Recommendations in findings</label>
+    <label class="chk"><input type="checkbox" id="sAppendix" checked> Appendix — full scores</label>
+    <label class="chk"><input type="checkbox" id="sBreaks" checked> Page break per section</label>
+  </div>
+
+  <div class="panel" id="exportPanel" hidden>
+    <h2>6 · Output</h2>
+    <button class="primary" id="btnPrint">Print / Save as PDF</button>
+    <div class="btnrow" style="margin-top:8px">
+      <button class="ghost" id="btnHtml" style="flex:1">Save HTML</button>
+      <button class="ghost" id="btnCfg" style="flex:1">Save settings</button>
+    </div>
+    <input type="file" id="fileCfg" accept=".json,application/json" hidden>
+    <div class="btnrow" style="margin-top:8px">
+      <button class="ghost" id="btnLoadCfg" style="flex:1">Load settings</button>
+    </div>
+    <div class="hint">Print uses your browser's PDF writer. Turn off headers and footers and enable
+      background graphics for the cleanest result.</div>
+  </div>
+</aside>
+
+<main>
+  <div class="dropzone" id="drop">
+      <h3>Drop an assessment JSON here</h3>
+      <p>Or use the buttons on the left. Files stay in your browser — nothing is uploaded anywhere.</p>
+      <button id="btnAssess2">Choose file</button>
+  </div>
+  <div class="stage">
+    <div id="report" class="report"></div>
+  </div>
+</main>
+</div>
+
+<div class="toast" id="toast"></div>
+<script>/* =====================================================================
+   Maturity assessment report builder.
+
+   Input: the JSON saved by the assessment tool. Two shapes are accepted.
+     1. An export that already carries a resolved report[] array — self-contained.
+     2. A raw state file (meta + goals + responses) plus its framework file,
+        from which everything is recomputed the same way the app does.
+   Legacy exports from the combined CSF+CIS build are also understood.
+   ===================================================================== */
+
+const $  = s => document.querySelector(s);
+const $$ = s => Array.from(document.querySelectorAll(s));
+const esc = s => String(s ?? "").replace(/[&<>"']/g,
+  c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+/* The logo URL is typed by the user and framework URLs come from a file: allow only
+   http(s), so javascript: and data: payloads can never reach an attribute. */
+function safeUrl(u){
+  try{
+    const p = new URL(String(u), location.href);
+    return (p.protocol === "http:" || p.protocol === "https:") ? esc(p.href) : "";
+  }catch(_){ return ""; }
+}
+const safeName = s => /^[A-Za-z0-9._-]+$/.test(String(s)) && !String(s).includes("..") ? String(s) : "";
+function mergeSafe(target, src){
+  if(!src || typeof src !== "object") return target;
+  Object.keys(src).forEach(k=>{
+    if(k === "__proto__" || k === "constructor" || k === "prototype") return;
+    target[k] = src[k];
+  });
+  return target;
+}
+const para = s => esc(s).replace(/\n{2,}/g, "</p><p>").replace(/\n/g, "<br>");
+const n2 = v => v == null ? "\u2013" : v.toFixed(2);
+const n2s = v => v == null ? "" : v.toFixed(2);
+const sgn = v => v == null ? "\u2013" : (v >= 0 ? "+" : "") + v.toFixed(2);
+const avg = a => { const v = a.filter(x => x != null); return v.length ? v.reduce((x,y)=>x+y,0)/v.length : null; };
+
+const DEFAULT_LEVELS = [
+  {v:0,l:"Not performed",d:"No evidence the outcome is addressed."},
+  {v:1,l:"Ad hoc",d:"Happens reactively, undocumented, person-dependent."},
+  {v:2,l:"Developing",d:"Partly in place, inconsistently applied."},
+  {v:3,l:"Defined",d:"Documented, approved and applied across scope."},
+  {v:4,l:"Managed",d:"Measured, reviewed and enforced with evidence."},
+  {v:5,l:"Optimising",d:"Continuously improved against metrics and threat change."}
+];
+const DEFAULT_PRIORITY = [
+  {k:"P1",l:"Critical",d:"More than 2.0 below the target maturity"},
+  {k:"P2",l:"High",d:"1.0 to 2.0 below target"},
+  {k:"P3",l:"Moderate",d:"Up to 1.0 below target"},
+  {k:"P4",l:"Maintain",d:"At or above target \u2014 sustain the control"}
+];
+const PRI_ORDER = {P1:0,P2:1,P3:2,P4:3,NA:4};
+const EFF_NAME = {L:"Low",M:"Medium",H:"High"};
+
+let DATA = null;          // resolved model
+let rawAssess = null, rawFw = null;
+let cfg = {};             // cover / summary settings
+let filt = {score:new Set(["0","1","2","3","4","5","na"]), pri:new Set(), eff:new Set(["Low","Medium","High"]),
+            onlyNotes:false, onlyBelow:false};
+
+/* ---------------------------------------------------------------- resolve */
+function priorityOf(score, goal){
+  if(score == null) return {k:"NA", l:"Not assessed", gap:null};
+  const gap = score - goal;
+  if(gap >= 0)  return {k:"P4", l:"Maintain", gap};
+  if(gap > -1)  return {k:"P3", l:"Moderate", gap};
+  if(gap >= -2) return {k:"P2", l:"High", gap};
+  return {k:"P1", l:"Critical", gap};
+}
+
+function resolve(assess, fw){
+  const meta = assess.meta || {};
+  const goals = assess.goals || {};
+  const levels = (fw && fw.levels) || DEFAULT_LEVELS;
+  const priority = (fw && fw.priority) || DEFAULT_PRIORITY;
+  let items = [], groups = [], fwName = meta.framework || (fw && fw.name) || "Assessment framework";
+  let labels = (fw && fw.labels) || {group:"Group", groups:"Groups", section:"Section", item:"Item"};
+  let short = (fw && fw.short) || meta.frameworkId || "";
+  let refsName = fw && fw.references ? fw.references.short : null;
+
+  const declared = assess.frameworkId || (assess.meta && assess.meta.frameworkId);
+  if(fw && fw.id && declared && fw.id !== declared)
+    return {error:"mismatch", want:declared, got:fw.id};
+
+  if(Array.isArray(assess.report) && assess.report.length){
+    // ---- already resolved by the app (new or legacy shape)
+    items = assess.report.map(r=>({
+      id: r.ref,
+      group: r.group ?? r.fn ?? "\u2014",
+      groupName: r.groupName ?? r.fnName ?? (r.group ?? r.fn ?? ""),
+      section: r.section ?? r.cat ?? "",
+      sectionName: r.sectionName ?? r.catName ?? "",
+      q: r.outcome,
+      policy: r.policy, impl: r.implementation, score: r.score,
+      goal: r.goal, gap: r.gap,
+      pri: {k:r.priority, l:r.priorityLabel, gap:r.gap},
+      eff: r.effort,
+      pn: r.policyFindings || "", in: r.implementationFindings || "",
+      rec: r.recommendation || "", recSrc: r.recommendationSource || "template",
+      refs: (r.references || r.xrefItems || []).map(x=>x.ref)
+    }));
+    if(!refsName && items.some(i=>i.refs.length)){
+      const s = assess.report.find(r=>(r.references||[]).length);
+      refsName = s && s.references[0].source ? s.references[0].source : "Cross-reference";
+    }
+    // group order and descriptions come from the framework when we have it
+    if(fw && fw.groups){
+      groups = fw.groups.map(g=>({id:g.id, name:g.name, desc:g.desc,
+        sections:g.sections.map(s=>({id:s.id, name:s.name, desc:s.desc}))}));
+    } else {
+      const seen = new Map();
+      items.forEach(i=>{
+        if(!seen.has(i.group)) seen.set(i.group, {id:i.group, name:i.groupName, desc:"", sections:new Map()});
+        const g = seen.get(i.group);
+        if(i.section && !g.sections.has(i.section)) g.sections.set(i.section, {id:i.section, name:i.sectionName, desc:""});
+      });
+      groups = [...seen.values()].map(g=>({...g, sections:[...g.sections.values()]}));
+    }
+  } else {
+    // ---- raw state file: needs the framework
+    if(!fw) return {error:"needFramework"};
+    const resp = assess.responses || {};
+    groups = fw.groups.map(g=>({id:g.id, name:g.name, desc:g.desc,
+      sections:g.sections.map(s=>({id:s.id, name:s.name, desc:s.desc}))}));
+    items = fw.items.map(it=>{
+      const r = resp[it.id] || {};
+      const p = (r.p == null || r.p === "") ? null : Number(r.p);
+      const i = (r.i == null || r.i === "") ? null : Number(r.i);
+      const score = avg([p, i]);
+      const goal = goals[it.group] ?? 3;
+      const g = fw.groups.find(x=>x.id===it.group);
+      const s = g && g.sections.find(x=>x.id===it.section);
+      const pri = priorityOf(score, goal);
+      return {
+        id: it.id, group: it.group, groupName: g ? g.name : it.group,
+        section: it.section, sectionName: s ? s.name : it.section,
+        q: it.q, policy: p, impl: i, score, goal, gap: pri.gap, pri,
+        eff: EFF_NAME[it.eff] || it.eff,
+        pn: r.pn || "", in: r.in || "",
+        rec: r.rec != null ? r.rec : (it.rec || ""),
+        recSrc: (r.rec != null && r.rec !== it.rec) ? "tailored" : "template",
+        refs: (it.refs || []).map(x=>x.ref)
+      };
+    });
+  }
+
+  // per-group rollups
+  groups.forEach(g=>{
+    const its = items.filter(i=>i.group === g.id);
+    g.items = its;
+    g.goal = goals[g.id] ?? (its[0] ? its[0].goal : 3);
+    g.policy = avg(its.map(i=>i.policy));
+    g.impl = avg(its.map(i=>i.impl));
+    g.score = avg(its.map(i=>i.score));
+    g.done = its.filter(i=>i.score != null).length;
+    g.total = its.length;
+    g.gap = g.score == null ? null : g.score - g.goal;
+    g.sections.forEach(s=>{
+      const si = its.filter(i=>i.section === s.id);
+      s.items = si; s.score = avg(si.map(i=>i.score));
+      s.policy = avg(si.map(i=>i.policy)); s.impl = avg(si.map(i=>i.impl));
+      s.done = si.filter(i=>i.score != null).length; s.total = si.length;
+    });
+  });
+  groups = groups.filter(g=>g.total > 0);
+
+  const overall = avg(items.map(i=>i.score));
+  const counts = {P1:0,P2:0,P3:0,P4:0,NA:0};
+  items.forEach(i=>counts[i.pri.k]++);
+
+  return {
+    meta, goals, groups, items, levels, priority, labels, short, fwName, refsName,
+    overall, policy: avg(items.map(i=>i.policy)), impl: avg(items.map(i=>i.impl)),
+    goalAvg: avg(groups.map(g=>g.goal)), counts,
+    assessed: items.filter(i=>i.score != null).length
+  };
+}
+
+/* ---------------------------------------------------------------- filters */
+function scoreBand(i){ return i.score == null ? "na" : String(Math.round(i.score)); }
+function passes(i){
+  if(!filt.score.has(scoreBand(i))) return false;
+  if(filt.pri.size && !filt.pri.has(i.pri.k)) return false;
+  if(!filt.eff.has(i.eff)) return false;
+  if(filt.onlyNotes && !(i.pn.trim() || i.in.trim())) return false;
+  if(filt.onlyBelow && !(i.gap != null && i.gap < 0)) return false;
+  return true;
+}
+const shown = () => DATA.items.filter(passes);
+
+/* ---------------------------------------------------------------- charts */
+function radar(){
+  const gs = DATA.groups, n = gs.length;
+  if(n < 3) return barsOnly();
+  const R = 108, cx = 168, cy = 142;
+  const pt = (i,r) => { const a = -Math.PI/2 + i*2*Math.PI/n; return [cx+r*Math.cos(a), cy+r*Math.sin(a)]; };
+  let g = "";
+  for(let k=1;k<=5;k++)
+    g += `<polygon points="${gs.map((_,i)=>pt(i,R*k/5).join(",")).join(" ")}" fill="none" stroke="#DFE3EB"/>`;
+  gs.forEach((_,i)=>{ const [x,y]=pt(i,R); g += `<line x1="${cx}" y1="${cy}" x2="${x}" y2="${y}" stroke="#DFE3EB"/>`; });
+  g += `<polygon points="${gs.map((x,i)=>pt(i,R*x.goal/5).join(",")).join(" ")}"
+        fill="none" stroke="#3A4353" stroke-width="1.5" stroke-dasharray="5 4"/>`;
+  const vals = gs.map(x=>x.score);
+  if(vals.some(v=>v!=null)){
+    g += `<polygon points="${gs.map((x,i)=>pt(i,R*(vals[i]??0)/5).join(",")).join(" ")}"
+          fill="#1F4FD8" fill-opacity=".16" stroke="#1F4FD8" stroke-width="2"/>`;
+    gs.forEach((x,i)=>{ if(vals[i]!=null){ const [px,py]=pt(i,R*vals[i]/5);
+      g += `<circle cx="${px}" cy="${py}" r="3.2" fill="#1F4FD8"/>`; }});
+  }
+  gs.forEach((x,i)=>{ const [tx,ty]=pt(i,R+24);
+    g += `<text x="${tx}" y="${ty}" text-anchor="middle" dominant-baseline="middle"
+          font-family="ui-monospace,monospace" font-size="10.5" font-weight="700" fill="#171A21">${esc(x.id)}</text>
+          <text x="${tx}" y="${ty+12}" text-anchor="middle" font-size="9.5" fill="#5D6577">${n2(vals[i])}</text>`; });
+  return `<svg viewBox="0 0 336 300" role="img" aria-label="Maturity by ${esc(DATA.labels.group.toLowerCase())}">${g}</svg>`;
+}
+function barsOnly(){
+  return hbars(DATA.groups.map(g=>({label:g.id, policy:g.policy, impl:g.impl, score:g.score, goal:g.goal})), 336);
+}
+function hbars(rows, W){
+  const rowH = 40, h = rows.length*rowH + 12, x0 = 44, w = W - x0 - 32;
+  let g = "";
+  rows.forEach((r,i)=>{
+    const y = i*rowH + 10, gx = x0 + w*r.goal/5;
+    g += `<text x="0" y="${y+13}" font-family="ui-monospace,monospace" font-size="10.5" font-weight="700">${esc(r.label)}</text>`;
+    g += `<rect x="${x0}" y="${y}" width="${w}" height="9" fill="#DFE3EB"/>`;
+    g += `<rect x="${x0}" y="${y}" width="${w*(r.policy??0)/5}" height="9" fill="#5B7FE8"/>`;
+    g += `<rect x="${x0}" y="${y+12}" width="${w}" height="9" fill="#DFE3EB"/>`;
+    g += `<rect x="${x0}" y="${y+12}" width="${w*(r.impl??0)/5}" height="9" fill="#12324F"/>`;
+    g += `<line x1="${gx}" y1="${y-3}" x2="${gx}" y2="${y+24}" stroke="#3A4353" stroke-width="2" stroke-dasharray="3 3"/>`;
+    g += `<text x="${W-28}" y="${y+16}" font-family="ui-monospace,monospace" font-size="10.5">${n2(r.score)}</text>`;
+  });
+  return `<svg viewBox="0 0 ${W} ${h}" role="img" aria-label="Policy against implementation">${g}</svg>`;
+}
+function priBar(){
+  const P = DATA.priority.concat([{k:"NA",l:"Not assessed"}]);
+  const rows = P.filter(p=>DATA.counts[p.k] > 0);
+  const max = Math.max(...rows.map(p=>DATA.counts[p.k]), 1);
+  const W = 336, rowH = 30, h = rows.length*rowH + 10, x0 = 76, w = W - x0 - 34;
+  const col = {P1:"#B3243C",P2:"#C4622B",P3:"#1F4FD8",P4:"#1B7A4B",NA:"#5D6577"};
+  let g = "";
+  rows.forEach((p,i)=>{
+    const y = i*rowH + 8, len = w*DATA.counts[p.k]/max;
+    g += `<text x="0" y="${y+12}" font-family="ui-monospace,monospace" font-size="10" font-weight="700" fill="${col[p.k]}">${p.k}</text>`;
+    g += `<text x="22" y="${y+12}" font-size="10.5" fill="#5D6577">${esc(p.l)}</text>`;
+    g += `<rect x="${x0}" y="${y+1}" width="${Math.max(len,1)}" height="13" fill="${col[p.k]}"/>`;
+    g += `<text x="${x0+Math.max(len,1)+6}" y="${y+12}" font-family="ui-monospace,monospace" font-size="10.5">${DATA.counts[p.k]}</text>`;
+  });
+  return `<svg viewBox="0 0 ${W} ${h}" role="img" aria-label="Findings by priority">${g}</svg>`;
+}
+
+/* ---------------------------------------------------------------- summary draft */
+function draftSummary(){
+  const d = DATA, worst = [...d.groups].filter(g=>g.score!=null).sort((a,b)=>a.score-b.score);
+  const best = worst.slice().reverse();
+  const L = d.labels.group.toLowerCase();
+  const band = d.levels.find(l=>l.v === Math.round(d.overall ?? 0));
+  const belowGoal = d.groups.filter(g=>g.gap != null && g.gap < 0).length;
+  const p1 = d.counts.P1, p2 = d.counts.P2;
+  const lead = d.policy != null && d.impl != null && d.policy - d.impl >= 0.25;
+  const lag  = d.impl != null && d.policy != null && d.impl - d.policy >= 0.25;
+
+  let t = `${d.meta.customer || "The organisation"} was assessed against ${d.fwName} `
+    + `on ${fmtDate(d.meta.date)}. The assessment covered ${d.items.length} `
+    + `${(d.labels.item || "item").toLowerCase()}${d.items.length===1?"":"s"}, of which ${d.assessed} `
+    + `${d.assessed===1?"was":"were"} scored for both policy and implementation maturity.\n\n`;
+
+  t += `Overall maturity is ${n2(d.overall)} out of 5`
+    + (band ? ` \u2014 broadly "${band.l.toLowerCase()}"` : "")
+    + `, against an average target of ${n2(d.goalAvg)}. `
+    + (belowGoal ? `${belowGoal} of ${d.groups.length} ${d.labels.groups.toLowerCase()} sit below their target. ` : `All ${d.labels.groups.toLowerCase()} are at or above target. `);
+
+  if(lead) t += `Policy maturity (${n2(d.policy)}) runs ahead of implementation (${n2(d.impl)}), the common pattern where controls are documented but not consistently operating or evidenced. `;
+  else if(lag) t += `Implementation maturity (${n2(d.impl)}) runs ahead of policy (${n2(d.policy)}), indicating controls that work in practice but are not yet documented or mandated \u2014 a risk to consistency and to audit. `;
+  else t += `Policy (${n2(d.policy)}) and implementation (${n2(d.impl)}) are closely aligned. `;
+  t += `\n\n`;
+
+  if(worst.length){
+    t += `The weakest ${d.labels.groups.toLowerCase()} ${worst.length>1?"are":"is"} `
+      + worst.slice(0,2).map(g=>`${g.name} (${n2(g.score)} against a target of ${g.goal})`).join(" and ")
+      + `. The strongest is ${best[0].name} at ${n2(best[0].score)}. `;
+  }
+  t += `${p1 + p2} ${(p1+p2)===1?"finding":"findings"} `
+    + `${(p1+p2)===1?"is":"are"} rated critical or high priority`
+    + (p1 ? `, including ${p1} rated critical` : "") + `. `
+    + `Addressing these is the fastest route to the target profile.\n\n`;
+
+  t += `[Replace this paragraph with the two or three actions the client should take first, and the `
+    + `business consequence of not taking them.]`;
+  return t;
+}
+function fmtDate(s){
+  if(!s) return "the assessment date";
+  const d = new Date(s + (s.length === 10 ? "T00:00:00" : ""));
+  if(isNaN(d)) return s;
+  return d.toLocaleDateString("en-IE", {day:"numeric", month:"long", year:"numeric"});
+}
+
+/* ---------------------------------------------------------------- render */
+function section(num, title, body, opts){
+  const br = $("#sBreaks").checked ? ' class="page"' : ' class="page nobreak"';
+  return `<section${br} data-sec="${esc(title)}">
+    <div class="sechd"><div class="num">${num}</div><h2 class="ttl">${esc(title)}</h2></div>
+    ${body}</section>`;
+}
+
+function render(){
+  if(!DATA){ $("#report").innerHTML = ""; return; }
+  const d = DATA, out = [];
+  let n = 0;
+  const nums = [];
+  const add = (title, body) => { n++; nums.push([n, title]); out.push(section(n, title, body)); };
+
+  // ---- cover
+  if($("#sCover").checked){
+    // referrerpolicy keeps the client's report host out of the logo server's logs;
+    // the fallback is wired up after render rather than with an inline handler so a
+    // strict Content-Security-Policy can forbid inline event handlers
+    const href = safeUrl(cfg.logo);
+    const logo = href
+      ? `<img class="logo" src="${href}" alt="" referrerpolicy="no-referrer" data-logo>`
+      : `<div class="logo-sp"></div>`;
+    out.push(`<section class="page cover">
+      ${logo}
+      <div class="rule"></div>
+      <h1>${esc(cfg.title || "Cybersecurity Maturity Assessment")}</h1>
+      <div class="sub">${esc(cfg.sub || d.fwName)}</div>
+      <div class="meta">
+        <div><span class="dt">Client</span>${esc(cfg.client || d.meta.customer || "\u2014")}</div>
+        <div><span class="dt">Framework</span>${esc(d.fwName)}</div>
+        <div><span class="dt">Prepared by</span>${esc(cfg.author || d.meta.assessor || "\u2014")}</div>
+        <div><span class="dt">Date</span>${esc(fmtDate(cfg.date || d.meta.date))}</div>
+        ${cfg.ref ? `<div><span class="dt">Reference</span>${esc(cfg.ref)}</div>` : ""}
+        ${cfg.ver ? `<div><span class="dt">Version</span>${esc(cfg.ver)}</div>` : ""}
+      </div>
+      ${cfg.cls ? `<div class="cls">${esc(cfg.cls)}</div>` : ""}
+    </section>`);
+  }
+
+  // ---- executive summary
+  if($("#sSummary").checked){
+    add("Executive summary", `
+      <div class="kpis">
+        <div class="kpi"><b>${n2(d.overall)}</b><span>Overall maturity</span></div>
+        <div class="kpi"><b>${n2(d.policy)}</b><span>Policy</span></div>
+        <div class="kpi"><b>${n2(d.impl)}</b><span>Implementation</span></div>
+        <div class="kpi"><b style="color:${(d.overall??0)>=(d.goalAvg??0)?"var(--ok)":"var(--gap)"}">${sgn(d.overall!=null&&d.goalAvg!=null?d.overall-d.goalAvg:null)}</b><span>Gap to target</span></div>
+      </div>
+      <p>${para(cfg.summary || "")}</p>`);
+  }
+
+  // ---- scope and approach
+  if($("#sApproach").checked){
+    add("Scope and approach", `
+      <h4>Scope</h4>
+      <p>${para(cfg.scope || d.meta.scope || "Not stated.")}</p>
+      <h4>Approach</h4>
+      <p>Each ${esc((d.labels.item||"item").toLowerCase())} in ${esc(d.fwName)} was assessed twice: once for
+      <strong>policy maturity</strong> \u2014 whether the expectation is documented, approved, current and
+      communicated \u2014 and once for <strong>implementation maturity</strong> \u2014 whether it is actually
+      operating, evidenced and covering the full scope. The score shown for each item is the mean of the two.</p>
+      <p>Target maturity is set per ${esc(d.labels.group.toLowerCase())} and agreed with the client. The gap
+      between measured and target maturity determines the priority of each recommendation.</p>
+      <h4>Maturity scale</h4>
+      <table class="scale"><thead><tr><th class="num">Level</th><th>Definition</th><th>Meaning</th></tr></thead>
+        <tbody>${d.levels.map(l=>`<tr><td>${l.v}</td><td><strong>${esc(l.l)}</strong></td>
+          <td>${esc(l.d)}</td></tr>`).join("")}</tbody></table>
+      <h4>Priority bands</h4>
+      <table><thead><tr><th>Band</th><th>Meaning</th></tr></thead><tbody>
+        ${d.priority.map(p=>`<tr><td><span class="pill ${p.k}">${p.k}</span> ${esc(p.l)}</td>
+          <td>${esc(p.d)}</td></tr>`).join("")}</tbody></table>`);
+  }
+
+  // ---- maturity overview
+  if($("#sOverview").checked){
+    const charts = $("#sCharts").checked ? `
+      <div class="charts">
+        <div class="chart"><h4>Maturity profile</h4>
+          <p>Measured score against the target ring.</p>${radar()}
+          <div class="legend"><span><i style="background:#1F4FD8;opacity:.75"></i>Measured</span>
+            <span><i style="background:#3A4353"></i>Target</span></div></div>
+        <div class="chart"><h4>Policy against implementation</h4>
+          <p>Where documentation runs ahead of practice, or the reverse.</p>
+          ${hbars(d.groups.map(g=>({label:g.id, policy:g.policy, impl:g.impl, score:g.score, goal:g.goal})), 336)}
+          <div class="legend"><span><i style="background:#5B7FE8"></i>Policy</span>
+            <span><i style="background:#12324F"></i>Implementation</span>
+            <span><i style="background:#3A4353;height:2px;margin-bottom:3px"></i>Target</span></div></div>
+      </div>` : "";
+    add(`Maturity overview`, charts + `
+      <h4>${esc(d.labels.group)} summary</h4>
+      <table><thead><tr><th>${esc(d.labels.group)}</th><th class="num">Assessed</th>
+        <th class="num">Policy</th><th class="num">Impl.</th><th class="num">Score</th>
+        <th class="num">Target</th><th class="num">Gap</th><th>Progress</th></tr></thead><tbody>
+        ${d.groups.map(g=>{
+          const pct = g.score==null?0:Math.min(100, g.score/Math.max(g.goal,.01)*100);
+          return `<tr><td><strong>${esc(g.id)}</strong> ${esc(g.name)}</td>
+          <td class="num">${g.done}/${g.total}</td><td class="num">${n2(g.policy)}</td>
+          <td class="num">${n2(g.impl)}</td><td class="num"><strong>${n2(g.score)}</strong></td>
+          <td class="num">${g.goal}</td>
+          <td class="num ${g.gap==null?"":g.gap>=0?"gap-ok":"gap-neg"}">${sgn(g.gap)}</td>
+          <td><span class="minibar"><i style="width:${pct}%;background:${g.gap!=null&&g.gap>=0?"var(--ok)":"var(--measured)"}"></i></span></td></tr>`;
+        }).join("")}
+        <tr class="tot"><td>All ${esc(d.labels.groups.toLowerCase())}</td>
+          <td class="num">${d.assessed}/${d.items.length}</td><td class="num">${n2(d.policy)}</td>
+          <td class="num">${n2(d.impl)}</td><td class="num">${n2(d.overall)}</td>
+          <td class="num">${n2(d.goalAvg)}</td>
+          <td class="num ${(d.overall??0)>=(d.goalAvg??0)?"gap-ok":"gap-neg"}">${sgn(d.overall!=null&&d.goalAvg!=null?d.overall-d.goalAvg:null)}</td>
+          <td></td></tr>
+      </tbody></table>`);
+  }
+
+  // ---- prioritised actions
+  if($("#sPriority").checked){
+    const list = shown().slice().sort((a,b)=>
+      PRI_ORDER[a.pri.k]-PRI_ORDER[b.pri.k] || (a.gap??0)-(b.gap??0) || String(a.id).localeCompare(String(b.id)));
+    const top = list.filter(i=>i.pri.k==="P1" || i.pri.k==="P2");
+    add("Prioritised actions", `
+      ${$("#sCharts").checked ? `<div class="chart" style="max-width:360px"><h4>Findings by priority</h4>
+        <p>Across all ${d.items.length} assessed items.</p>${priBar()}</div>` : ""}
+      <h4>Critical and high priority actions${top.length?` \u2014 ${top.length}`:""}</h4>
+      ${top.length ? `<table><thead><tr><th>Pri</th><th>Ref</th><th>Action</th>
+        <th class="num">Score</th><th class="num">Target</th><th>Effort</th></tr></thead><tbody>
+        ${top.map(i=>`<tr>
+          <td><span class="pill ${i.pri.k}">${i.pri.k}</span></td>
+          <td class="mono" style="font-size:11.5px;white-space:nowrap">${esc(i.id)}</td>
+          <td>${esc(trim(i.rec, 260))}</td>
+          <td class="num">${n2(i.score)}</td><td class="num">${i.goal}</td>
+          <td><span class="eff">${esc(i.eff)}</span></td></tr>`).join("")}
+        </tbody></table>`
+        : `<div class="empty">No critical or high priority findings within the current filters.</div>`}`);
+  }
+
+  // ---- detailed findings
+  if($("#sFindings").checked){
+    const vis = shown();
+    let body = "";
+    if(!vis.length){
+      body = `<div class="empty">No findings match the selected filters.</div>`;
+    } else {
+      d.groups.forEach(g=>{
+        const gi = vis.filter(i=>i.group === g.id);
+        if(!gi.length) return;
+        body += `<div class="grouphd"><div class="gid">${esc(g.id)}</div>
+          <h3>${esc(g.name)}</h3>
+          ${g.desc ? `<p class="gdesc">${esc(g.desc)}</p>` : ""}
+          <div class="gstat">Score <strong>${n2(g.score)}</strong> against a target of ${g.goal}
+            \u00b7 ${gi.length} of ${g.total} ${(d.labels.item||"item").toLowerCase()}s shown</div></div>`;
+        g.sections.forEach(s=>{
+          const si = gi.filter(i=>i.section === s.id);
+          if(!si.length) return;
+          body += `<div class="sectionhd">${esc(s.id)} \u00b7 ${esc(s.name)}</div>`;
+          body += si.map(finding).join("");
+        });
+        const loose = gi.filter(i=>!g.sections.some(s=>s.id === i.section));
+        if(loose.length) body += loose.map(finding).join("");
+      });
+    }
+    add("Detailed findings", body);
+  }
+
+  // ---- appendix
+  if($("#sAppendix").checked){
+    add("Appendix \u2014 complete scores", `
+      <p class="summary-note">Every ${esc((d.labels.item||"item").toLowerCase())} in scope, including those
+      excluded from the detailed findings by the report filters.</p>
+      <table><thead><tr><th>Ref</th><th>${esc(d.labels.group)}</th><th>Outcome</th>
+        <th class="num">Pol.</th><th class="num">Impl.</th><th class="num">Score</th>
+        <th class="num">Target</th><th class="num">Gap</th><th>Pri</th></tr></thead><tbody>
+        ${d.items.map(i=>`<tr>
+          <td class="mono" style="font-size:11px;white-space:nowrap">${esc(i.id)}</td>
+          <td class="mono" style="font-size:11px">${esc(i.group)}</td>
+          <td style="font-size:11.5px">${esc(trim(i.q, 110))}</td>
+          <td class="num">${i.policy ?? "\u2013"}</td><td class="num">${i.impl ?? "\u2013"}</td>
+          <td class="num">${n2(i.score)}</td><td class="num">${i.goal}</td>
+          <td class="num ${i.gap==null?"":i.gap>=0?"gap-ok":"gap-neg"}">${sgn(i.gap)}</td>
+          <td><span class="pill ${i.pri.k}">${i.pri.k}</span></td></tr>`).join("")}
+      </tbody></table>`);
+  }
+
+  // ---- contents (built last, inserted after the cover)
+  if($("#sToc").checked && nums.length){
+    const toc = `<section class="page"><div class="sechd"><div class="num">\u2014</div>
+      <h2 class="ttl">Contents</h2></div>
+      <div class="toc">${nums.map(([i,t])=>`<div><span class="n">${i}</span><span>${esc(t)}</span></div>`).join("")}</div>
+      </section>`;
+    const at = $("#sCover").checked ? 1 : 0;
+    out.splice(at, 0, toc);
+  }
+
+  $("#report").innerHTML = out.join("");
+  const img = $("#report img[data-logo]");
+  if(img) img.addEventListener("error", ()=>{
+    img.insertAdjacentHTML("afterend", '<div class="logo-sp"></div>');
+    img.remove();
+  });
+  $("#filtCount").textContent = `${shown().length} of ${d.items.length} items pass the filters`;
+}
+
+function trim(s, n){ s = String(s||""); return s.length > n ? s.slice(0, n-1).trim() + "\u2026" : s; }
+
+function finding(i){
+  const showRec = $("#sRecs").checked && i.rec;
+  return `<div class="finding">
+    <div class="finding-hd">
+      <span class="ref">${esc(i.id)}</span>
+      <span class="q">${esc(i.q)}</span>
+      <span class="scores">
+        <span class="pill ${i.pri.k}">${i.pri.k}</span>
+        <span class="eff">${esc(i.eff)}</span><br>
+        P ${i.policy ?? "\u2013"} / I ${i.impl ?? "\u2013"} \u00b7 <b>${n2(i.score)}</b> / ${i.goal}
+      </span>
+    </div>
+    <div class="finding-bd">
+      <div class="fblock"><div class="lbl">Policy findings</div>
+        <p>${i.pn.trim() ? para(i.pn) : "<span style='color:var(--muted)'>No policy findings recorded.</span>"}</p></div>
+      <div class="fblock"><div class="lbl">Implementation findings</div>
+        <p>${i.in.trim() ? para(i.in) : "<span style='color:var(--muted)'>No implementation findings recorded.</span>"}</p></div>
+      ${showRec ? `<div class="rec"><div class="lbl">Recommendation${i.recSrc==="tailored"?"":" (template)"}</div>
+        <p>${para(i.rec)}</p></div>` : ""}
+      ${i.refs.length ? `<div class="refs">${esc(DATA.refsName || "Cross-reference")}: ${esc(i.refs.join(", "))}</div>` : ""}
+    </div>
+  </div>`;
+}
+
+/* ------------------------------------------------------- framework library */
+/* Same convention as the assessment app: frameworks live in ./frameworks/ with an
+   index.json manifest. When a raw assessment names its framework we fetch it
+   automatically, so the usual case is a single drag and drop. */
+const FW_DIR = "frameworks/";
+const FW_KNOWN = ["csf","cis","iso27001","dora","nis2"];
+let LIBRARY = null;   // null = not looked yet
+
+async function getJson(url){
+  const r = await fetch(url, {cache:"no-store"});
+  if(!r.ok) throw new Error(r.status);
+  return r.json();
+}
+async function library(){
+  if(LIBRARY) return LIBRARY;
+  LIBRARY = [];
+  if(location.protocol === "file:") return LIBRARY;
+  try{
+    const m = await getJson(FW_DIR + "index.json");
+    const list = Array.isArray(m) ? m : (m.frameworks || []);
+    LIBRARY = list.filter(f=>f && safeName(f.file)).map(f=>({
+      id: String(f.id || f.file.replace(/^framework-|\.json$/g, "")), file: safeName(f.file) }));
+  }catch(_){
+    LIBRARY = FW_KNOWN.map(id=>({id, file:`framework-${id}.json`}));
+  }
+  return LIBRARY;
+}
+async function fetchFramework(id){
+  const clean = safeName(id);
+  if(!clean) throw new Error("bad framework id");
+  const lib = await library();
+  const hit = lib.find(f=>f.id === id) || {file:`framework-${clean}.json`};
+  if(!safeName(hit.file)) throw new Error("bad framework file");
+  return getJson(FW_DIR + hit.file);
+}
+
+/* ---------------------------------------------------------------- theme */
+/* Shared with the assessment tool through a cookie scoped to this folder. The dark
+   theme covers the tool chrome only — .stage keeps the light palette so the report
+   preview matches what prints. */
+function themeCookiePath(){
+  const p = location.pathname;
+  return p.slice(0, p.lastIndexOf("/") + 1) || "/";
+}
+function readTheme(){
+  const m = document.cookie.match(/(?:^|;\s*)mat_theme=(dark|light)/);
+  return m ? m[1] : null;
+}
+function saveTheme(v){
+  try{
+    const secure = location.protocol === "https:" ? "; Secure" : "";
+    document.cookie = `mat_theme=${v}; path=${themeCookiePath()}; max-age=31536000; SameSite=Lax${secure}`;
+    return readTheme() === v;
+  }catch(_){ return false; }
+}
+function applyTheme(v){
+  document.documentElement.setAttribute("data-theme", v);
+  const b = $("#themeBtn");
+  if(b){
+    b.setAttribute("aria-pressed", String(v === "dark"));
+    b.title = v === "dark" ? "Switch to light theme" : "Switch to dark theme";
+  }
+}
+$("#themeBtn").addEventListener("click", ()=>{
+  const next = document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark";
+  applyTheme(next);
+  if(!saveTheme(next))
+    toast("Theme changed for this session \u2014 saving it needs the page served over http");
+});
+applyTheme(readTheme() || "dark");
+
+/* ---------------------------------------------------------------- wiring */
+let toastT;
+function toast(m){ const t=$("#toast"); t.textContent=m; t.classList.add("on");
+  clearTimeout(toastT); toastT=setTimeout(()=>t.classList.remove("on"), 2200); }
+
+function readFile(file, cb){
+  const fr = new FileReader();
+  fr.onload = () => { try{ cb(JSON.parse(fr.result)); }
+                      catch(_){ alert("That file isn't valid JSON."); } };
+  fr.readAsText(file);
+}
+
+function ingest(json){
+  if(json && json.schema === 3 && json.groups && json.items){ rawFw = json; }
+  else if(json && (json.responses || json.report)){ rawAssess = json; autoTried = null; }
+  else if(json && json.__reportConfig){ applyCfg(json); render(); return; }
+  else return alert("That doesn't look like an assessment export or a framework file.");
+  build();
+}
+
+let autoTried = null;
+function build(){
+  if(!rawAssess){ status(); return; }
+  const r = resolve(rawAssess, rawFw);
+  if(r.error === "needFramework"){
+    DATA = null;
+    const want = rawAssess.frameworkId || (rawAssess.meta && rawAssess.meta.frameworkId);
+    if(want && autoTried !== want){
+      autoTried = want;
+      status(`Fetching the ${want} framework from ./frameworks\u2026`);
+      fetchFramework(want).then(j=>{
+        if(j && j.schema === 3){ rawFw = j; build(); toast(`Framework loaded from ./frameworks`); }
+        else needFw(want);
+      }).catch(()=>needFw(want));
+      return;
+    }
+    needFw(want);
+    return;
+  }
+  if(r.error === "mismatch"){
+    DATA = null; status(`Framework mismatch: the assessment was saved against "${r.want}" but "${r.got}" was loaded.`);
+    return;
+  }
+  DATA = r;
+  status();
+  firstRun();
+  render();
+}
+
+function needFw(want){
+  status(`This assessment doesn't carry a resolved report, so its framework file is needed too`
+    + (want ? ` \u2014 framework-${want}.json` : "")
+    + `. Put it in a ./frameworks folder beside this page, or load it with the Framework button.`);
+}
+
+function status(warn){
+  let h = "";
+  if(rawAssess) h += `<div class="loaded"><b>${esc((rawAssess.meta&&rawAssess.meta.customer)||"Assessment")}</b>
+    ${esc((rawAssess.meta&&rawAssess.meta.framework)||rawAssess.frameworkId||"")}
+    \u00b7 ${Object.keys(rawAssess.responses||{}).length || (rawAssess.report||[]).length} items</div>`;
+  if(rawFw) h += `<div class="loaded"><b>${esc(rawFw.name)}</b>${esc(rawFw.id)} v${esc(rawFw.version)}</div>`;
+  if(warn) h += `<div class="warnbox">${esc(warn)}</div>`;
+  $("#loadState").innerHTML = h;
+  $("#drop").hidden = !!DATA;
+}
+
+let seeded = {};   // what each field was auto-filled with, so untouched fields can refresh
+function firstRun(){
+  ["#cfgPanel","#summaryPanel","#filterPanel","#sectionPanel","#exportPanel"]
+    .forEach(s=>$(s).hidden = false);
+  // priority filter buttons follow the framework's own bands; only rebuilt when the
+  // bands actually change, so a loaded settings file or a manual selection survives
+  // reloading the assessment or correcting the framework
+  const keys = DATA.priority.map(p=>p.k).concat(["NA"]);
+  const have = $$("#segPri button").map(b=>b.dataset.p);
+  if(keys.join() !== have.join()){
+    $("#segPri").innerHTML = keys.map(k=>`<button data-p="${k}" aria-pressed="true">${k}</button>`).join("");
+    filt.pri.clear(); keys.forEach(k=>filt.pri.add(k));
+  }
+  const m = DATA.meta;
+  // Re-seed anything the user hasn't touched, so loading a second assessment updates
+  // the cover instead of leaving the previous client's details on it. A field the
+  // user has edited (its value differs from what we last seeded) is left alone.
+  const fresh = {
+    title: `${DATA.short || DATA.fwName} Maturity Assessment`,
+    sub: DATA.fwName,
+    client: m.customer || "",
+    author: m.assessor || "",
+    date: m.date || new Date().toISOString().slice(0,10),
+    scope: m.scope || "",
+    summary: draftSummary()
+  };
+  Object.keys(fresh).forEach(k=>{
+    const untouched = cfg[k] === undefined || cfg[k] === "" || cfg[k] === seeded[k];
+    if(untouched) cfg[k] = fresh[k];
+    seeded[k] = fresh[k];
+  });
+  if(cfg.logo === undefined) cfg.logo = "";
+  if(cfg.ref === undefined) cfg.ref = "";
+  if(cfg.ver === undefined || cfg.ver === "") cfg.ver = "1.0";
+  if(cfg.cls === undefined) cfg.cls = "Confidential";
+  syncCfg();
+}
+
+function syncCfg(){
+  $("#cTitle").value = cfg.title; $("#cSub").value = cfg.sub; $("#cClient").value = cfg.client;
+  $("#cLogo").value = cfg.logo; $("#cAuthor").value = cfg.author; $("#cDate").value = cfg.date;
+  $("#cRef").value = cfg.ref; $("#cVer").value = cfg.ver; $("#cClass").value = cfg.cls;
+  $("#cSummary").value = cfg.summary; $("#cScope").value = cfg.scope;
+}
+const CFG_MAP = {cTitle:"title", cSub:"sub", cClient:"client", cLogo:"logo", cAuthor:"author",
+                 cDate:"date", cRef:"ref", cVer:"ver", cClass:"cls", cSummary:"summary", cScope:"scope"};
+Object.keys(CFG_MAP).forEach(id=>{
+  const el = document.getElementById(id);
+  el.addEventListener("input", ()=>{ cfg[CFG_MAP[id]] = el.value; render(); });
+  el.addEventListener("change", ()=>{ cfg[CFG_MAP[id]] = el.value; render(); });
+});
+
+$("#btnDraft").onclick = ()=>{ if(!DATA) return; cfg.summary = draftSummary(); syncCfg(); render();
+  toast("Summary redrafted from the data"); };
+
+function segToggle(sel, set, attr){
+  $(sel).addEventListener("click", e=>{
+    const b = e.target.closest("button"); if(!b) return;
+    const v = b.dataset[attr], on = b.getAttribute("aria-pressed") === "true";
+    b.setAttribute("aria-pressed", String(!on));
+    if(on) set.delete(v); else set.add(v);
+    render();
+  });
+}
+segToggle("#segScore", filt.score, "s");
+segToggle("#segPri", filt.pri, "p");
+segToggle("#segEff", filt.eff, "e");
+$("#fOnlyNotes").onchange = e=>{ filt.onlyNotes = e.target.checked; render(); };
+$("#fOnlyBelow").onchange = e=>{ filt.onlyBelow = e.target.checked; render(); };
+$$("#sectionPanel input").forEach(c=>c.addEventListener("change", render));
+
+$("#btnAssess").onclick = ()=>$("#fileAssess").click();
+$("#btnAssess2").onclick = ()=>$("#fileAssess").click();
+$("#btnFw").onclick = ()=>$("#fileFw").click();
+$("#btnLoadCfg").onclick = ()=>$("#fileCfg").click();
+["fileAssess","fileFw","fileCfg"].forEach(id=>{
+  document.getElementById(id).onchange = e=>{
+    if(e.target.files[0]) readFile(e.target.files[0], ingest);
+    e.target.value = "";
+  };
+});
+
+const drop = $("#drop");
+["dragenter","dragover"].forEach(ev=>document.addEventListener(ev, e=>{
+  e.preventDefault(); if(!DATA) drop.classList.add("over"); }));
+["dragleave","drop"].forEach(ev=>document.addEventListener(ev, e=>{
+  e.preventDefault(); drop.classList.remove("over"); }));
+document.addEventListener("drop", e=>{
+  const f = e.dataTransfer && e.dataTransfer.files[0];
+  if(f) readFile(f, ingest);
+});
+
+$("#btnPrint").onclick = ()=>window.print();
+
+function download(name, text, type){
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(new Blob([text], {type}));
+  a.download = name; a.click();
+  setTimeout(()=>{ try{ URL.revokeObjectURL(a.href); }catch(_){} }, 1000);
+}
+const slug = () => (cfg.client || "report").replace(/[^a-z0-9]+/gi,"-").toLowerCase().replace(/^-|-$/g,"");
+
+$("#btnHtml").onclick = ()=>{
+  if(!DATA) return;
+  // read the <style> element directly rather than serialising cssRules — that keeps
+  // @page and @media print intact and works the same in every browser
+  const css = document.querySelector("style").textContent;
+  // no data-theme attribute: the exported document always renders light
+  const html = `<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>${esc(cfg.title)} \u2014 ${esc(cfg.client)}</title>
+<style>${css}
+aside,.noprint,.toast{display:none!important}
+.shell{display:block}main{padding:26px 20px 60px}
+</style></head><body><div class="shell"><main><div class="stage">
+<div class="report">${$("#report").innerHTML}</div></div></main></div></body></html>`;
+  download(`${slug()}-report.html`, html, "text/html");
+  toast("Standalone HTML saved");
+};
+
+$("#btnCfg").onclick = ()=>{
+  download(`${slug()}-report-settings.json`, JSON.stringify({
+    __reportConfig: true, cfg,
+    filters: {score:[...filt.score], pri:[...filt.pri], eff:[...filt.eff],
+              onlyNotes:filt.onlyNotes, onlyBelow:filt.onlyBelow},
+    sections: Object.fromEntries($$("#sectionPanel input").map(c=>[c.id, c.checked]))
+  }, null, 2), "application/json");
+  toast("Settings saved");
+};
+
+function applyCfg(j){
+  mergeSafe(cfg, j.cfg);
+  if(j.filters){
+    const reset = (set, vals) => { set.clear(); (vals||[]).forEach(v=>set.add(v)); };
+    reset(filt.score, j.filters.score); reset(filt.pri, j.filters.pri); reset(filt.eff, j.filters.eff);
+    filt.onlyNotes = !!j.filters.onlyNotes; filt.onlyBelow = !!j.filters.onlyBelow;
+    $("#fOnlyNotes").checked = filt.onlyNotes; $("#fOnlyBelow").checked = filt.onlyBelow;
+    $$("#segScore button").forEach(b=>b.setAttribute("aria-pressed", String(filt.score.has(b.dataset.s))));
+    $$("#segPri button").forEach(b=>b.setAttribute("aria-pressed", String(filt.pri.has(b.dataset.p))));
+    $$("#segEff button").forEach(b=>b.setAttribute("aria-pressed", String(filt.eff.has(b.dataset.e))));
+  }
+  seeded = {};   // settings loaded on purpose: never overwrite them from the next file
+  if(j.sections) Object.entries(j.sections).forEach(([id,v])=>{
+    const el = document.getElementById(id); if(el) el.checked = v; });
+  syncCfg();
+  toast("Settings loaded");
+}
+
+status();
+</script>
+</body>
+</html>

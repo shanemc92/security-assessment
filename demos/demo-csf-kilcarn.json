@@ -1,0 +1,663 @@
+{
+  "schema": 2,
+  "meta": {
+    "customer": "Kilcarn Foods Ltd",
+    "assessor": "M. Kavanagh",
+    "date": "2026-06-18",
+    "scope": "Corporate IT, Microsoft 365 and the three site networks. Excludes plant OT/SCADA and the cold chain telemetry platform. Assessed against NIST CSF 2.0 only; the CIS safeguard detail is held in the combined assessment.",
+    "frameworkId": "csf",
+    "framework": "NIST Cybersecurity Framework 2.0"
+  },
+  "goals": {
+    "GV": 3,
+    "ID": 3,
+    "PR": 4,
+    "DE": 3,
+    "RS": 3,
+    "RC": 3
+  },
+  "frameworkId": "csf",
+  "responses": {
+    "GV.OC-01": {
+      "p": 2,
+      "i": 2,
+      "pn": "Mission and objectives are stated in the group business plan; the IT/security policy references it in the introduction but does not translate it into risk priorities.",
+      "in": "Security work is driven by audit findings and customer questionnaires rather than by mission impact. No documented link from production continuity to control selection."
+    },
+    "GV.OC-02": {
+      "p": 2,
+      "i": 1,
+      "pn": "Stakeholder expectations captured only where a customer contract demands it (two retail accounts have security schedules).",
+      "in": "No stakeholder register. Retail customer security requirements are handled ad hoc by the account team and not routed to IT."
+    },
+    "GV.OC-03": {
+      "p": 3,
+      "i": 2,
+      "pn": "Legal and regulatory register maintained by the compliance manager; covers GDPR, food safety and, since March, NIS2 as an important entity.",
+      "in": "GDPR obligations are operationalised (DPIA process, ROPA). NIS2 obligations identified in a gap paper but not yet assigned owners or dates."
+    },
+    "GV.OC-04": {
+      "p": 3,
+      "i": 2,
+      "pn": "Business impact analysis completed in 2024 identifies order-to-dispatch, cold chain telemetry and payroll as critical.",
+      "in": "BIA outputs feed the DR plan but have not been revisited since the Little Island site was integrated. Cold chain telemetry is out of this assessment's scope."
+    },
+    "GV.OC-05": {
+      "p": 2,
+      "i": 2,
+      "pn": "Dependency list exists for IT services (M365, Azure, the ERP host and the EDI broker) inside the DR plan.",
+      "in": "Dependencies are known to the IT team but not mapped to business functions, and single points of failure are not tracked anywhere formal."
+    },
+    "GV.RM-01": {
+      "p": 1,
+      "i": 1,
+      "pn": "No documented risk management objectives. Security objectives appear only as line items in the annual IT plan.",
+      "in": "Objectives are effectively 'pass the customer audits'. Nothing measurable is agreed with the board."
+    },
+    "GV.RM-02": {
+      "p": 0,
+      "i": 0,
+      "pn": "No risk appetite or tolerance statement exists at any level.",
+      "in": "Risk acceptance happens verbally in the IT steering meeting with no threshold, no record and no expiry.",
+      "rec": "Draft a one-page risk appetite statement for approval by the Operations Director at the next IT steering meeting, expressed in terms the business already uses (production downtime hours, order-to-dispatch disruption, personal data exposure). This unblocks GV.RM-04 and gives the steering committee a basis for recording risk acceptance with an expiry date."
+    },
+    "GV.RM-03": {
+      "p": 1,
+      "i": 1,
+      "pn": "Enterprise risk register is maintained by finance and contains one line for 'IT/cyber'.",
+      "in": "Cyber risks are not aggregated with enterprise risk. The single register entry has not been updated in 14 months."
+    },
+    "GV.RM-04": {
+      "p": 1,
+      "i": 1,
+      "pn": "No documented risk response options. Cyber insurance was renewed in January without a documented risk basis.",
+      "in": "Response decisions are made case by case by the IT manager. Shared-responsibility boundaries for Azure and the ERP host are undocumented."
+    },
+    "GV.RM-05": {
+      "p": 2,
+      "i": 2,
+      "pn": "IT steering committee terms of reference name security as a standing agenda item.",
+      "in": "Steering meets monthly and security is discussed, but there is no upward escalation path to the board and no route for suppliers to raise risk."
+    },
+    "GV.RM-06": {
+      "p": 1,
+      "i": 1,
+      "pn": "No standardised risk calculation method. The one register entry uses an unlabelled high/medium/low.",
+      "in": "Qualys TruRisk scoring is used for vulnerabilities, which is consistent, but nothing equivalent exists for non-technical risk."
+    },
+    "GV.RM-07": {
+      "p": 0,
+      "i": 0,
+      "pn": "Positive risk / opportunity is not addressed in any documentation.",
+      "in": "Not performed. Noted as low priority relative to the other Govern gaps."
+    },
+    "GV.RR-01": {
+      "p": 2,
+      "i": 2,
+      "pn": "The Operations Director is named as the accountable executive in the information security policy.",
+      "in": "Leadership engages when customers or auditors ask, and funded the Sophos and Qualys renewals without challenge, but does not set direction or review outcomes."
+    },
+    "GV.RR-02": {
+      "p": 2,
+      "i": 2,
+      "pn": "Policy names an IT Manager, a part-time security lead and a compliance manager. No RACI for security activities.",
+      "in": "Roles are understood inside IT. Outside IT, staff do not know who owns security decisions; three interviewees named the wrong person."
+    },
+    "GV.RR-03": {
+      "p": 2,
+      "i": 1,
+      "pn": "No documented resourcing model. Headcount is agreed annually with no reference to the risk strategy.",
+      "in": "Security is approximately 0.4 FTE of the IT Manager's time plus the MSP retainer. Vulnerability remediation is visibly resource-constrained."
+    },
+    "GV.RR-04": {
+      "p": 3,
+      "i": 3,
+      "pn": "HR policy covers pre-employment screening, the acceptable use policy in the contract of employment, and a documented leavers process.",
+      "in": "Screening and AUP signature are consistently evidenced. Leaver deprovisioning is triggered from the HR system, though the sample showed two accounts disabled 4 and 9 days late."
+    },
+    "GV.PO-01": {
+      "p": 3,
+      "i": 2,
+      "pn": "Information security policy plus eight supporting policies, approved by the Operations Director in 2023. Scope, roles and enforcement statements are all present.",
+      "in": "Policies are published on the intranet and referenced in induction. Content is not consistently reflected in practice \u2014 the remote access policy still describes the retired SSL VPN."
+    },
+    "GV.PO-02": {
+      "p": 2,
+      "i": 1,
+      "pn": "Policy states an annual review cycle.",
+      "in": "Last full review was 22 months ago. No evidence of communication of changes, and no enforcement or exception mechanism."
+    },
+    "GV.OV-01": {
+      "p": 1,
+      "i": 1,
+      "pn": "No documented review of strategy outcomes.",
+      "in": "The IT plan is refreshed annually but is not informed by any measurement of whether prior security work reduced risk."
+    },
+    "GV.OV-02": {
+      "p": 1,
+      "i": 1,
+      "pn": "No process for reviewing whether the strategy still covers organisational requirements.",
+      "in": "The Little Island acquisition (2025) has not triggered any reassessment of the security approach."
+    },
+    "GV.OV-03": {
+      "p": 1,
+      "i": 1,
+      "pn": "No defined security KPIs or metrics.",
+      "in": "Patch compliance and phishing simulation rates are visible in Sophos and M365 but are not reported, trended or acted on as performance measures."
+    },
+    "GV.SC-01": {
+      "p": 1,
+      "i": 0,
+      "pn": "No supply chain risk management programme, strategy or policy. The procurement policy is silent on cybersecurity.",
+      "in": "Not performed. This is the single largest gap in the assessment and is directly relevant to NIS2 Article 21(2)(d).",
+      "rec": "Stand up a supplier assurance programme owned jointly by the compliance manager and procurement, starting with the 11 material IT suppliers already identified during this assessment. Minimum viable version: a one-page security schedule for contracts, a tiered questionnaire, and an annual reassessment date for the four Tier 1 suppliers. This is the single largest NIS2 exposure and should be started before the next audit cycle."
+    },
+    "GV.SC-02": {
+      "p": 1,
+      "i": 1,
+      "pn": "Security responsibilities appear in two of the eleven material supplier contracts reviewed, both driven by the supplier's own paper.",
+      "in": "No standard security schedule. The ERP hosting contract has no security obligations at all."
+    },
+    "GV.SC-03": {
+      "p": 0,
+      "i": 0,
+      "pn": "Supply chain risk is not integrated into any risk management process.",
+      "in": "Not performed."
+    },
+    "GV.SC-04": {
+      "p": 2,
+      "i": 2,
+      "pn": "Finance maintains an approved supplier list with spend-based tiering.",
+      "in": "The list is accurate for spend but does not identify which suppliers touch data or systems. IT built an informal list of 11 material IT suppliers for this assessment."
+    },
+    "GV.SC-05": {
+      "p": 1,
+      "i": 1,
+      "pn": "No standard security requirements exist for inclusion in contracts or tenders.",
+      "in": "Requirements are only raised when a customer flows them down to Kilcarn first."
+    },
+    "GV.SC-06": {
+      "p": 1,
+      "i": 1,
+      "pn": "No due diligence procedure before onboarding a supplier.",
+      "in": "The most recent IT supplier (the EDI broker) was onboarded in April with no security review; the assessor could not locate a SOC 2 report or equivalent."
+    },
+    "GV.SC-07": {
+      "p": 1,
+      "i": 1,
+      "pn": "No documented approach to understanding or monitoring third-party risk over the relationship.",
+      "in": "No supplier reassessment, no monitoring of supplier security notices. The 2025 EDI broker outage was handled as an availability issue only."
+    },
+    "GV.SC-08": {
+      "p": 1,
+      "i": 0,
+      "pn": "The incident response plan does not reference suppliers or define their role.",
+      "in": "Not performed. The MSP has no contractual incident obligations and no agreed contact path outside the service desk."
+    },
+    "GV.SC-09": {
+      "p": 0,
+      "i": 0,
+      "pn": "Supply chain practices are not integrated into product or service lifecycle management.",
+      "in": "Not performed."
+    },
+    "GV.SC-10": {
+      "p": 1,
+      "i": 1,
+      "pn": "No offboarding provisions for suppliers in policy or contract.",
+      "in": "Data return and account termination are handled informally. Two dormant accounts belonging to a supplier disengaged in 2024 were still enabled at the time of testing."
+    },
+    "ID.AM-01": {
+      "p": 3,
+      "i": 2,
+      "pn": "Asset management procedure defines ownership, tagging and a quarterly reconciliation.",
+      "in": "Intune and vSphere give good coverage of laptops and VMs. Reconciliation is not actually quarterly, and 34 network devices and the Little Island server room are tracked only in a spreadsheet."
+    },
+    "ID.AM-02": {
+      "p": 3,
+      "i": 2,
+      "pn": "Software asset procedure covers approval, licensing and removal.",
+      "in": "Intune discovery and Sophos give a reliable list for managed endpoints. Server-side software is not inventoried centrally; two out-of-support applications were found on the ERP host."
+    },
+    "ID.AM-03": {
+      "p": 2,
+      "i": 2,
+      "pn": "Network documentation standard exists as part of the change process.",
+      "in": "Core diagrams exist and are broadly accurate for HQ. Little Island was integrated in 2025 and the diagram has not been updated. No data-flow diagrams."
+    },
+    "ID.AM-04": {
+      "p": 1,
+      "i": 1,
+      "pn": "No requirement to inventory supplier-provided services.",
+      "in": "The 11-supplier list built for this assessment is the only artefact. Shadow SaaS is not discovered."
+    },
+    "ID.AM-05": {
+      "p": 2,
+      "i": 2,
+      "pn": "Criticality tiers defined in the BIA (Tier 1 to Tier 3).",
+      "in": "Tiering is applied to the eight named business systems but not to the underlying assets, so patch and backup priority is not driven by criticality."
+    },
+    "ID.AM-07": {
+      "p": 1,
+      "i": 1,
+      "pn": "Data inventory is required by the GDPR policy.",
+      "in": "The ROPA covers personal data reasonably well. Commercially sensitive data (recipes, pricing, retail forecasts) is not inventoried or classified at all."
+    },
+    "ID.AM-08": {
+      "p": 2,
+      "i": 2,
+      "pn": "Lifecycle is covered for endpoints in the asset procedure; nothing equivalent for servers, network or SaaS.",
+      "in": "Endpoint refresh runs on a four-year cycle with certified disposal. Server and appliance end-of-life is reactive \u2014 two switches are past vendor end-of-support."
+    },
+    "ID.RA-01": {
+      "p": 4,
+      "i": 4,
+      "pn": "Vulnerability management procedure defines scan cadence, TruRisk-based prioritisation and remediation SLAs by severity.",
+      "in": "Qualys VMDR runs authenticated scans weekly across servers and endpoints and daily on the external perimeter. Findings are tracked to closure in the IT ticket queue. Strongest control in the assessment."
+    },
+    "ID.RA-02": {
+      "p": 2,
+      "i": 2,
+      "pn": "No documented threat intelligence requirement.",
+      "in": "The IT Manager subscribes to NCSC-IE and Sophos advisories and acts on them. Consumption is personal rather than institutional and stops when he is on leave."
+    },
+    "ID.RA-03": {
+      "p": 1,
+      "i": 1,
+      "pn": "No threat identification process.",
+      "in": "Threats are not recorded anywhere. No threat modelling for the ERP or EDI integration."
+    },
+    "ID.RA-04": {
+      "p": 1,
+      "i": 1,
+      "pn": "No impact and likelihood methodology outside the vulnerability process.",
+      "in": "TruRisk covers technical exposure well; business impact of non-technical threats is not assessed."
+    },
+    "ID.RA-05": {
+      "p": 1,
+      "i": 1,
+      "pn": "No inherent/residual risk model.",
+      "in": "Prioritisation is effectively CVSS/TruRisk driven, which under-weights process and supplier risk."
+    },
+    "ID.RA-06": {
+      "p": 2,
+      "i": 2,
+      "pn": "Remediation SLAs are documented for vulnerabilities only.",
+      "in": "Vulnerability responses are tracked well. Risk responses arising from audits or incidents are captured in meeting minutes and frequently lost."
+    },
+    "ID.RA-07": {
+      "p": 3,
+      "i": 3,
+      "pn": "Change management procedure requires a risk statement, approval and rollback plan for standard and major changes.",
+      "in": "CAB meets weekly and records are complete for infrastructure change. Emergency changes are retrospectively documented; three of eight sampled were missing the risk assessment. Exceptions have no expiry date."
+    },
+    "ID.RA-08": {
+      "p": 1,
+      "i": 0,
+      "pn": "No vulnerability disclosure policy and no published contact.",
+      "in": "Not performed. security@ alias does not exist; a 2025 researcher report reached the general info@ mailbox and sat for 11 days."
+    },
+    "ID.RA-09": {
+      "p": 1,
+      "i": 1,
+      "pn": "No requirement to verify authenticity or integrity of hardware and software before use.",
+      "in": "Software is generally acquired from vendor portals and Microsoft Store, so practice is reasonable, but hash or signature verification is not performed or evidenced."
+    },
+    "ID.RA-10": {
+      "p": 1,
+      "i": 0,
+      "pn": "No pre-acquisition assessment requirement for critical suppliers.",
+      "in": "Not performed. See GV.SC-06."
+    },
+    "ID.IM-01": {
+      "p": 2,
+      "i": 2,
+      "pn": "Audit and assessment findings are expected to be actioned; no documented improvement process.",
+      "in": "Findings from the 2025 retail customer audit were tracked in a spreadsheet to closure, which shows the capability exists. It is not repeatable or owned."
+    },
+    "ID.IM-02": {
+      "p": 2,
+      "i": 1,
+      "pn": "Testing is required annually by policy (penetration test only).",
+      "in": "External penetration test performed in November 2025; six of the fourteen findings remain open with no dates. No exercises of any kind."
+    },
+    "ID.IM-03": {
+      "p": 1,
+      "i": 1,
+      "pn": "No process for capturing improvements from day-to-day operations.",
+      "in": "Good ideas surface in the weekly IT meeting and are not recorded."
+    },
+    "ID.IM-04": {
+      "p": 2,
+      "i": 2,
+      "pn": "Incident response plan and DR plan both exist and were approved in 2025.",
+      "in": "Plans are documented and stored on SharePoint and in the offline runbook copy. Neither has been exercised, and contact lists still name two leavers."
+    },
+    "PR.AA-01": {
+      "p": 4,
+      "i": 3,
+      "pn": "Identity and access management policy covers user, admin and service account lifecycle, with a documented JML process.",
+      "in": "Entra ID is authoritative and joiner/leaver is HR-triggered and reliable. Service accounts are the weak point: 23 identified, 9 with no named owner and 4 with non-expiring passwords."
+    },
+    "PR.AA-02": {
+      "p": 3,
+      "i": 3,
+      "pn": "Identity proofing requirements are set out in the HR onboarding standard.",
+      "in": "In-person identity verification at induction for site staff, and manager confirmation for remote hires. Contractors follow the same process."
+    },
+    "PR.AA-03": {
+      "p": 4,
+      "i": 4,
+      "pn": "Authentication standard requires MFA for all cloud, remote and administrative access, and prohibits shared accounts.",
+      "in": "Entra Conditional Access enforces MFA for all users with no legacy authentication exceptions remaining. Device compliance is required for M365 access. Sampling found no shared interactive accounts."
+    },
+    "PR.AA-04": {
+      "p": 3,
+      "i": 3,
+      "pn": "SSO and federation requirements documented for new applications.",
+      "in": "SAML/OIDC SSO in place for eight of eleven business applications. The ERP and two smaller tools still hold local credentials."
+    },
+    "PR.AA-05": {
+      "p": 3,
+      "i": 2,
+      "pn": "Access control policy defines least privilege, role-based access and six-monthly recertification.",
+      "in": "RBAC is well implemented in Entra and file services. Recertification has not run since early 2025; the ERP finance role sample showed three users retaining access after moving department."
+    },
+    "PR.AA-06": {
+      "p": 3,
+      "i": 3,
+      "pn": "Physical security procedure covers badge issue, visitor escort and server room access.",
+      "in": "Badge access with individual credentials at all three sites, server rooms on a separate access group. Access list review is annual and was completed; visitor log at Ashbourne is inconsistently completed."
+    },
+    "PR.AT-01": {
+      "p": 3,
+      "i": 3,
+      "pn": "Awareness policy requires induction training and annual refresher for all staff.",
+      "in": "KnowBe4-style annual module plus monthly phishing simulation. Completion is 94% and the click rate has fallen from 18% to 6% over twelve months."
+    },
+    "PR.AT-02": {
+      "p": 2,
+      "i": 2,
+      "pn": "Role-based training is mentioned in policy but not defined for any specific role.",
+      "in": "IT staff receive vendor training on Sophos and vSphere. No security-specific training for privileged users, developers (none in house) or the executive team."
+    },
+    "PR.DS-01": {
+      "p": 3,
+      "i": 3,
+      "pn": "Encryption standard requires full-disk encryption on endpoints and encryption at rest for cloud data.",
+      "in": "BitLocker enforced via Intune with keys escrowed in Entra, 100% compliant on managed devices. SQL TDE is not enabled on the ERP database, which holds pricing and customer data."
+    },
+    "PR.DS-02": {
+      "p": 3,
+      "i": 3,
+      "pn": "Standard requires TLS 1.2 or better for all data in transit and prohibits plaintext protocols.",
+      "in": "External services are TLS 1.2+ and verified in the last external scan. Internal LDAP signing is enforced; one legacy line-of-business web app on the Ashbourne VLAN is still HTTP only."
+    },
+    "PR.DS-10": {
+      "p": 1,
+      "i": 1,
+      "pn": "Data-in-use protection is not addressed in policy.",
+      "in": "No memory protection, enclave or equivalent controls, and none required for this environment. Recorded as a documentation gap rather than a technical one."
+    },
+    "PR.DS-11": {
+      "p": 4,
+      "i": 3,
+      "pn": "Backup standard defines 3-2-1, retention of 35 days operational and 12 months archive, and quarterly restore testing.",
+      "in": "Veeam with immutable repository and offsite copy; jobs are monitored and success rate over the period was 99.4%. Restore testing is file-level only and the last full system restore test was 14 months ago.",
+      "rec": "Reinstate the quarterly restore test and extend it to at least one full system recovery per year \u2014 the ERP host is the obvious candidate given its Tier 1 status. Schedule the first full test alongside the Q3 tabletop so the recovery capability and the response plan are validated together."
+    },
+    "PR.PS-01": {
+      "p": 3,
+      "i": 3,
+      "pn": "Configuration standards documented for Windows 11, Windows Server 2022 and M365, based on CIS Benchmarks Level 1.",
+      "in": "Intune configuration profiles and GPO deliver the baseline for endpoints and domain servers. Drift is not monitored, and the Little Island file server was built manually outside the baseline."
+    },
+    "PR.PS-02": {
+      "p": 4,
+      "i": 3,
+      "pn": "Patch policy sets 14 days for critical, 30 for high, 90 for medium, and requires removal of unsupported software.",
+      "in": "Intune and WSUS deliver OS and Microsoft patching reliably (96% within SLA). Third-party patching is manual and lags \u2014 Qualys shows 41 endpoints with out-of-date Chrome or Adobe Reader past SLA."
+    },
+    "PR.PS-03": {
+      "p": 3,
+      "i": 2,
+      "pn": "Hardware maintenance and disposal covered in the asset procedure with certified destruction.",
+      "in": "Endpoint disposal is evidenced with certificates. Network and server hardware maintenance is reactive; two access switches and the Ashbourne UPS are past end-of-support."
+    },
+    "PR.PS-04": {
+      "p": 3,
+      "i": 2,
+      "pn": "Logging standard defines which events must be generated and a 12-month retention requirement.",
+      "in": "Logs are generated on servers, endpoints, firewalls and M365. Retention is met for M365 (Purview) but firewall logs roll at 30 days and vSphere logs at 14, both short of the standard."
+    },
+    "PR.PS-05": {
+      "p": 3,
+      "i": 3,
+      "pn": "Policy prohibits unauthorised software and requires application control.",
+      "in": "Users are non-admin on all managed endpoints and Sophos application control blocks known unwanted applications. Full allowlisting (WDAC/AppLocker) is not deployed, so unsigned binaries in user-writable paths can still execute."
+    },
+    "PR.PS-06": {
+      "p": 1,
+      "i": 1,
+      "pn": "No secure development policy.",
+      "in": "No in-house software development. Two Power Apps and roughly 40 Power Automate flows are built by the finance team with no review, which is where this gap actually bites."
+    },
+    "PR.IR-01": {
+      "p": 3,
+      "i": 3,
+      "pn": "Network security standard covers segmentation, firewall change control and remote access.",
+      "in": "Sophos XGS firewalls at each site with a documented ruleset, corporate/guest/OT VLAN separation and Entra-authenticated always-on VPN. East-west traffic within the corporate VLAN is unrestricted."
+    },
+    "PR.IR-02": {
+      "p": 3,
+      "i": 3,
+      "pn": "Environmental requirements documented for the HQ and Ashbourne server rooms.",
+      "in": "UPS, HVAC and water detection in place at HQ with monitoring; Ashbourne has UPS and HVAC but no environmental alerting and the UPS is past end-of-support."
+    },
+    "PR.IR-03": {
+      "p": 3,
+      "i": 2,
+      "pn": "Resilience requirements documented in the DR plan with RTO 8 hours and RPO 4 hours for Tier 1 systems.",
+      "in": "vSphere HA and replication to Ashbourne provide the technical capability. Failover has never been tested end-to-end, so the stated RTO is unproven."
+    },
+    "PR.IR-04": {
+      "p": 3,
+      "i": 3,
+      "pn": "Capacity management is part of the infrastructure standard with defined thresholds.",
+      "in": "PRTG monitors storage, compute and bandwidth with alerting at 80%. Capacity is reviewed monthly and forecasting is documented for the next 12 months."
+    },
+    "DE.CM-01": {
+      "p": 2,
+      "i": 2,
+      "pn": "Monitoring standard states that network activity will be monitored; no defined use cases or thresholds.",
+      "in": "Sophos XGS produces IPS and web filtering alerts to the IT mailbox. No netflow collection, no baseline of normal traffic and nothing reviewed out of hours."
+    },
+    "DE.CM-02": {
+      "p": 3,
+      "i": 3,
+      "pn": "Physical monitoring requirements documented in the site security procedure.",
+      "in": "CCTV with 31-day retention and door-forced alarms at all three sites, monitored by the facilities provider. Alerts do not reach IT."
+    },
+    "DE.CM-03": {
+      "p": 2,
+      "i": 1,
+      "pn": "Acceptable use policy reserves the right to monitor; no procedure defines what is monitored or by whom.",
+      "in": "Entra sign-in risk and impossible-travel alerts are enabled and do fire, but nobody is assigned to review them. 62 risky sign-in alerts were unreviewed at the time of testing."
+    },
+    "DE.CM-06": {
+      "p": 1,
+      "i": 1,
+      "pn": "No requirement to monitor external service provider activity.",
+      "in": "The MSP holds Global Administrator and privileged vSphere access. Their activity is not logged to a Kilcarn-controlled destination or reviewed."
+    },
+    "DE.CM-09": {
+      "p": 3,
+      "i": 2,
+      "pn": "Endpoint and server monitoring covered in the monitoring standard.",
+      "in": "Sophos Central EDR is deployed on 98% of managed endpoints and all servers, with detections visible in the console. Triage happens in business hours only, and the mean time to acknowledge over the period was 19 hours."
+    },
+    "DE.AE-02": {
+      "p": 2,
+      "i": 2,
+      "pn": "Analysis expectations are stated in the incident response plan at a high level.",
+      "in": "Analysis is performed competently by the IT Manager when he picks something up. No playbooks, so quality depends entirely on who is on shift."
+    },
+    "DE.AE-03": {
+      "p": 1,
+      "i": 1,
+      "pn": "No requirement to correlate information across sources.",
+      "in": "No SIEM. Firewall, endpoint, identity and M365 signals live in four separate consoles and are only joined manually during an incident."
+    },
+    "DE.AE-04": {
+      "p": 2,
+      "i": 2,
+      "pn": "Impact and scope estimation is referenced in the incident response plan.",
+      "in": "Done informally and reasonably well for the two incidents reviewed, but not recorded in a consistent form."
+    },
+    "DE.AE-06": {
+      "p": 2,
+      "i": 2,
+      "pn": "Plan states that IT and the Operations Director are informed of significant events.",
+      "in": "Alerts reach a shared IT mailbox. There is no on-call rota, so anything raised after 17:30 on Friday is seen Monday morning."
+    },
+    "DE.AE-07": {
+      "p": 2,
+      "i": 1,
+      "pn": "No requirement to integrate threat intelligence into analysis.",
+      "in": "Sophos threat feeds are applied automatically by the product. No manual enrichment, no IOC sweeps against historical data."
+    },
+    "DE.AE-08": {
+      "p": 2,
+      "i": 2,
+      "pn": "Incident declaration criteria are defined in the incident response plan with three severity levels.",
+      "in": "The criteria are sensible and written down, but declaration in practice is a judgement call by whoever is available and has not been consistently applied."
+    },
+    "RS.MA-01": {
+      "p": 3,
+      "i": 2,
+      "pn": "Incident response plan approved March 2025, defines activation, roles and the response lifecycle.",
+      "in": "The plan was followed for the June 2025 business email compromise and worked. Third parties are not part of it \u2014 the MSP and insurer were engaged ad hoc, and the plan has never been exercised."
+    },
+    "RS.MA-02": {
+      "p": 2,
+      "i": 2,
+      "pn": "Triage responsibilities are assigned in the plan to the IT Manager or deputy.",
+      "in": "Triage happens through the service desk queue and is generally sound in hours. No documented triage criteria and no out-of-hours capability."
+    },
+    "RS.MA-03": {
+      "p": 3,
+      "i": 2,
+      "pn": "Severity matrix in the plan defines P1 to P3 with response and update targets.",
+      "in": "The matrix is clear. Of the seven security tickets sampled, four had no severity recorded at all."
+    },
+    "RS.MA-04": {
+      "p": 3,
+      "i": 2,
+      "pn": "Escalation path documented to the Operations Director and, for P1, the managing director.",
+      "in": "The path is understood by IT staff. The 2025 BEC incident reached the Operations Director six hours after detection against a two-hour target."
+    },
+    "RS.MA-05": {
+      "p": 2,
+      "i": 2,
+      "pn": "Recovery initiation criteria are stated briefly in the plan.",
+      "in": "Criteria are vague ('once the threat is contained') and there is no documented sign-off step, so the decision to restore is effectively made by whoever is in the room."
+    },
+    "RS.AN-03": {
+      "p": 2,
+      "i": 2,
+      "pn": "Root cause analysis is required by the plan for P1 and P2 incidents.",
+      "in": "A root cause was established for the BEC (a legacy authentication path, since closed). No RCA exists for the two P2 incidents in the period."
+    },
+    "RS.AN-06": {
+      "p": 1,
+      "i": 1,
+      "pn": "No requirement to record investigative actions or preserve their integrity.",
+      "in": "Investigation notes live in ticket comments and in the IT Manager's OneNote. No timestamped action log, no integrity protection."
+    },
+    "RS.AN-07": {
+      "p": 1,
+      "i": 1,
+      "pn": "No evidence handling or chain of custody procedure.",
+      "in": "Evidence collection is ad hoc. During the BEC, mailbox audit logs were exported to a personal OneDrive folder with no hashing."
+    },
+    "RS.AN-08": {
+      "p": 2,
+      "i": 2,
+      "pn": "Magnitude estimation is mentioned in the plan.",
+      "in": "Estimated during the BEC (14 mailboxes assessed, 2 confirmed accessed) and reported to the DPO, which was appropriate. Not a repeatable method."
+    },
+    "RS.CO-02": {
+      "p": 3,
+      "i": 3,
+      "pn": "Notification requirements documented, including the 72-hour GDPR clock and the NIS2 24-hour early warning.",
+      "in": "The DPO route works and was used correctly in 2025. NIS2 notification steps are written down but no one has walked through them, and the NCSC-IE contact details in the plan are out of date."
+    },
+    "RS.CO-03": {
+      "p": 2,
+      "i": 2,
+      "pn": "Information sharing expectations are stated in the plan.",
+      "in": "Internal sharing worked during the BEC. No mechanism for sharing with customers, suppliers or sector peers, and no supplier contact tree."
+    },
+    "RS.MI-01": {
+      "p": 3,
+      "i": 3,
+      "pn": "Containment actions are described in the plan by incident type.",
+      "in": "Sophos Central isolation and Entra session revocation are available and were both used effectively in the 2025 incident. Containment is a genuine strength."
+    },
+    "RS.MI-02": {
+      "p": 3,
+      "i": 2,
+      "pn": "Eradication steps described in the plan at a general level.",
+      "in": "Eradication relies on rebuild-from-image for endpoints, which is effective. No documented verification step to confirm the threat is gone before returning a system to service."
+    },
+    "RC.RP-01": {
+      "p": 3,
+      "i": 2,
+      "pn": "DR plan documents recovery execution with RTO 8 hours and RPO 4 hours for Tier 1.",
+      "in": "The plan is detailed and the Veeam capability is real. Full execution has never been rehearsed, so the RTO remains an assumption."
+    },
+    "RC.RP-02": {
+      "p": 3,
+      "i": 2,
+      "pn": "Recovery prioritisation is documented and follows the BIA tiering.",
+      "in": "Prioritisation is sound on paper. Little Island systems were never added after the 2025 integration and do not appear in the recovery order."
+    },
+    "RC.RP-03": {
+      "p": 4,
+      "i": 3,
+      "pn": "Standard requires backup integrity verification before any restore.",
+      "in": "Veeam SureBackup verification runs nightly against the immutable repository and results are checked. Integrity of the offsite copy is verified monthly rather than per restore."
+    },
+    "RC.RP-04": {
+      "p": 2,
+      "i": 2,
+      "pn": "The plan states that critical functions are considered when setting recovery targets.",
+      "in": "Targets come from the 2024 BIA and are reasonable, but there is no post-incident reassessment step to adjust them."
+    },
+    "RC.RP-05": {
+      "p": 3,
+      "i": 2,
+      "pn": "Verification of restored assets is required before return to service.",
+      "in": "File-level restores are verified by the requesting user. There is no technical integrity check on restored systems and no formal return-to-service sign-off."
+    },
+    "RC.RP-06": {
+      "p": 2,
+      "i": 2,
+      "pn": "The plan defines who declares the end of an incident.",
+      "in": "Declared verbally for the 2025 incident. Documentation was completed after the fact and the lessons-learned section was left blank."
+    },
+    "RC.CO-03": {
+      "p": 3,
+      "i": 2,
+      "pn": "Internal recovery communication is covered in the DR plan with a defined update cadence.",
+      "in": "Communication during the 2025 incident was effective by email and Teams. The cadence in the plan (hourly for P1) was not met, and the plan's contact list names two leavers."
+    },
+    "RC.CO-04": {
+      "p": 2,
+      "i": 1,
+      "pn": "The plan says public communication is owned by the managing director with marketing support.",
+      "in": "No holding statements, no approved channels and no rehearsal. If an incident became public, the response would be improvised."
+    }
+  },
+  "exported": "2026-06-18T16:42:00.000Z",
+  "frameworkVersion": "2.0"
+}

@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<meta name="robots" content="noindex, nofollow">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src https: data: blob:; connect-src 'self'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'">
+<link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAACXBIWXMAAAsTAAALEwEAmpwYAAAFQUlEQVR4nO2dUUxbZRTHb/YguidCMt/0XV8Mj2YhaYY+khgxBIwzwemYW6QlKhAfdC76IGOZGjeRJWOrcWwyHMY9sCUGBAKbWVxgG3DLcHOWUqCc8n1V0IE55qu33W1vkdpbes+V809+L7fJ137nl9PvNk3u0TQOh8PhcDgcDofD4XA4HA7nfxwAeFxK2SyEGBRChIQQa1JK3MoIIdaEEDNCiAEpZdPy8vJjmy4CER+WUrYKIf5wugCSOEKIFSllCyIWbYqMWCz2qJTyitMblS4jGo2qmu3YjM4YcXpz0qXMzMyMDg8PP5I3IepryulNSZczODh4VtO0orwc4JnOjMjCIrZ9dgGrnz+Iu3b60PN0/ZZm105fvBZtx3pwYWHRIgQA7ldUVNRomrbNbne8k0lGXe1hx4vgIcq+Pa0ZpXR3d5/RNO0pW0LUrW36wqoznN60hzhfHOuxCNF1fULTtCpN07bbETKbvrBqzcQbe33d2NYRxHZ/aEvT1hFEr7c7WZeayoMWIeFwGDRNU19bT9oRYvnRZz4zWEbogZRTvybromqUXrelpaW/DCHlOQvJdMdgbk2ni9BODHNtMtXOEPIcC/GTElLNQvykhChYSDsL2Xp4WEiIFCzETwsW4qcFC/HTgoX4aeG4EB2QgQewEKAFCwFasBCgBQsBWrAQoAULgc3n+ixg50gnDtyeYCG6w1wLhvG9c3vwzY4KbDpdiTfmfmchOgEZiuYvq/Dm/DIL0TeJm/MreO5qF14c7dtQRuPpSvxe/2nDNVkI5I5/6FSy4P7BDtsyXCHEfwuxoR/R11d4GvoQ28fW/2ydI2eTRU9IsSPDFULe+sEZGT4T44uZP9tEZBU/7f0gRYo6J3KV4QohlDtEX0dKrjJcIcQNTKRJyVUGC4H8SjnZ34Yt376NffpozuuwEKAFCwFasBCgBQsBWrAQoAULAVqwEKAFCwFasBCgBQuB/BCYXcl8fX41DguBwjF3sgN/2/sSLnxyFAPz95PX714dw9gbr6H07cPpySAL0QuEKrgSooi0tsSl/HJlDGP7a5PXgxcvsRC9QIQufJcsvAIOvZsiY6nJh1P3lliI7qCUBKLRi9O357Neh7wQ6n9Q6SbmTpxIkRE7UIs/T4b+k1jyQij/haubiB/g+1+xdEik9aOUg971QtzQIXd/vJFyZkjv3lQpRw5nfetLXogbEI3elAN8enoBZ7/+JkVK8HI/C9ELBHx46B8ZzQ1xGYnrSSl1u+NdxEKgMARml/He0DWcCsYsr925HsA7Y9NZr8VCgBYsBGjBQoAWLARowUKAFiwEaMFCgBYsBGjBQoAWLAS2mJCNHqQ8PrfmeBF0ItyaW832Qcq2hMz826PGP/78MksBjNfg6PFLybq8+ML7FiHhcHgxH0IG0hdWIxnMrcnUW2g/bn0Y/+Tk5Hg+HqTcnL6wGsWgRjI4vWkPUV5/9QhGItZxFV1dXV/ZftS4mjZmDLiySFEjGdQUAB7oUh+vgaqF6oxMMgDgT4/Hc8D2w/iNLmnJdMfAyKzp7e3tMZ0fT9gSgogPRaNRy2AXRmbF1NSUXlJS8rIhw95AF1OX7FDTxpzenHQZgUBALy0trTN1h72RR+ao0W9DQ0OdasCV0xuVxFFnhvqaKi4u3m2S8aztoWAZUqSmjZ0/f/6MmqmkxvioHzxOF0A6jKqBqoW6tVW1KSsrSxzgCZ7Jy9i8dbLNaL2qtDdlNAtVRq3y3hmZst24Yyg37q2rCRSgxmGqjVqUG7XJ34RPDofD4XA4HA6Hw+FwOFph8zfQaBjzgGBxjwAAAABJRU5ErkJggg==">
+
+<script>
+(function(){
+  var m = document.cookie.match(/(?:^|;\s*)mat_theme=(dark|light)/);
+  document.documentElement.setAttribute("data-theme", m ? m[1] : "dark");
+})();
+</script>
+<title>Security Maturity Assessment Toolkit</title>
+<style>
+:root{
+  color-scheme:light;
+  --paper:#E7EAF0; --surface:#FFFFFF; --ink:#171A21; --muted:#5D6577;
+  --rule:#C6CCD8; --rule-soft:#DFE3EB; --tint:#F4F6FA;
+  --measured:#1F4FD8; --impl:#12324F; --ok:#1B7A4B; --gap:#B3243C;
+  --ok-bg:#F4FAF6;
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --paper:#0D1117; --surface:#161B23; --ink:#E4E8EF; --muted:#8F9AAB;
+  --rule:#2B323E; --rule-soft:#222833; --tint:#1C2330;
+  --measured:#6E9BFF; --impl:#AFC2DE; --ok:#4FCB8B; --gap:#FF6B7E;
+  --ok-bg:#12211A;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);
+  font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;font-size:15px;line-height:1.55}
+.mono{font-family:ui-monospace,"SF Mono","JetBrains Mono",Menlo,Consolas,monospace}
+a{color:var(--measured)}
+:focus-visible{outline:2px solid var(--measured);outline-offset:2px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+
+header{background:var(--surface);border-bottom:2px solid var(--ink)}
+header .wrap{padding-top:44px;padding-bottom:38px;position:relative}
+.themebtn{position:absolute;top:24px;right:24px;border:1px solid var(--rule);
+  background:var(--surface);color:var(--muted);padding:6px 9px;cursor:pointer;
+  display:inline-flex;align-items:center;line-height:1;border-radius:0;font:inherit}
+.themebtn:hover{background:var(--tint);color:var(--ink);border-color:var(--ink)}
+.themebtn svg{width:16px;height:16px;display:block;fill:none;stroke:currentColor;
+  stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.themebtn .ic-sun{display:none}
+:root[data-theme="dark"] .themebtn .ic-sun{display:block}
+:root[data-theme="dark"] .themebtn .ic-moon{display:none}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.rule{height:5px;width:96px;background:var(--ink);margin-bottom:22px}
+h1{font-size:34px;line-height:1.12;letter-spacing:-.03em;margin:0 0 10px;font-weight:600;max-width:17em}
+h1 span{font-family:ui-monospace,monospace;color:var(--measured);font-weight:600}
+.lede{font-size:16.5px;color:var(--muted);margin:0;max-width:46em}
+.tagline{display:flex;gap:22px;flex-wrap:wrap;margin-top:24px;
+  font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.09em;
+  text-transform:uppercase;color:var(--muted)}
+.tagline b{color:var(--ink);font-weight:700}
+
+h2{font-size:11.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);
+  font-family:ui-monospace,monospace;margin:44px 0 14px;font-weight:600}
+
+.tools{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
+.tool{background:var(--surface);border:1px solid var(--rule);padding:20px 22px 22px;
+  display:flex;flex-direction:column;text-decoration:none;color:inherit;transition:border-color .12s}
+.tool:hover{border-color:var(--ink)}
+.tool .step{font-family:ui-monospace,monospace;font-size:10px;letter-spacing:.11em;
+  text-transform:uppercase;color:var(--measured);font-weight:700;margin-bottom:8px}
+.tool h3{margin:0 0 7px;font-size:18px;letter-spacing:-.01em}
+.tool p{margin:0 0 16px;font-size:13.5px;color:var(--muted);flex:1}
+.tool ul{margin:0 0 16px;padding-left:17px;font-size:12.5px;color:var(--muted)}
+.tool li{margin:3px 0}
+.go{font-family:ui-monospace,monospace;font-size:12px;font-weight:600;color:var(--ink);
+  border:1px solid var(--ink);padding:7px 13px;display:inline-block;align-self:flex-start}
+.tool:hover .go{background:var(--ink);color:var(--surface)}
+.tool.muted{background:var(--tint)}
+.tool.muted .step{color:var(--muted)}
+
+table{width:100%;border-collapse:collapse;background:var(--surface);border:1px solid var(--rule)}
+th,td{text-align:left;padding:9px 13px;border-bottom:1px solid var(--rule-soft);font-size:13.5px;
+  vertical-align:top}
+th{font-family:ui-monospace,monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--muted);background:var(--tint);border-bottom:1px solid var(--rule);white-space:nowrap}
+td.num,th.num{text-align:right;font-family:ui-monospace,monospace;white-space:nowrap}
+tr:last-child td{border-bottom:none}
+td .id{font-family:ui-monospace,monospace;font-size:11.5px;color:var(--measured);font-weight:600}
+td .sub{font-size:11.5px;color:var(--muted);margin-top:2px}
+.state{font-family:ui-monospace,monospace;font-size:12px;color:var(--muted);margin-top:9px}
+.state.bad{color:var(--gap)}
+
+.notes{background:var(--surface);border:1px solid var(--rule);padding:20px 24px}
+.notes h3{margin:0 0 8px;font-size:14.5px}
+.notes h3+p{margin-top:0}
+.notes p{margin:0 0 14px;font-size:13.5px;color:var(--muted)}
+.notes p:last-child{margin-bottom:0}
+.notes code{font-family:ui-monospace,monospace;font-size:12.5px;background:var(--tint);
+  border:1px solid var(--rule-soft);padding:1px 5px}
+.notes pre{font-family:ui-monospace,monospace;font-size:12px;background:var(--tint);
+  border:1px solid var(--rule-soft);padding:11px 13px;overflow-x:auto;margin:0 0 14px;line-height:1.5}
+.split{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px}
+.privacy{border-left:3px solid var(--ok);background:var(--ok-bg);border-top:1px solid var(--rule-soft);
+  border-right:1px solid var(--rule-soft);border-bottom:1px solid var(--rule-soft);padding:16px 20px;
+  font-size:13.5px}
+.privacy b{color:var(--ok)}
+
+footer{margin:56px 0 0;border-top:1px solid var(--rule);background:var(--surface)}
+footer .wrap{padding:20px 24px 60px;font-size:12px;color:var(--muted)}
+@media(max-width:640px){h1{font-size:26px}header .wrap{padding-top:32px}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <button class="themebtn" id="themeBtn" type="button" aria-pressed="true">
+      <svg class="ic-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.7A8.6 8.6 0 0 1 9.3 3.5a8.6 8.6 0 1 0 11.2 11.2Z"/></svg>
+      <svg class="ic-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.4M12 19.6V22M4.2 4.2l1.7 1.7M18.1 18.1l1.7 1.7M2 12h2.4M19.6 12H22M4.2 19.8l1.7-1.7M18.1 5.9l1.7-1.7"/></svg>
+      <span class="sr">Toggle theme</span>
+    </button>
+    <div class="rule"></div>
+    <h1><span>Security maturity</span> assessment toolkit</h1>
+    <p class="lede">Score an organisation against a control framework, twice per control &mdash;
+      once for whether the policy exists, once for whether it actually operates &mdash; then turn the
+      result into a client-ready report.</p>
+    <div class="tagline">
+      <span><b id="tFw">&mdash;</b> frameworks</span>
+      <span><b id="tItems">&mdash;</b> assessable controls</span>
+      <span><b>0</b> servers involved</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <h2>Tools</h2>
+  <div class="tools">
+    <a class="tool" href="maturity-assessment.html">
+      <div class="step">Step 1</div>
+      <h3>Assessment</h3>
+      <p>Work through the framework, scoring policy and implementation maturity and recording
+        findings against each control.</p>
+      <ul>
+        <li>Templated recommendation and effort rating on every control</li>
+        <li>Targets per group drive an automatic priority ranking</li>
+        <li>Filter by state, search, and collapse what you're not working on</li>
+        <li>Saves to JSON; exports CSV for mail merge</li>
+      </ul>
+      <span class="go">Open the assessment &rarr;</span>
+    </a>
+
+    <a class="tool" href="report-builder.html">
+      <div class="step">Step 2</div>
+      <h3>Report builder</h3>
+      <p>Turns a saved assessment into a formatted report: cover page, executive summary, maturity
+        charts and detailed findings.</p>
+      <ul>
+        <li>Your logo, title, classification and reference on the cover</li>
+        <li>Executive summary drafted from the data, then edited by you</li>
+        <li>Filter findings by score band, priority and effort</li>
+        <li>Print to PDF or save a standalone HTML file</li>
+      </ul>
+      <span class="go">Open the report builder &rarr;</span>
+    </a>
+
+    <a class="tool muted" href="csf-cis-assessment.html">
+      <div class="step">Archive</div>
+      <h3>NIST CSF + CIS combined</h3>
+      <p>The earlier build that assesses NIST CSF 2.0 and CIS Controls v8.1 together on one pass,
+        with the official crosswalk between them.</p>
+      <ul>
+        <li>208 items: 106 CSF subcategories plus 102 CIS-only safeguards</li>
+        <li>Results roll up both ways, with CIS Implementation Group scoping</li>
+        <li>Self-contained &mdash; needs no framework file</li>
+      </ul>
+      <span class="go">Open the combined build &rarr;</span>
+    </a>
+  </div>
+
+  <h2>Framework library</h2>
+  <table>
+    <thead><tr><th>Framework</th><th>Version</th><th class="num">Groups</th>
+      <th class="num">Controls</th><th>Cross-reference</th><th>File</th></tr></thead>
+    <tbody id="fwRows"><tr><td colspan="6" style="color:var(--muted)">Reading
+      <span class="mono">frameworks/index.json</span>&hellip;</td></tr></tbody>
+  </table>
+  <div class="state" id="fwState"></div>
+
+  <h2>Sample assessments</h2>
+  <p style="font-size:13.5px;color:var(--muted);margin:0 0 12px;max-width:52em">Three fictional
+    organisations, fully scored with findings on every control. Load one into either tool to see the
+    output before running a real engagement.</p>
+  <table>
+    <thead><tr><th>File</th><th>Organisation</th><th>Framework</th><th class="num">Score</th><th>Shape</th></tr></thead>
+    <tbody>
+      <tr><td><a href="demos/demo-csf-kilcarn.json" download><span class="mono">demo-csf-kilcarn.json</span></a></td>
+        <td>Kilcarn Foods Ltd<div class="sub">Chilled food manufacturer, 450 staff, three sites</div></td>
+        <td>NIST CSF</td><td class="num">1.93</td>
+        <td>Policy ahead of practice throughout; governance is the gap</td></tr>
+      <tr><td><a href="demos/demo-cis-kilcarn.json" download><span class="mono">demo-cis-kilcarn.json</span></a></td>
+        <td>Kilcarn Foods Ltd<div class="sub">Same assessment, safeguard level</div></td>
+        <td>CIS Controls</td><td class="num">2.36</td>
+        <td>Scores higher &mdash; CIS asks about the technical controls they run well</td></tr>
+      <tr><td><a href="demos/demo-nis2-kilcarn.json" download><span class="mono">demo-nis2-kilcarn.json</span></a></td>
+        <td>Kilcarn Foods Ltd<div class="sub">Same organisation as an Annex II entity</div></td>
+        <td>NIS2</td><td class="num">1.65</td>
+        <td>Scores lowest &mdash; incident reporting obligations they have never touched</td></tr>
+      <tr><td><a href="demos/demo-iso27001-corrib.json" download><span class="mono">demo-iso27001-corrib.json</span></a></td>
+        <td>Corrib Analytics Ltd<div class="sub">SaaS analytics, 120 staff, stage 1 audit booked</div></td>
+        <td>ISO 27001</td><td class="num">2.26</td>
+        <td>Strong engineering, weak management system &mdash; typical first certification</td></tr>
+      <tr><td><a href="demos/demo-dora-boyne.json" download><span class="mono">demo-dora-boyne.json</span></a></td>
+        <td>Boyne Payments DAC<div class="sub">E-money institution, 200 staff</div></td>
+        <td>DORA</td><td class="num">2.33</td>
+        <td>Mature incident handling, immature ICT third-party management</td></tr>
+    </tbody>
+  </table>
+
+  <h2>How it fits together</h2>
+  <div class="split">
+    <div class="notes">
+      <h3>Running an assessment</h3>
+      <p>Open the assessment, pick a framework from the dropdown, and fill in the customer details.
+        Score each control for policy and implementation, and record what you saw in the two findings
+        boxes. Set targets on the Goals tab &mdash; they drive the priority ranking on the
+        Recommendations tab.</p>
+      <p>Save early and often: everything lives in the browser tab until you press
+        <b>Save JSON</b>. One file per customer per framework.</p>
+      <h3>Producing the report</h3>
+      <p>Open the report builder and drop the saved JSON on it. Set the cover details, edit the
+        drafted executive summary, choose which findings to include, then print to PDF. Save your
+        settings to reuse the same house style next time.</p>
+    </div>
+    <div class="notes">
+      <h3>Adding a framework</h3>
+      <p>Drop the JSON into <code>frameworks/</code> and add a row to
+        <code>frameworks/index.json</code>. Anything named <code>framework-&lt;id&gt;.json</code> is
+        found even without a manifest entry.</p>
+      <pre>frameworks/
+    index.json
+    framework-csf.json
+    framework-yourown.json</pre>
+      <p>Framework files use <code>"schema": 3</code> &mdash; groups containing sections containing
+        controls, plus a flat item list carrying the question, recommendation and effort rating.
+        Copy an existing file to see the shape.</p>
+      <p>Editing recommendations in the framework file changes the starting point for every future
+        assessment. Editing one inside an assessment only affects that customer, and is flagged as
+        tailored in the exports.</p>
+    </div>
+  </div>
+
+  <div class="privacy" style="margin-top:14px">
+    <b>Nothing is uploaded.</b> Every tool here runs entirely in your browser. Assessment data is read
+    from and written to files you choose, and is never sent anywhere. The only outbound request any
+    tool makes is for the framework files in this folder &mdash; and, if you set one on a report cover,
+    the logo image from whatever host you point it at.
+  </div>
+
+</div>
+
+<footer><div class="wrap">
+  Single-file tools, no dependencies, no build step, no telemetry.
+  Framework content is derived from the published standards and is provided as a starting point for
+  professional judgement, not as a certified crosswalk.
+</div></footer>
+
+<script>
+/* Theme toggle. The preference is a cookie scoped to this folder, so it carries
+   across to the assessment tool and the report builder. */
+(function(){
+  const btn = document.getElementById("themeBtn");
+  const path = () => { const p = location.pathname; return p.slice(0, p.lastIndexOf("/") + 1) || "/"; };
+  const read = () => { const m = document.cookie.match(/(?:^|;\s*)mat_theme=(dark|light)/); return m ? m[1] : null; };
+  function apply(v){
+    document.documentElement.setAttribute("data-theme", v);
+    btn.setAttribute("aria-pressed", String(v === "dark"));
+    btn.title = v === "dark" ? "Switch to light theme" : "Switch to dark theme";
+  }
+  btn.addEventListener("click", ()=>{
+    const next = document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark";
+    apply(next);
+    try{
+      const secure = location.protocol === "https:" ? "; Secure" : "";
+      document.cookie = `mat_theme=${next}; path=${path()}; max-age=31536000; SameSite=Lax${secure}`;
+    }catch(_){ /* file:// blocks cookies; the toggle still works for this session */ }
+  });
+  apply(read() || "dark");
+})();
+
+/* Populate the framework table from the same manifest the tools use. Read-only and
+   fully escaped: a manifest entry can't inject markup here. */
+(async function(){
+  const esc = s => String(s ?? "").replace(/[&<>"']/g,
+    c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+  const rows = document.getElementById("fwRows");
+  const state = document.getElementById("fwState");
+  const say = (msg, bad) => { state.textContent = msg; state.className = "state" + (bad ? " bad" : ""); };
+
+  if(location.protocol === "file:"){
+    rows.innerHTML = `<tr><td colspan="6" style="color:var(--muted)">Serve this folder over http
+      to list the framework library. The tools still work from disk &mdash; load a framework with
+      the file picker.</td></tr>`;
+    say("Tip: python3 -m http.server 8000");
+    return;
+  }
+  try{
+    const r = await fetch("frameworks/index.json", {cache:"no-store"});
+    if(!r.ok) throw new Error("HTTP " + r.status);
+    const m = await r.json();
+    const list = Array.isArray(m) ? m : (m.frameworks || []);
+    if(!list.length) throw new Error("manifest is empty");
+    rows.innerHTML = list.map(f=>`<tr>
+      <td><span class="id">${esc(f.short || f.id || "")}</span>
+        <div class="sub">${esc(f.name || "")}</div></td>
+      <td class="mono" style="font-size:12px">${esc(f.version || "\u2014")}</td>
+      <td class="num">${esc(f.groups ?? "\u2014")}</td>
+      <td class="num">${esc(f.items ?? "\u2014")}</td>
+      <td>${f.references ? esc(f.references) : '<span style="color:var(--muted)">\u2014</span>'}</td>
+      <td class="mono" style="font-size:11.5px"><a href="frameworks/${encodeURIComponent(f.file || "")}"
+        download>${esc(f.file || "")}</a></td></tr>`).join("");
+    const items = list.reduce((a,f)=>a + (Number(f.items) || 0), 0);
+    document.getElementById("tFw").textContent = list.length;
+    document.getElementById("tItems").textContent = items.toLocaleString();
+    say(`Loaded from frameworks/index.json${m.updated ? " \u00b7 updated " + esc(m.updated) : ""}`);
+  }catch(e){
+    rows.innerHTML = `<tr><td colspan="6" style="color:var(--muted)">Couldn't read
+      <span class="mono">frameworks/index.json</span>. The tools fall back to probing known
+      filenames, so they may still work.</td></tr>`;
+    say("Framework library unavailable: " + e.message, true);
+  }
+})();
+</script>
+</body>
+</html>

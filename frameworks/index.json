@@ -1,0 +1,57 @@
+{
+  "name": "Framework library",
+  "note": "Read by maturity-assessment.html and report-builder.html. Add a framework by dropping its JSON in this folder and adding a row here. Without this file the tools fall back to probing the known filenames, which also works.",
+  "updated": "2026-07-25",
+  "frameworks": [
+    {
+      "id": "csf",
+      "file": "framework-csf.json",
+      "name": "NIST Cybersecurity Framework 2.0",
+      "short": "NIST CSF",
+      "version": "2.0",
+      "items": 106,
+      "groups": 6,
+      "references": null
+    },
+    {
+      "id": "cis",
+      "file": "framework-cis.json",
+      "name": "CIS Critical Security Controls v8.1.2",
+      "short": "CIS Controls",
+      "version": "8.1.2",
+      "items": 148,
+      "groups": 18,
+      "references": "CSF"
+    },
+    {
+      "id": "iso27001",
+      "file": "framework-iso27001.json",
+      "name": "ISO/IEC 27001:2022 and ISO/IEC 27002:2022",
+      "short": "ISO 27001",
+      "version": "2022",
+      "items": 118,
+      "groups": 5,
+      "references": "CSF"
+    },
+    {
+      "id": "dora",
+      "file": "framework-dora.json",
+      "name": "DORA \u2014 Regulation (EU) 2022/2554 on digital operational resilience",
+      "short": "DORA",
+      "version": "2022/2554",
+      "items": 72,
+      "groups": 5,
+      "references": "CSF"
+    },
+    {
+      "id": "nis2",
+      "file": "framework-nis2.json",
+      "name": "NIS2 \u2014 Directive (EU) 2022/2555 on network and information systems security",
+      "short": "NIS2",
+      "version": "2022/2555",
+      "items": 40,
+      "groups": 4,
+      "references": "CSF"
+    }
+  ]
+}

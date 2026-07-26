@@ -1,0 +1,926 @@
+{
+  "schema": 2,
+  "meta": {
+    "customer": "Kilcarn Foods Ltd",
+    "assessor": "M. Kavanagh",
+    "date": "2026-06-18",
+    "scope": "Corporate IT, Microsoft 365 and the three site networks. Excludes plant OT/SCADA and the cold chain telemetry platform. Assessed against CIS Controls v8.1.2 only. Safeguards with a NIST CSF equivalent take their score from that assessment, noted in the policy findings.",
+    "frameworkId": "cis",
+    "framework": "CIS Critical Security Controls v8.1.2"
+  },
+  "goals": {
+    "1": 3,
+    "2": 3,
+    "3": 3,
+    "4": 4,
+    "5": 4,
+    "6": 4,
+    "7": 4,
+    "8": 3,
+    "9": 4,
+    "10": 4,
+    "11": 4,
+    "12": 3,
+    "13": 3,
+    "14": 3,
+    "15": 3,
+    "16": 2,
+    "17": 3,
+    "18": 3
+  },
+  "frameworkId": "cis",
+  "responses": {
+    "1.1": {
+      "p": 2,
+      "i": 2,
+      "pn": "Assessed via NIST CSF ID.AM-01, ID.AM-08. Asset management procedure defines ownership, tagging and a quarterly reconciliation. Lifecycle is covered for endpoints in the asset procedure; nothing equivalent for servers, network or SaaS.",
+      "in": "Intune and vSphere give good coverage of laptops and VMs. Reconciliation is not actually quarterly, and 34 network devices and the Little Island server room are tracked only in a spreadsheet. Endpoint refresh runs on a four-year cycle with certified disposal. Server and appliance end-of-life is reactive \u2014 two switches are past vendor end-of-support."
+    },
+    "1.2": {
+      "p": 3,
+      "i": 2,
+      "pn": "Assessed via NIST CSF PR.PS-03. Hardware maintenance and disposal covered in the asset procedure with certified destruction.",
+      "in": "Endpoint disposal is evidenced with certificates. Network and server hardware maintenance is reactive; two access switches and the Ashbourne UPS are past end-of-support."
+    },
+    "1.3": {
+      "p": 2,
+      "i": 1,
+      "pn": "Discovery is not required by the asset procedure.",
+      "in": "No active discovery tool. Asset data comes from Intune and vSphere only, so unmanaged devices on the corporate VLAN are invisible."
+    },
+    "1.4": {
+      "p": 2,
+      "i": 2,
+      "pn": "",
+      "in": "DHCP logging is enabled on the Windows DHCP servers but is not used to update the inventory."
+    },
+    "1.5": {
+      "p": 1,
+      "i": 0,
+      "pn": "Not addressed.",
+      "in": "No passive discovery capability."
+    },
+    "2.1": {
+      "p": 3,
+      "i": 2,
+      "pn": "Assessed via NIST CSF ID.AM-02. Software asset procedure covers approval, licensing and removal.",
+      "in": "Intune discovery and Sophos give a reliable list for managed endpoints. Server-side software is not inventoried centrally; two out-of-support applications were found on the ERP host."
+    },
+    "2.2": {
+      "p": 4,
+      "i": 3,
+      "pn": "Assessed via NIST CSF PR.PS-02. Patch policy sets 14 days for critical, 30 for high, 90 for medium, and requires removal of unsupported software.",
+      "in": "Intune and WSUS deliver OS and Microsoft patching reliably (96% within SLA). Third-party patching is manual and lags \u2014 Qualys shows 41 endpoints with out-of-date Chrome or Adobe Reader past SLA."
+    },
+    "2.3": {
+      "p": 4,
+      "i": 3,
+      "pn": "Assessed via NIST CSF PR.PS-02. Patch policy sets 14 days for critical, 30 for high, 90 for medium, and requires removal of unsupported software.",
+      "in": "Intune and WSUS deliver OS and Microsoft patching reliably (96% within SLA). Third-party patching is manual and lags \u2014 Qualys shows 41 endpoints with out-of-date Chrome or Adobe Reader past SLA."
+    },
+    "2.4": {
+      "p": 3,
+      "i": 3,
+      "pn": "",
+      "in": "Intune and Sophos provide automated software inventory for endpoints; servers are excluded."
+    },
+    "2.5": {
+      "p": 3,
+      "i": 3,
+      "pn": "Assessed via NIST CSF PR.PS-05. Policy prohibits unauthorised software and requires application control.",
+      "in": "Users are non-admin on all managed endpoints and Sophos application control blocks known unwanted applications. Full allowlisting (WDAC/AppLocker) is not deployed, so unsigned binaries in user-writable paths can still execute."
+    },
+    "2.6": {
+      "p": 1,
+      "i": 0,
+      "pn": "Library allowlisting is not addressed in the configuration standard.",
+      "in": "Not implemented."
+    },
+    "2.7": {
+      "p": 1,
+      "i": 0,
+      "pn": "",
+      "in": "Script allowlisting not implemented. PowerShell Constrained Language Mode is not enforced."
+    },
+    "3.2": {
+      "p": 1,
+      "i": 1,
+      "pn": "Assessed via NIST CSF ID.AM-07. Data inventory is required by the GDPR policy.",
+      "in": "The ROPA covers personal data reasonably well. Commercially sensitive data (recipes, pricing, retail forecasts) is not inventoried or classified at all."
+    },
+    "3.3": {
+      "p": 2,
+      "i": 3,
+      "pn": "Access control expectations are set in the data policy but no classification scheme underpins them.",
+      "in": "NTFS and SharePoint permissions are role-based and reasonably tight; the 2025 review removed 40 stale group memberships. Nothing is driven by data sensitivity because nothing is classified."
+    },
+    "3.4": {
+      "p": 2,
+      "i": 1,
+      "pn": "Retention schedule exists for personal data and finance records.",
+      "in": "Retention is enforced for the ERP and payroll. M365 retention labels are configured but not applied \u2014 mailboxes and Teams data are effectively kept indefinitely."
+    },
+    "3.5": {
+      "p": 2,
+      "i": 2,
+      "pn": "Assessed via NIST CSF ID.AM-08. Lifecycle is covered for endpoints in the asset procedure; nothing equivalent for servers, network or SaaS.",
+      "in": "Endpoint refresh runs on a four-year cycle with certified disposal. Server and appliance end-of-life is reactive \u2014 two switches are past vendor end-of-support."
+    },
+    "3.6": {
+      "p": 4,
+      "i": 4,
+      "pn": "",
+      "in": "BitLocker enforced by Intune on all managed endpoints, keys escrowed in Entra, 100% compliance in the last report."
+    },
+    "3.1": {
+      "p": 3,
+      "i": 3,
+      "pn": "Assessed via NIST CSF PR.DS-02. Standard requires TLS 1.2 or better for all data in transit and prohibits plaintext protocols.",
+      "in": "External services are TLS 1.2+ and verified in the last external scan. Internal LDAP signing is enforced; one legacy line-of-business web app on the Ashbourne VLAN is still HTTP only."
+    },
+    "3.7": {
+      "p": 2,
+      "i": 2,
+      "pn": "Assessed via NIST CSF ID.AM-05. Criticality tiers defined in the BIA (Tier 1 to Tier 3).",
+      "in": "Tiering is applied to the eight named business systems but not to the underlying assets, so patch and backup priority is not driven by criticality."
+    },
+    "3.8": {
+      "p": 2,
+      "i": 2,
+      "pn": "Assessed via NIST CSF ID.AM-03. Network documentation standard exists as part of the change process.",
+      "in": "Core diagrams exist and are broadly accurate for HQ. Little Island was integrated in 2025 and the diagram has not been updated. No data-flow diagrams."
+    },
+    "3.9": {
+      "p": 3,
+      "i": 2,
+      "pn": "Removable media policy requires encryption.",
+      "in": "Sophos device control blocks unencrypted USB write on endpoints. Not enforced on the three shared production-office PCs at Ashbourne."
+    },
+    "3.11": {
+      "p": 3,
+      "i": 3,
+      "pn": "Assessed via NIST CSF PR.DS-01. Encryption standard requires full-disk encryption on endpoints and encryption at rest for cloud data.",
+      "in": "BitLocker enforced via Intune with keys escrowed in Entra, 100% compliant on managed devices. SQL TDE is not enabled on the ERP database, which holds pricing and customer data."
+    },
+    "3.12": {
+      "p": 3,
+      "i": 3,
+      "pn": "Assessed via NIST CSF PR.IR-01. Network security standard covers segmentation, firewall change control and remote access.",
+      "in": "Sophos XGS firewalls at each site with a documented ruleset, corporate/guest/OT VLAN separation and Entra-authenticated always-on VPN. East-west traffic within the corporate VLAN is unrestricted."
+    },
+    "3.13": {
+      "p": 1,
+      "i": 0,
+      "pn": "DLP is not required by policy.",
+      "in": "Purview DLP is licensed under E3 for limited scenarios but no policies are configured."
+    },
+    "3.14": {
+      "p": 1,
+      "i": 0,
+      "pn": "",
+      "in": "Sensitive data access is not logged distinctly from general file access."
+    },
+    "4.2": {
+      "p": 3,
+      "i": 3,
+      "pn": "Assessed via NIST CSF PR.PS-01. Configuration standards documented for Windows 11, Windows Server 2022 and M365, based on CIS Benchmarks Level 1.",
+      "in": "Intune configuration profiles and GPO deliver the baseline for endpoints and domain servers. Drift is not monitored, and the Little Island file server was built manually outside the baseline."
+    },
+    "4.3": {
+      "p": 4,
+      "i": 4,
+      "pn": "",
+      "in": "15-minute lock enforced via Intune and GPO across endpoints and servers; verified on sample."
+    },
+    "4.4": {
+      "p": 3,
+      "i": 3,
+      "pn": "",
+      "in": "Windows Firewall enabled on all servers with managed rules via GPO."
+    },
+    "4.5": {
+      "p": 4,
+      "i": 4,
+      "pn": "",
+      "in": "Windows Firewall enforced and locked by Intune profile on all endpoints."
+    },
+    "4.6": {
+      "p": 3,
+      "i": 3,
+      "pn": "Secure management requirements documented in the infrastructure standard.",
+      "in": "Management of servers and M365 is via authenticated, encrypted channels. Two switches are still managed over HTTP on the management VLAN."
+    },
+    "4.7": {
+      "p": 3,
+      "i": 3,
+      "pn": "",
+      "in": "Default accounts renamed or disabled on Windows builds. Default SNMP community strings were found on two older switches."
+    },
+    "4.1": {
+      "p": 3,
+      "i": 3,
+      "pn": "Assessed via NIST CSF PR.PS-01. Configuration standards documented for Windows 11, Windows Server 2022 and M365, based on CIS Benchmarks Level 1.",
+      "in": "Intune configuration profiles and GPO deliver the baseline for endpoints and domain servers. Drift is not monitored, and the Little Island file server was built manually outside the baseline."
+    },
+    "4.8": {
+      "p": 3,
+      "i": 2,
+      "pn": "",
+      "in": "Role-based Windows Server installs keep services minimal. No periodic review, and the ERP host runs an unused IIS instance."
+    },
+    "4.9": {
+      "p": 4,
+      "i": 4,
+      "pn": "",
+      "in": "DNS is forced to the internal resolvers and then to a filtered upstream; external DNS is blocked at the firewall."
+    },
+    "4.11": {
+      "p": 4,
+      "i": 4,
+      "pn": "",
+      "in": "Intune remote wipe is available and tested for all corporate laptops and enrolled mobiles."
+    },
+    "4.12": {
+      "p": 2,
+      "i": 2,
+      "pn": "",
+      "in": "Intune app protection policies applied to Outlook and Teams on BYOD, but no full containerisation."
+    },
+    "5.1": {
+      "p": 4,
+      "i": 2,
+      "pn": "Assessed via NIST CSF PR.AA-01, PR.AA-05. Identity and access management policy covers user, admin and service account lifecycle, with a documented JML process. Access control policy defines least privilege, role-based access and six-monthly recertification.",
+      "in": "Entra ID is authoritative and joiner/leaver is HR-triggered and reliable. Service accounts are the weak point: 23 identified, 9 with no named owner and 4 with non-expiring passwords. RBAC is well implemented in Entra and file services. Recertification has not run since early 2025; the ERP finance role sample showed three users retaining access after moving department."
+    },
+    "5.2": {
+      "p": 3,
+      "i": 3,
+      "pn": "Password standard aligns to NCSC guidance with a 14-character minimum and no forced rotation.",
+      "in": "Entra password protection with a custom banned-list is enabled. Local administrator passwords are unique via LAPS on endpoints but not on servers."
+    },
+    "5.3": {
+      "p": 3,
+      "i": 2,
+      "pn": "90-day dormancy threshold documented.",
+      "in": "Reviewed manually rather than automatically. The sample found 11 accounts inactive for more than 90 days still enabled, including two supplier accounts."
+    },
+    "5.4": {
+      "p": 4,
+      "i": 4,
+      "pn": "Separate administrative accounts are mandated by the IAM policy.",
+      "in": "Admins hold distinct -adm accounts with no mailbox and no internet browsing; day-to-day accounts have no privilege. Well implemented."
+    },
+    "5.5": {
+      "p": 2,
+      "i": 1,
+      "pn": "Service account register is required by the IAM policy.",
+      "in": "23 service accounts identified during this assessment; 9 have no named owner and 4 have non-expiring passwords. The register does not exist in practice."
+    },
+    "5.6": {
+      "p": 4,
+      "i": 3,
+      "pn": "Assessed via NIST CSF PR.AA-01. Identity and access management policy covers user, admin and service account lifecycle, with a documented JML process.",
+      "in": "Entra ID is authoritative and joiner/leaver is HR-triggered and reliable. Service accounts are the weak point: 23 identified, 9 with no named owner and 4 with non-expiring passwords."
+    },
+    "6.1": {
+      "p": 3,
+      "i": 3,
+      "pn": "Assessed via NIST CSF GV.RR-04. HR policy covers pre-employment screening, the acceptable use policy in the contract of employment, and a documented leavers process.",
+      "in": "Screening and AUP signature are consistently evidenced. Leaver deprovisioning is triggered from the HR system, though the sample showed two accounts disabled 4 and 9 days late."
+    },
+    "6.2": {
+      "p": 3,
+      "i": 3,
+      "pn": "Assessed via NIST CSF GV.RR-04. HR policy covers pre-employment screening, the acceptable use policy in the contract of employment, and a documented leavers process.",
+      "in": "Screening and AUP signature are consistently evidenced. Leaver deprovisioning is triggered from the HR system, though the sample showed two accounts disabled 4 and 9 days late."
+    },
+    "6.3": {
+      "p": 4,
+      "i": 4,
+      "pn": "",
+      "in": "All internet-facing applications are behind Entra with Conditional Access MFA. No exceptions found."
+    },
+    "6.4": {
+      "p": 4,
+      "i": 4,
+      "pn": "",
+      "in": "Always-on VPN requires Entra MFA plus a compliant device."
+    },
+    "6.5": {
+      "p": 4,
+      "i": 4,
+      "pn": "",
+      "in": "MFA enforced on all administrative roles; PIM is not licensed but standing admin count is low (5)."
+    },
+    "6.6": {
+      "p": 2,
+      "i": 2,
+      "pn": "",
+      "in": "No formal inventory of authentication systems. Entra, the ERP local directory and two SaaS local directories are known but undocumented."
+    },
+    "6.7": {
+      "p": 3,
+      "i": 3,
+      "pn": "",
+      "in": "Entra ID is the central access control point for 8 of 11 business applications."
+    },
+    "6.8": {
+      "p": 3,
+      "i": 2,
+      "pn": "Assessed via NIST CSF PR.AA-05. Access control policy defines least privilege, role-based access and six-monthly recertification.",
+      "in": "RBAC is well implemented in Entra and file services. Recertification has not run since early 2025; the ERP finance role sample showed three users retaining access after moving department."
+    },
+    "7.1": {
+      "p": 4,
+      "i": 4,
+      "pn": "Assessed via NIST CSF ID.RA-01. Vulnerability management procedure defines scan cadence, TruRisk-based prioritisation and remediation SLAs by severity.",
+      "in": "Qualys VMDR runs authenticated scans weekly across servers and endpoints and daily on the external perimeter. Findings are tracked to closure in the IT ticket queue. Strongest control in the assessment."
+    },
+    "7.2": {
+      "p": 2,
+      "i": 0,
+      "pn": "Assessed via NIST CSF ID.RA-08, ID.IM-02. No vulnerability disclosure policy and no published contact. Testing is required annually by policy (penetration test only).",
+      "in": "Not performed. security@ alias does not exist; a 2025 researcher report reached the general info@ mailbox and sat for 11 days. External penetration test performed in November 2025; six of the fourteen findings remain open with no dates. No exercises of any kind."
+    },
+    "7.3": {
+      "p": 4,
+      "i": 4,
+      "pn": "",
+      "in": "Intune update rings and WSUS deliver OS patching; 96% within the 14-day critical SLA."
+    },
+    "7.4": {
+      "p": 3,
+      "i": 2,
+      "pn": "",
+      "in": "Microsoft applications patch automatically. Third-party application patching is manual \u2014 41 endpoints past SLA for Chrome or Adobe Reader."
+    },
+    "7.5": {
+      "p": 4,
+      "i": 4,
+      "pn": "",
+      "in": "Qualys authenticated internal scans run weekly across servers and endpoints."
+    },
+    "7.6": {
+      "p": 4,
+      "i": 4,
+      "pn": "",
+      "in": "External perimeter scanned daily by Qualys; results reviewed at the weekly IT meeting."
+    },
+    "7.7": {
+      "p": 3,
+      "i": 3,
+      "pn": "SLAs documented by severity.",
+      "in": "Remediation is tracked to closure. Median time to close criticals over the period was 11 days, within the 14-day SLA."
+    },
+    "8.2": {
+      "p": 3,
+      "i": 2,
+      "pn": "Assessed via NIST CSF PR.PS-04. Logging standard defines which events must be generated and a 12-month retention requirement.",
+      "in": "Logs are generated on servers, endpoints, firewalls and M365. Retention is met for M365 (Purview) but firewall logs roll at 30 days and vSphere logs at 14, both short of the standard."
+    },
+    "8.3": {
+      "p": 2,
+      "i": 2,
+      "pn": "",
+      "in": "Storage is adequate for current short retention but would not support the 12-month standard without additional capacity."
+    },
+    "8.1": {
+      "p": 3,
+      "i": 2,
+      "pn": "12-month retention required by the logging standard.",
+      "in": "Met for M365 via Purview. Firewall logs roll at 30 days and vSphere at 14, so the standard is not met for two of the four main sources."
+    },
+    "8.4": {
+      "p": 3,
+      "i": 3,
+      "pn": "",
+      "in": "NTP is centralised on the domain controllers and synchronised to an external stratum-2 source; verified on sample."
+    },
+    "8.5": {
+      "p": 2,
+      "i": 2,
+      "pn": "",
+      "in": "Default Windows audit policy plus M365 unified audit log. Detailed logging (process creation, PowerShell) is not enabled."
+    },
+    "8.6": {
+      "p": 2,
+      "i": 2,
+      "pn": "",
+      "in": "DNS queries are logged at the resolver but retained for 7 days and never reviewed."
+    },
+    "8.7": {
+      "p": 2,
+      "i": 2,
+      "pn": "",
+      "in": "URL requests are logged by the Sophos web filter with 30-day retention."
+    },
+    "8.8": {
+      "p": 1,
+      "i": 0,
+      "pn": "",
+      "in": "Command-line process auditing is not enabled. This was a material obstacle during the 2025 BEC investigation."
+    },
+    "8.9": {
+      "p": 1,
+      "i": 1,
+      "pn": "Centralisation is stated as an objective in the logging standard.",
+      "in": "No SIEM or central log store. Four separate consoles. This is the root cause of most Detect findings and is the top recommendation from this assessment.",
+      "rec": "Procure and deploy Microsoft Sentinel against the existing E3 tenant, ingesting Entra ID sign-in and audit logs, Defender/Sophos endpoint detections, Sophos XGS firewall syslog and vSphere events. Kilcarn already holds the licence entitlement, so this is a deployment and tuning exercise rather than a new purchase. Sequence this before any further Detect work \u2014 it unblocks DE.AE-03, DE.CM-01, DE.AE-07 and the 12-month retention shortfall at PR.PS-04 in a single project."
+    },
+    "8.11": {
+      "p": 2,
+      "i": 2,
+      "pn": "Assessed via NIST CSF DE.AE-02. Analysis expectations are stated in the incident response plan at a high level.",
+      "in": "Analysis is performed competently by the IT Manager when he picks something up. No playbooks, so quality depends entirely on who is on shift."
+    },
+    "8.12": {
+      "p": 1,
+      "i": 0,
+      "pn": "",
+      "in": "MSP and cloud provider logs are not collected. See DE.CM-06."
+    },
+    "9.1": {
+      "p": 4,
+      "i": 4,
+      "pn": "",
+      "in": "Edge and Chrome kept current via Intune; Outlook is M365 Apps current channel. No unsupported browsers or clients found."
+    },
+    "9.2": {
+      "p": 4,
+      "i": 4,
+      "pn": "",
+      "in": "DNS filtering enforced for all corporate and VPN traffic with category blocking; bypass is prevented at the firewall."
+    },
+    "9.3": {
+      "p": 3,
+      "i": 3,
+      "pn": "",
+      "in": "Sophos web filtering categories are enforced on the corporate network and via the VPN."
+    },
+    "9.4": {
+      "p": 2,
+      "i": 2,
+      "pn": "",
+      "in": "Browser extension installation is not restricted. Users can add extensions from the Chrome Web Store."
+    },
+    "9.5": {
+      "p": 3,
+      "i": 3,
+      "pn": "SPF, DKIM and DMARC required by the email standard.",
+      "in": "SPF and DKIM are correct on both sending domains. DMARC is published at p=quarantine with 100% coverage; the move to p=reject has been open since March."
+    },
+    "9.6": {
+      "p": 4,
+      "i": 4,
+      "pn": "",
+      "in": "Executable, script and macro-bearing file types are blocked at Exchange Online transport rules."
+    },
+    "9.7": {
+      "p": 4,
+      "i": 4,
+      "pn": "",
+      "in": "Defender for Office 365 plus Sophos email protection; Safe Links and Safe Attachments enabled tenant-wide."
+    },
+    "10.1": {
+      "p": 3,
+      "i": 2,
+      "pn": "Assessed via NIST CSF DE.CM-09. Endpoint and server monitoring covered in the monitoring standard.",
+      "in": "Sophos Central EDR is deployed on 98% of managed endpoints and all servers, with detections visible in the console. Triage happens in business hours only, and the mean time to acknowledge over the period was 19 hours."
+    },
+    "10.2": {
+      "p": 4,
+      "i": 4,
+      "pn": "",
+      "in": "Sophos Central manages signature and engine updates automatically; console shows 100% current."
+    },
+    "10.3": {
+      "p": 4,
+      "i": 4,
+      "pn": "",
+      "in": "Autorun and autoplay disabled by Intune policy across all endpoints."
+    },
+    "10.4": {
+      "p": 4,
+      "i": 4,
+      "pn": "",
+      "in": "Sophos on-access scanning covers removable media."
+    },
+    "10.5": {
+      "p": 3,
+      "i": 3,
+      "pn": "",
+      "in": "Sophos exploit prevention enabled. Windows ASR rules are partially deployed \u2014 6 of the 16 recommended rules are in block mode."
+    },
+    "10.6": {
+      "p": 4,
+      "i": 4,
+      "pn": "",
+      "in": "Sophos Central provides single-console management with alerting; 98% endpoint coverage."
+    },
+    "10.7": {
+      "p": 2,
+      "i": 1,
+      "pn": "Assessed via NIST CSF DE.CM-03. Acceptable use policy reserves the right to monitor; no procedure defines what is monitored or by whom.",
+      "in": "Entra sign-in risk and impossible-travel alerts are enabled and do fire, but nobody is assigned to review them. 62 risky sign-in alerts were unreviewed at the time of testing."
+    },
+    "11.1": {
+      "p": 4,
+      "i": 3,
+      "pn": "Backup standard defines scope, schedule, retention and testing.",
+      "in": "Veeam covers all Tier 1 and Tier 2 systems and M365. The documented quarterly restore test has not run since Q1 2025."
+    },
+    "11.2": {
+      "p": 4,
+      "i": 3,
+      "pn": "Assessed via NIST CSF PR.DS-11. Backup standard defines 3-2-1, retention of 35 days operational and 12 months archive, and quarterly restore testing.",
+      "in": "Veeam with immutable repository and offsite copy; jobs are monitored and success rate over the period was 99.4%. Restore testing is file-level only and the last full system restore test was 14 months ago."
+    },
+    "11.3": {
+      "p": 4,
+      "i": 3,
+      "pn": "Assessed via NIST CSF PR.DS-11. Backup standard defines 3-2-1, retention of 35 days operational and 12 months archive, and quarterly restore testing.",
+      "in": "Veeam with immutable repository and offsite copy; jobs are monitored and success rate over the period was 99.4%. Restore testing is file-level only and the last full system restore test was 14 months ago."
+    },
+    "11.4": {
+      "p": 4,
+      "i": 4,
+      "pn": "",
+      "in": "Immutable Veeam repository plus an offsite copy at Ashbourne; immutability verified during this assessment."
+    },
+    "11.5": {
+      "p": 4,
+      "i": 3,
+      "pn": "Assessed via NIST CSF PR.DS-11, RC.RP-03. Backup standard defines 3-2-1, retention of 35 days operational and 12 months archive, and quarterly restore testing. Standard requires backup integrity verification before any restore.",
+      "in": "Veeam with immutable repository and offsite copy; jobs are monitored and success rate over the period was 99.4%. Restore testing is file-level only and the last full system restore test was 14 months ago. Veeam SureBackup verification runs nightly against the immutable repository and results are checked. Integrity of the offsite copy is verified monthly rather than per restore."
+    },
+    "12.1": {
+      "p": 3,
+      "i": 2,
+      "pn": "",
+      "in": "Firewall firmware is current. Two access switches are past vendor end-of-support and cannot be patched."
+    },
+    "12.2": {
+      "p": 3,
+      "i": 3,
+      "pn": "Assessed via NIST CSF PR.IR-01. Network security standard covers segmentation, firewall change control and remote access.",
+      "in": "Sophos XGS firewalls at each site with a documented ruleset, corporate/guest/OT VLAN separation and Entra-authenticated always-on VPN. East-west traffic within the corporate VLAN is unrestricted."
+    },
+    "12.3": {
+      "p": 3,
+      "i": 3,
+      "pn": "",
+      "in": "Network devices are managed from the management VLAN with individual accounts; two devices still allow HTTP management."
+    },
+    "12.4": {
+      "p": 2,
+      "i": 2,
+      "pn": "",
+      "in": "HQ diagrams are current. Little Island has not been documented since the 2025 integration."
+    },
+    "12.5": {
+      "p": 2,
+      "i": 2,
+      "pn": "",
+      "in": "Firewalls authenticate to Entra. Switches use local accounts with no central AAA."
+    },
+    "12.6": {
+      "p": 3,
+      "i": 3,
+      "pn": "",
+      "in": "SSH and HTTPS are used for most device management; SNMPv2c is still in use for monitoring."
+    },
+    "12.7": {
+      "p": 4,
+      "i": 4,
+      "pn": "",
+      "in": "Always-on VPN with device compliance; split tunnelling is disabled."
+    },
+    "12.8": {
+      "p": 2,
+      "i": 2,
+      "pn": "",
+      "in": "Administrative work is done from -adm accounts on standard laptops. No dedicated privileged access workstations."
+    },
+    "13.2": {
+      "p": 3,
+      "i": 3,
+      "pn": "",
+      "in": "Sophos EDR provides host-based detection on 98% of endpoints and all servers."
+    },
+    "13.3": {
+      "p": 2,
+      "i": 2,
+      "pn": "",
+      "in": "Sophos XGS IPS is enabled at the perimeter. No internal network detection."
+    },
+    "13.4": {
+      "p": 3,
+      "i": 3,
+      "pn": "",
+      "in": "Firewall rules separate corporate, guest and OT VLANs. Within the corporate VLAN traffic is unrestricted."
+    },
+    "13.5": {
+      "p": 3,
+      "i": 3,
+      "pn": "",
+      "in": "Remote assets must pass Entra device compliance before VPN or M365 access is granted."
+    },
+    "13.6": {
+      "p": 1,
+      "i": 0,
+      "pn": "",
+      "in": "No netflow or traffic flow logging anywhere in the estate."
+    },
+    "13.1": {
+      "p": 2,
+      "i": 2,
+      "pn": "Assessed via NIST CSF DE.CM-01. Monitoring standard states that network activity will be monitored; no defined use cases or thresholds.",
+      "in": "Sophos XGS produces IPS and web filtering alerts to the IT mailbox. No netflow collection, no baseline of normal traffic and nothing reviewed out of hours."
+    },
+    "13.7": {
+      "p": 3,
+      "i": 3,
+      "pn": "",
+      "in": "Sophos EDR is in block mode on endpoints and servers."
+    },
+    "13.8": {
+      "p": 2,
+      "i": 2,
+      "pn": "",
+      "in": "Perimeter IPS is in prevention mode; no internal IPS."
+    },
+    "13.9": {
+      "p": 1,
+      "i": 0,
+      "pn": "",
+      "in": "No 802.1X or port-level access control. Any device plugged into a wall port at any site reaches the corporate VLAN."
+    },
+    "13.11": {
+      "p": 1,
+      "i": 0,
+      "pn": "",
+      "in": "Alert thresholds are vendor defaults and have never been tuned; alert fatigue in the shared IT mailbox is visible."
+    },
+    "14.1": {
+      "p": 2,
+      "i": 2,
+      "pn": "Assessed via NIST CSF GV.RR-01, PR.AT-01. The Operations Director is named as the accountable executive in the information security policy. Awareness policy requires induction training and annual refresher for all staff.",
+      "in": "Leadership engages when customers or auditors ask, and funded the Sophos and Qualys renewals without challenge, but does not set direction or review outcomes. KnowBe4-style annual module plus monthly phishing simulation. Completion is 94% and the click rate has fallen from 18% to 6% over twelve months."
+    },
+    "14.2": {
+      "p": 4,
+      "i": 4,
+      "pn": "",
+      "in": "Social engineering is covered in induction, the annual module and monthly simulations. Click rate down from 18% to 6%."
+    },
+    "14.3": {
+      "p": 3,
+      "i": 3,
+      "pn": "",
+      "in": "Authentication and MFA practice is covered in the annual module."
+    },
+    "14.4": {
+      "p": 2,
+      "i": 2,
+      "pn": "",
+      "in": "Data handling training is generic because there is no classification scheme to teach."
+    },
+    "14.5": {
+      "p": 3,
+      "i": 3,
+      "pn": "",
+      "in": "Accidental disclosure and misdirected email are covered in the annual module."
+    },
+    "14.6": {
+      "p": 3,
+      "i": 3,
+      "pn": "Reporting expectations are documented in the incident response plan.",
+      "in": "The Outlook report-phishing button is deployed and used \u2014 214 reports in the period. Staff know how to report; they do not always get feedback."
+    },
+    "14.7": {
+      "p": 3,
+      "i": 2,
+      "pn": "",
+      "in": "Covered in training. There is no simple way for a user to check whether their device is out of date."
+    },
+    "14.8": {
+      "p": 3,
+      "i": 3,
+      "pn": "",
+      "in": "Insecure network use is covered in training and mitigated by always-on VPN."
+    },
+    "14.9": {
+      "p": 2,
+      "i": 2,
+      "pn": "Assessed via NIST CSF GV.RR-02, PR.AT-02. Policy names an IT Manager, a part-time security lead and a compliance manager. No RACI for security activities. Role-based training is mentioned in policy but not defined for any specific role.",
+      "in": "Roles are understood inside IT. Outside IT, staff do not know who owns security decisions; three interviewees named the wrong person. IT staff receive vendor training on Sophos and vSphere. No security-specific training for privileged users, developers (none in house) or the executive team."
+    },
+    "15.1": {
+      "p": 2,
+      "i": 2,
+      "pn": "Assessed via NIST CSF GV.SC-04, ID.AM-04. Finance maintains an approved supplier list with spend-based tiering. No requirement to inventory supplier-provided services.",
+      "in": "The list is accurate for spend but does not identify which suppliers touch data or systems. IT built an informal list of 11 material IT suppliers for this assessment. The 11-supplier list built for this assessment is the only artefact. Shadow SaaS is not discovered."
+    },
+    "15.2": {
+      "p": 1,
+      "i": 0,
+      "pn": "Assessed via NIST CSF GV.SC-01, DE.CM-06. No supply chain risk management programme, strategy or policy. The procurement policy is silent on cybersecurity. No requirement to monitor external service provider activity.",
+      "in": "Not performed. This is the single largest gap in the assessment and is directly relevant to NIS2 Article 21(2)(d). The MSP holds Global Administrator and privileged vSphere access. Their activity is not logged to a Kilcarn-controlled destination or reviewed."
+    },
+    "15.3": {
+      "p": 2,
+      "i": 2,
+      "pn": "Assessed via NIST CSF GV.SC-04. Finance maintains an approved supplier list with spend-based tiering.",
+      "in": "The list is accurate for spend but does not identify which suppliers touch data or systems. IT built an informal list of 11 material IT suppliers for this assessment."
+    },
+    "15.4": {
+      "p": 1,
+      "i": 1,
+      "pn": "Assessed via NIST CSF GV.SC-02, GV.SC-05, GV.SC-08. Security responsibilities appear in two of the eleven material supplier contracts reviewed, both driven by the supplier's own paper. No standard security requirements exist for inclusion in contracts or tenders. The incident response plan does not reference suppliers or define their role.",
+      "in": "No standard security schedule. The ERP hosting contract has no security obligations at all. Requirements are only raised when a customer flows them down to Kilcarn first. Not performed. The MSP has no contractual incident obligations and no agreed contact path outside the service desk."
+    },
+    "15.5": {
+      "p": 1,
+      "i": 1,
+      "pn": "Assessed via NIST CSF GV.SC-06. No due diligence procedure before onboarding a supplier.",
+      "in": "The most recent IT supplier (the EDI broker) was onboarded in April with no security review; the assessor could not locate a SOC 2 report or equivalent."
+    },
+    "15.6": {
+      "p": 1,
+      "i": 1,
+      "pn": "Assessed via NIST CSF GV.SC-07, GV.SC-09, DE.CM-06. No documented approach to understanding or monitoring third-party risk over the relationship. Supply chain practices are not integrated into product or service lifecycle management. No requirement to monitor external service provider activity.",
+      "in": "No supplier reassessment, no monitoring of supplier security notices. The 2025 EDI broker outage was handled as an availability issue only. Not performed. The MSP holds Global Administrator and privileged vSphere access. Their activity is not logged to a Kilcarn-controlled destination or reviewed."
+    },
+    "15.7": {
+      "p": 1,
+      "i": 1,
+      "pn": "Assessed via NIST CSF GV.SC-10. No offboarding provisions for suppliers in policy or contract.",
+      "in": "Data return and account termination are handled informally. Two dormant accounts belonging to a supplier disengaged in 2024 were still enabled at the time of testing."
+    },
+    "16.1": {
+      "p": 1,
+      "i": 1,
+      "pn": "Assessed via NIST CSF PR.PS-06. No secure development policy.",
+      "in": "No in-house software development. Two Power Apps and roughly 40 Power Automate flows are built by the finance team with no review, which is where this gap actually bites."
+    },
+    "16.2": {
+      "p": 1,
+      "i": 1,
+      "pn": "",
+      "in": "No process to accept software vulnerability reports. See ID.RA-08."
+    },
+    "16.3": {
+      "p": 1,
+      "i": 1,
+      "pn": "",
+      "in": "Not performed; no in-house development."
+    },
+    "16.4": {
+      "p": 1,
+      "i": 0,
+      "pn": "",
+      "in": "No inventory of third-party components. The Power Platform connectors used by finance are undocumented."
+    },
+    "16.5": {
+      "p": 1,
+      "i": 1,
+      "pn": "",
+      "in": ""
+    },
+    "16.6": {
+      "p": 1,
+      "i": 1,
+      "pn": "",
+      "in": ""
+    },
+    "16.7": {
+      "p": 1,
+      "i": 1,
+      "pn": "",
+      "in": ""
+    },
+    "16.8": {
+      "p": 2,
+      "i": 2,
+      "pn": "",
+      "in": "The ERP has a separate test instance. The Power Platform work is built directly in the production environment."
+    },
+    "16.9": {
+      "p": 1,
+      "i": 1,
+      "pn": "",
+      "in": "The finance staff building Power Apps and Power Automate flows have had no secure development training."
+    },
+    "16.11": {
+      "p": 1,
+      "i": 1,
+      "pn": "",
+      "in": ""
+    },
+    "16.12": {
+      "p": 0,
+      "i": 0,
+      "pn": "",
+      "in": ""
+    },
+    "16.13": {
+      "p": 0,
+      "i": 0,
+      "pn": "",
+      "in": ""
+    },
+    "16.14": {
+      "p": 0,
+      "i": 0,
+      "pn": "",
+      "in": ""
+    },
+    "17.1": {
+      "p": 3,
+      "i": 3,
+      "pn": "The plan names the IT Manager as incident handler and the compliance manager as deputy.",
+      "in": "Both are aware of the role. Neither has formal incident response training and there is no out-of-hours rota."
+    },
+    "17.2": {
+      "p": 2,
+      "i": 2,
+      "pn": "Assessed via NIST CSF RS.CO-02, RS.CO-03, RC.CO-04. Notification requirements documented, including the 72-hour GDPR clock and the NIS2 24-hour early warning. Information sharing expectations are stated in the plan. The plan says public communication is owned by the managing director with marketing support.",
+      "in": "The DPO route works and was used correctly in 2025. NIS2 notification steps are written down but no one has walked through them, and the NCSC-IE contact details in the plan are out of date. Internal sharing worked during the BEC. No mechanism for sharing with customers, suppliers or sector peers, and no supplier contact tree. No holding statements, no approved channels and no rehearsal. If an incident became public, the response would be improvised."
+    },
+    "17.3": {
+      "p": 3,
+      "i": 3,
+      "pn": "",
+      "in": "Reporting route is documented and the phishing button works well; 214 user reports in the period."
+    },
+    "17.4": {
+      "p": 3,
+      "i": 2,
+      "pn": "Assessed via NIST CSF RS.MA-01. Incident response plan approved March 2025, defines activation, roles and the response lifecycle.",
+      "in": "The plan was followed for the June 2025 business email compromise and worked. Third parties are not part of it \u2014 the MSP and insurer were engaged ad hoc, and the plan has never been exercised."
+    },
+    "17.5": {
+      "p": 3,
+      "i": 2,
+      "pn": "Roles are assigned in the plan.",
+      "in": "Assigned but not rehearsed. Two named individuals have left the business."
+    },
+    "17.6": {
+      "p": 2,
+      "i": 1,
+      "pn": "Assessed via NIST CSF RC.CO-04. The plan says public communication is owned by the managing director with marketing support.",
+      "in": "No holding statements, no approved channels and no rehearsal. If an incident became public, the response would be improvised."
+    },
+    "17.7": {
+      "p": 1,
+      "i": 0,
+      "pn": "Annual exercises are required by the plan.",
+      "in": "No exercise has ever been run. Top recommendation alongside log centralisation.",
+      "rec": "Run a facilitated tabletop exercise in Q3 covering a ransomware scenario affecting the Ashbourne production systems, with the Operations Director, IT Manager, compliance manager and the MSP present. Use the June 2025 BEC as a warm-up scenario for the first session. Budget half a day and capture the actions in the improvement register."
+    },
+    "17.8": {
+      "p": 2,
+      "i": 2,
+      "pn": "Assessed via NIST CSF RS.AN-03. Root cause analysis is required by the plan for P1 and P2 incidents.",
+      "in": "A root cause was established for the BEC (a legacy authentication path, since closed). No RCA exists for the two P2 incidents in the period."
+    },
+    "17.9": {
+      "p": 2,
+      "i": 2,
+      "pn": "Assessed via NIST CSF RS.MA-05. Recovery initiation criteria are stated briefly in the plan.",
+      "in": "Criteria are vague ('once the threat is contained') and there is no documented sign-off step, so the decision to restore is effectively made by whoever is in the room."
+    },
+    "18.1": {
+      "p": 2,
+      "i": 2,
+      "pn": "Annual external testing is required by policy.",
+      "in": "Delivered as a one-off purchase rather than a programme; no scope definition or year-on-year comparison."
+    },
+    "18.2": {
+      "p": 3,
+      "i": 3,
+      "pn": "",
+      "in": "External test completed November 2025 by a CREST-accredited provider."
+    },
+    "18.3": {
+      "p": 2,
+      "i": 1,
+      "pn": "Remediation of findings is required within 90 days.",
+      "in": "Six of fourteen findings from the November test remain open past SLA, including one high-severity issue on the customer portal."
+    },
+    "18.4": {
+      "p": 1,
+      "i": 0,
+      "pn": "",
+      "in": "No validation that controls actually work; no purple team or breach simulation activity."
+    },
+    "18.5": {
+      "p": 1,
+      "i": 0,
+      "pn": "",
+      "in": "No internal penetration testing has been performed."
+    }
+  },
+  "exported": "2026-06-18T16:42:00.000Z",
+  "frameworkVersion": "8.1.2"
+}

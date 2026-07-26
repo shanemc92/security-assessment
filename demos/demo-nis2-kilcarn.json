@@ -1,0 +1,267 @@
+{
+  "schema": 2,
+  "meta": {
+    "customer": "Kilcarn Foods Ltd",
+    "assessor": "M. Kavanagh",
+    "date": "2026-06-25",
+    "scope": "Corporate IT, Microsoft 365 and the three site networks. Excludes plant OT/SCADA and the cold chain telemetry platform. Kilcarn is an important entity under NIS2 Annex II (production, processing and distribution of food).",
+    "frameworkId": "nis2",
+    "framework": "NIS2 \u2014 Directive (EU) 2022/2555 on network and information systems security"
+  },
+  "goals": {
+    "GOV": 3,
+    "MEAS": 3,
+    "REP": 4,
+    "OBL": 3
+  },
+  "frameworkId": "nis2",
+  "responses": {
+    "Art. 20.1": {
+      "p": 1,
+      "i": 1,
+      "pn": "No record of the management body approving cybersecurity risk-management measures. The information security policy was approved by the Operations Director in 2023, which is not the same thing and predates NIS2 applying.",
+      "in": "The IT steering committee discusses security monthly but has no board-level escalation path. Directors have not been briefed on their personal liability under Article 20.",
+      "rec": "Take the risk-management measures to the board for formal approval at the next scheduled meeting and minute it, then set a standing quarterly oversight item. Brief the directors on personal liability under Article 20(1) at the same session \u2014 in most organisations that briefing is what unlocks the budget for everything else in this report."
+    },
+    "Art. 20.2": {
+      "p": 1,
+      "i": 1,
+      "pn": "No requirement anywhere for management body members to undertake cybersecurity training.",
+      "in": "No director has completed cybersecurity training. All-staff awareness training is delivered and well evidenced, but it is generic and was not designed to meet Article 20(2)."
+    },
+    "Art. 21.1": {
+      "p": 2,
+      "i": 1,
+      "pn": "No documented all-hazards approach. Security measures are selected reactively from audit findings and customer questionnaires rather than from a risk assessment.",
+      "in": "Proportionality has never been argued or recorded. If challenged by the NCSC-IE, Kilcarn could not currently show why its measures are appropriate to its size and exposure."
+    },
+    "Art. 21.2a.1": {
+      "p": 1,
+      "i": 1,
+      "pn": "No documented risk assessment methodology. The enterprise risk register holds a single unlabelled 'IT/cyber' entry, last updated 14 months ago.",
+      "in": "Qualys TruRisk gives consistent scoring for technical vulnerabilities, which is genuinely good, but nothing equivalent exists for process, supplier or people risk."
+    },
+    "Art. 21.2a.2": {
+      "p": 3,
+      "i": 2,
+      "pn": "Information security policy plus eight supporting policies, approved 2023, with scope, roles and enforcement statements present.",
+      "in": "Published on the intranet and referenced at induction, but the last full review was 22 months ago and the remote access policy still describes the retired SSL VPN."
+    },
+    "Art. 21.2b.1": {
+      "p": 3,
+      "i": 2,
+      "pn": "Incident response plan approved March 2025 defining activation, roles, three severity levels and the response lifecycle.",
+      "in": "The plan worked during the June 2025 business email compromise. It has never been exercised, contact lists name two leavers, and there is no out-of-hours capability."
+    },
+    "Art. 21.2b.2": {
+      "p": 2,
+      "i": 1,
+      "pn": "Logging standard defines which events must be generated and a 12-month retention requirement.",
+      "in": "No SIEM. Firewall, endpoint, identity and M365 signals sit in four separate consoles; firewall logs roll at 30 days and vSphere at 14. Reconstructing a 72-hour notification timeline would be difficult.",
+      "rec": "Deploy Microsoft Sentinel against the existing E3 tenant, ingesting Entra ID sign-in and audit logs, Sophos endpoint detections, XGS firewall syslog and vSphere events. The licence entitlement is already held. Beyond detection, this is what makes the 72-hour notification evidenceable \u2014 without it, reconstructing severity, impact and indicators of compromise inside three days is not realistic."
+    },
+    "Art. 21.2c.1": {
+      "p": 3,
+      "i": 2,
+      "pn": "Business impact analysis completed 2024 identifies order-to-dispatch, cold chain telemetry and payroll as critical. DR plan sets RTO 8 hours and RPO 4 hours for Tier 1.",
+      "in": "The plan is detailed but has not been revisited since the Little Island site was integrated in 2025, and that site does not appear in the recovery order."
+    },
+    "Art. 21.2c.2": {
+      "p": 4,
+      "i": 3,
+      "pn": "Backup standard defines 3-2-1, 35 days operational and 12 months archive retention, and quarterly restore testing.",
+      "in": "Veeam with an immutable repository and offsite copy; 99.4% job success over the period. Restore testing is file-level only and the last full system restore test was 14 months ago."
+    },
+    "Art. 21.2c.3": {
+      "p": 3,
+      "i": 2,
+      "pn": "Recovery objectives are documented and derived from the BIA.",
+      "in": "vSphere HA and replication to Ashbourne provide the capability, but failover has never been tested end to end, so the 8-hour RTO remains an assumption."
+    },
+    "Art. 21.2c.4": {
+      "p": 2,
+      "i": 2,
+      "pn": "The incident response plan names the Operations Director as escalation point and the managing director for P1, but there is no separate crisis management structure.",
+      "in": "Escalation during the 2025 BEC took six hours against a two-hour target. No pre-approved holding statements and no rehearsal of crisis decision-making."
+    },
+    "Art. 21.2d.1": {
+      "p": 1,
+      "i": 0,
+      "pn": "No supply chain risk management programme, strategy or policy. The procurement policy is silent on cybersecurity.",
+      "in": "Not performed. The EDI broker was onboarded in April with no security review and no SOC 2 or equivalent on file. This is the single largest NIS2 exposure.",
+      "rec": "Stand up a supplier assurance programme owned jointly by the compliance manager and procurement, starting with the 11 material IT suppliers already identified. Minimum viable version: a one-page security schedule with a 24-hour incident notification clause, a tiered questionnaire, and an annual reassessment date for the four Tier 1 suppliers. The notification clause matters twice over \u2014 it is an Article 21(2)(d) measure and it is what lets Kilcarn meet its own Article 23 deadlines when a supplier is the source."
+    },
+    "Art. 21.2d.2": {
+      "p": 1,
+      "i": 1,
+      "pn": "Security responsibilities appear in two of eleven material supplier contracts, both driven by the supplier's own paper. No standard security schedule exists.",
+      "in": "No supplier has a contractual incident notification obligation, so Kilcarn could learn of a supplier breach too late to meet its own 24-hour early warning."
+    },
+    "Art. 21.3": {
+      "p": 1,
+      "i": 1,
+      "pn": "No requirement to assess suppliers individually or to consider their secure development practices.",
+      "in": "Suppliers are tiered by spend, not by data or system access. The ERP hosting contract contains no security obligations at all."
+    },
+    "Art. 21.2e.1": {
+      "p": 1,
+      "i": 1,
+      "pn": "No secure development or acquisition policy. Security is not a gate in any procurement or project process.",
+      "in": "No in-house development, but the finance team has built two Power Apps and roughly 40 Power Automate flows directly in production with no review \u2014 that is where this gap actually bites."
+    },
+    "Art. 21.2e.2": {
+      "p": 4,
+      "i": 3,
+      "pn": "Vulnerability management procedure defines scan cadence, TruRisk prioritisation and remediation SLAs by severity. No vulnerability disclosure policy exists.",
+      "in": "Qualys VMDR scans weekly internally and daily externally with findings tracked to closure; median close for criticals was 11 days. There is no security@ address \u2014 a 2025 researcher report reached info@ and sat for 11 days."
+    },
+    "Art. 21.2f": {
+      "p": 1,
+      "i": 1,
+      "pn": "No defined measures of control effectiveness and no assessment process.",
+      "in": "Patch compliance and phishing click rates are visible in the consoles but are never reported, trended or acted on as performance measures."
+    },
+    "Art. 21.2g.1": {
+      "p": 3,
+      "i": 3,
+      "pn": "Configuration standards documented for Windows 11, Server 2022 and M365 based on CIS Benchmarks Level 1. Patch policy sets 14/30/90-day SLAs.",
+      "in": "Intune and WSUS deliver 96% OS patching within SLA and users are non-admin throughout. Third-party patching lags \u2014 41 endpoints past SLA \u2014 and the Little Island file server was built outside the baseline."
+    },
+    "Art. 21.2g.2": {
+      "p": 3,
+      "i": 3,
+      "pn": "Awareness policy requires induction and annual refresher training for all staff.",
+      "in": "94% completion with monthly phishing simulation; click rate down from 18% to 6% over twelve months. No role-based training for privileged or technical staff."
+    },
+    "Art. 21.2h": {
+      "p": 3,
+      "i": 3,
+      "pn": "Encryption standard requires full-disk encryption on endpoints, encryption at rest for cloud data, and TLS 1.2 or better in transit. No key management lifecycle is documented.",
+      "in": "BitLocker at 100% via Intune with keys escrowed in Entra. SQL TDE is not enabled on the ERP database, and one legacy line-of-business app on the Ashbourne VLAN is still HTTP only."
+    },
+    "Art. 21.2i.1": {
+      "p": 3,
+      "i": 3,
+      "pn": "HR policy covers pre-employment screening, acceptable use in the contract of employment, and a documented leavers process.",
+      "in": "Screening and AUP signature are consistently evidenced. Leaver deprovisioning is HR-triggered but the sample found two accounts disabled 4 and 9 days late."
+    },
+    "Art. 21.2i.2": {
+      "p": 3,
+      "i": 2,
+      "pn": "Access control policy defines least privilege, role-based access and six-monthly recertification.",
+      "in": "RBAC is well implemented in Entra and file services, but recertification has not run since early 2025 and three users retained ERP finance access after moving department."
+    },
+    "Art. 21.2i.3": {
+      "p": 3,
+      "i": 2,
+      "pn": "Asset management procedure defines ownership, tagging and quarterly reconciliation.",
+      "in": "Intune and vSphere give good coverage of laptops and VMs. Reconciliation is not actually quarterly; 34 network devices and the Little Island server room are tracked only in a spreadsheet."
+    },
+    "Art. 21.2j.1": {
+      "p": 4,
+      "i": 4,
+      "pn": "Authentication standard mandates MFA for all cloud, remote and administrative access and prohibits shared accounts.",
+      "in": "Entra Conditional Access enforces MFA for all users with no legacy authentication exceptions remaining, and device compliance is required for M365. Strongest control in the assessment alongside vulnerability management."
+    },
+    "Art. 21.2j.2": {
+      "p": 3,
+      "i": 3,
+      "pn": "Acceptable use policy directs staff to Teams and Exchange Online for business communication.",
+      "in": "Teams and Exchange Online are used throughout with encryption in transit. External sharing controls are at tenant defaults and have not been reviewed."
+    },
+    "Art. 21.2j.3": {
+      "p": 1,
+      "i": 0,
+      "pn": "No emergency communication arrangements are documented anywhere.",
+      "in": "Not performed. During the 2025 BEC all coordination ran over the same M365 tenant that was under investigation. No out-of-band channel exists.",
+      "rec": "Provision an out-of-band emergency communication channel independent of the M365 tenant and the corporate network \u2014 a separate messaging group on personal devices with a printed contact tree in the incident runbook is sufficient at this size. During the 2025 BEC all coordination ran over the tenant that was under investigation."
+    },
+    "Art. 21.4": {
+      "p": 2,
+      "i": 1,
+      "pn": "No corrective action process. Findings are expected to be actioned but nothing defines how.",
+      "in": "The 2025 retail customer audit findings were tracked to closure in a spreadsheet, showing the capability exists; six of fourteen November penetration test findings remain open with no dates."
+    },
+    "Art. 23.1.1": {
+      "p": 1,
+      "i": 1,
+      "pn": "The incident response plan defines three severity levels but does not reference the NIS2 significance criteria.",
+      "in": "Nobody at Kilcarn could currently determine whether an incident is 'significant' under Article 23(3). The 2025 BEC would probably have qualified and was not reported."
+    },
+    "Art. 23.1.2": {
+      "p": 1,
+      "i": 0,
+      "pn": "No trigger or route defined for notifying service recipients \u2014 in Kilcarn's case the retail customers.",
+      "in": "Not performed. Customer communication during the 2025 incident was handled ad hoc by the account team."
+    },
+    "Art. 23.2": {
+      "p": 1,
+      "i": 0,
+      "pn": "No mechanism for notifying recipients of significant cyber threats.",
+      "in": "Not performed."
+    },
+    "Art. 23.4a": {
+      "p": 1,
+      "i": 0,
+      "pn": "The 24-hour early warning obligation is named in a NIS2 gap paper but is not in the incident response plan.",
+      "in": "No route, no template, no authorised submitter and no out-of-hours capability. With detection stopping at 17:30 on Friday, a Friday evening incident would breach the 24-hour deadline before anyone saw it.",
+      "rec": "Write the 24-hour early warning into the incident response plan before anything else on this list. Minimum viable version: the NCSC-IE reporting portal URL, two named authorised submitters with a deputy, a one-page template, and an out-of-hours contact route via the MSP. This is achievable in a fortnight and closes the most acute regulatory exposure \u2014 a Friday evening incident currently breaches the deadline before anyone is aware of it."
+    },
+    "Art. 23.4b": {
+      "p": 1,
+      "i": 0,
+      "pn": "The 72-hour notification obligation is not reflected in any procedure.",
+      "in": "No template exists. Producing severity, impact and indicators of compromise within 72 hours would be difficult without central logging."
+    },
+    "Art. 23.4c": {
+      "p": 1,
+      "i": 0,
+      "pn": "No provision for responding to intermediate report requests.",
+      "in": "Not performed. No ownership assigned, so a supervisory request would compete directly with response work."
+    },
+    "Art. 23.4d": {
+      "p": 1,
+      "i": 1,
+      "pn": "Root cause analysis is required by the plan for P1 and P2 incidents, but the one-month final report is not referenced.",
+      "in": "A root cause was established for the 2025 BEC \u2014 a legacy authentication path, since closed \u2014 but no report in the Article 23(4)(d) form was produced, and the lessons-learned section was left blank."
+    },
+    "Art. 23.4e": {
+      "p": 0,
+      "i": 0,
+      "pn": "The progress report obligation is not documented.",
+      "in": "Not performed."
+    },
+    "Art. 3.4": {
+      "p": 2,
+      "i": 2,
+      "pn": "The compliance manager identified Kilcarn as an important entity under Annex II in a March gap paper.",
+      "in": "Registration with the NCSC-IE was submitted but no owner is assigned for keeping the submitted information current, and the named technical contact has since changed role."
+    },
+    "Art. 24": {
+      "p": 1,
+      "i": 1,
+      "pn": "No assessment of whether European cybersecurity certification schemes apply.",
+      "in": "Not considered. Two retail customers ask for ISO 27001 in their questionnaires, which is a commercial driver rather than a regulatory one."
+    },
+    "Art. 25": {
+      "p": 2,
+      "i": 2,
+      "pn": "Configuration standards reference CIS Benchmarks, but no overarching standard anchors the control set.",
+      "in": "Controls are a reasonable de facto subset of CIS IG1 and IG2 with no mapping to the Article 21(2) measures, so measure-by-measure coverage cannot be demonstrated."
+    },
+    "Art. 29": {
+      "p": 0,
+      "i": 0,
+      "pn": "No participation in any information-sharing arrangement.",
+      "in": "Not performed. The IT Manager consumes NCSC-IE advisories personally but Kilcarn shares nothing."
+    },
+    "Art. 32": {
+      "p": 1,
+      "i": 1,
+      "pn": "No supervision readiness pack. Evidence is spread across SharePoint, the ticket queue and individual mailboxes.",
+      "in": "A supervisory request would become a multi-week project. The absence of a risk assessment, a register of measures and any effectiveness evidence would be the hardest gaps to close at short notice."
+    }
+  },
+  "exported": "2026-06-25T17:05:00.000Z",
+  "frameworkVersion": "2022/2555"
+}
